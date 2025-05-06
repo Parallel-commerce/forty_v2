@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "header_banner_parallel_pEQYC7": {
+    "header_banner_parallel_aWzCA6": {
       "type": "header-banner-parallel",
       "name": "Header Banner",
       "settings": {
@@ -428,7 +428,7 @@
     }
   },
   "order": [
-    "header_banner_parallel_pEQYC7",
+    "header_banner_parallel_aWzCA6",
     "video_banner_Y6zWma",
     "slideshow_Mk7LPk",
     "featured_collection_37qppx",
