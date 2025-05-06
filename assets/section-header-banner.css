@@ -56,15 +56,15 @@
     }
   
     .header-banner--small .header-banner__media {
-      height: 20rem;
+      height: 20vh;
     }
   
     .header-banner--medium .header-banner__media {
-      height: 50rem;
+      height: 50vh;
     }
   
     .header-banner--large .header-banner__media {
-      height: 80rem;
+      height: 100vh;
     }
   }
   
