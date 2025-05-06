@@ -17,7 +17,7 @@
         "desktop_image": "shopify://shop_images/ONLINECLEARANCE_BANNERDESKTOP.jpg",
         "mobile_image": "shopify://shop_images/ONLINECLEARANCE_BANNERMOB.jpg",
         "image_overlay_opacity": 0,
-        "desktop_image_height": "large",
+        "desktop_image_height": "adapt",
         "mobile_image_height": "adapt",
         "image_behavior": "none"
       }
