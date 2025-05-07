@@ -13,7 +13,7 @@
       "type": "header-banner-parallel",
       "name": "Header Banner",
       "settings": {
-        "banner_link": "shopify://collections/warehouse-sale",
+        "banner_link": "shopify://collections/clearance-sale",
         "desktop_image": "shopify://shop_images/ONLINECLEARANCE_BANNERDESKTOP.jpg",
         "mobile_image": "shopify://shop_images/ONLINECLEARANCE_BANNERMOB.jpg",
         "image_overlay_opacity": 0,
