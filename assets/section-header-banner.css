@@ -24,6 +24,15 @@
     width: 100%;
   }
   
+  .header-banner__media video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
   .header-banner__media-image {
     position: absolute;
     height: 100%;
@@ -66,6 +75,10 @@
     .header-banner--large .header-banner__media {
       height: 100vh;
     }
+  
+    .header-banner__media--mobile {
+      display: none;
+    }
   }
   
   /* Mobile heights */
@@ -84,6 +97,10 @@
   
     .header-banner--mobile-large .header-banner__media {
       height: 25rem;
+    }
+  
+    .header-banner__media--desktop {
+      display: none;
     }
   }
   
