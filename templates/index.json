@@ -13,65 +13,15 @@
       "type": "header-banner-parallel",
       "name": "Header Banner",
       "settings": {
-        "banner_link": "shopify://collections/clearance-sale",
+        "banner_link": "shopify://collections/10th-year-black-edition",
+        "desktop_video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
         "desktop_image": "shopify://shop_images/ONLINECLEARANCE_BANNERDESKTOP.jpg",
+        "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
         "mobile_image": "shopify://shop_images/ONLINECLEARANCE_BANNERMOB.jpg",
         "image_overlay_opacity": 0,
         "desktop_image_height": "large",
         "mobile_image_height": "adapt",
         "image_behavior": "none"
-      }
-    },
-    "video_banner_Y6zWma": {
-      "type": "video-banner",
-      "blocks": {
-        "heading_T4zxE4": {
-          "type": "heading",
-          "settings": {
-            "heading": "NEW BENJAMIN TEES",
-            "heading_size": "h2"
-          }
-        },
-        "buttons_WQ34EX": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "SHOP NOW",
-            "button_link_1": "shopify://collections/benjamin-tees",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_T4zxE4",
-        "buttons_WQ34EX"
-      ],
-      "disabled": true,
-      "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/ccc67777b3884039a6b74a9081c1b7ae.mp4",
-        "mobile_video_url": "",
-        "desktop_content_position": "bottom-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "",
-        "stack_images_on_mobile": false,
-        "show_text_below": false,
-        "mobile_content_alignment": "left"
-      }
-    },
-    "slideshow_Mk7LPk": {
-      "type": "slideshow",
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
       }
     },
     "featured_collection_37qppx": {
@@ -429,8 +379,6 @@
   },
   "order": [
     "header_banner_parallel_aWzCA6",
-    "video_banner_Y6zWma",
-    "slideshow_Mk7LPk",
     "featured_collection_37qppx",
     "image_banner_Qwz9RY",
     "image_banner_CRDUet",
