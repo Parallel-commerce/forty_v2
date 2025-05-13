@@ -131,9 +131,15 @@
         {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -}}
         % OFF
       </span>
-      <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-        {{ 'products.product.sold_out' | t }}
-      </span>
+      {%- if product.tags contains 'coming-soon' -%}
+        <span class="badge coming-soon-badge">
+          Coming Soon
+        </span>
+      {%- elsif product.available == false -%}
+        <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
+          {{ 'products.product.sold_out' | t }}
+        </span>
+      {%- endif -%}
     {%- endif -%}
   </div>
 {% endunless %}
