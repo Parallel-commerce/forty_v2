@@ -11,13 +11,30 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "header_banner_parallel_bekU87": {
+      "type": "header-banner-parallel",
+      "name": "Header Banner",
+      "settings": {
+        "banner_link": "",
+        "desktop_video_url": "",
+        "desktop_image": "shopify://shop_images/JNRTECH_BANNERDESKTOP.jpg",
+        "mobile_video_url": "",
+        "mobile_image": "shopify://shop_images/JNRTECH_BANNERMOB.jpg",
+        "image_overlay_opacity": 0,
+        "desktop_image_height": "medium",
+        "mobile_image_height": "adapt",
+        "image_behavior": "none"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "header_banner_parallel_bekU87"
   ]
 }
