@@ -13,13 +13,13 @@
       "type": "header-banner-parallel",
       "name": "Header Banner",
       "settings": {
-        "banner_link": "shopify://collections/all-junior",
-        "desktop_video_url": "",
+        "banner_link": "shopify://collections/10th-year-black-edition",
+        "desktop_video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
         "desktop_image": "shopify://shop_images/JNRTECH_BANNERDESKTOP.jpg",
-        "mobile_video_url": "",
+        "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
         "mobile_image": "shopify://shop_images/JNRTECH_BANNERMOB.jpg",
         "image_overlay_opacity": 0,
-        "desktop_image_height": "adapt",
+        "desktop_image_height": "large",
         "mobile_image_height": "adapt",
         "image_behavior": "none"
       }
