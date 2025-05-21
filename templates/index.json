@@ -86,6 +86,7 @@
         "text_G7RRKM",
         "buttons_bgAnEk"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/deface_bitmap_peach_back.jpg",
         "image_2": "shopify://shop_images/deface_bitmap_white_back.jpg",
@@ -237,6 +238,21 @@
         "padding_bottom": 36
       }
     },
+    "header_banner_parallel_gUzBeE": {
+      "type": "header-banner-parallel",
+      "name": "Header Banner",
+      "settings": {
+        "banner_link": "shopify://collections/all-junior",
+        "desktop_video_url": "",
+        "desktop_image": "shopify://shop_images/JNRTECH_BANNERDESKTOP.jpg",
+        "mobile_video_url": "",
+        "mobile_image": "shopify://shop_images/JNRTECH_BANNERMOB.jpg",
+        "image_overlay_opacity": 0,
+        "desktop_image_height": "medium",
+        "mobile_image_height": "medium",
+        "image_behavior": "none"
+      }
+    },
     "multicolumn_mfJ7db": {
       "type": "multicolumn",
       "blocks": {
@@ -385,6 +401,7 @@
     "featured_collection_6XkUan",
     "image_banner_kDYUGq",
     "featured_collection_jqyTmq",
+    "header_banner_parallel_gUzBeE",
     "multicolumn_mfJ7db",
     "image_banner_eCYcbU",
     "d3e0de88-8654-4158-bb82-9835ffb9d940"
