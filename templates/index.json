@@ -9,19 +9,40 @@
  */
 {
   "sections": {
-    "header_banner_parallel_aWzCA6": {
-      "type": "header-banner-parallel",
-      "name": "Header Banner",
+    "slider_banner_eREQW4": {
+      "type": "slider-banner",
+      "blocks": {
+        "slide_a6UPCy": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
+            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
+            "link": "shopify://collections/10th-year-black-edition"
+          }
+        },
+        "slide_XUkdkX": {
+          "type": "slide",
+          "settings": {
+            "video_url": "",
+            "mobile_video_url": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_a6UPCy",
+        "slide_XUkdkX"
+      ],
+      "name": "Image Slider",
       "settings": {
-        "banner_link": "shopify://collections/10th-year-black-edition",
-        "desktop_video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
-        "desktop_image": "shopify://shop_images/JNRTECH_BANNERDESKTOP.jpg",
-        "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
-        "mobile_image": "shopify://shop_images/JNRTECH_BANNERMOB.jpg",
-        "image_overlay_opacity": 0,
-        "desktop_image_height": "large",
-        "mobile_image_height": "adapt",
-        "image_behavior": "none"
+        "height": "large",
+        "mobile_height": "actual",
+        "auto_rotate": false,
+        "slideshow_speed": 5,
+        "preload_next_slide": true,
+        "pause_on_hover": true,
+        "transition_effect": "fade",
+        "transition_speed": 500
       }
     },
     "featured_collection_37qppx": {
@@ -50,56 +71,6 @@
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "image_banner_Qwz9RY": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_h93rFm": {
-          "type": "heading",
-          "settings": {
-            "heading": "DEFACE BITMAP",
-            "heading_size": "h0"
-          }
-        },
-        "text_G7RRKM": {
-          "type": "text",
-          "settings": {
-            "text": "In the midst of an AI crisis, we’ve stripped back our DEFACE designs to the good old days, inspired by 80s bitmap graphics.  Designed by humans, for humans. ",
-            "text_style": "body"
-          }
-        },
-        "buttons_bgAnEk": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "SHOP BITMAP",
-            "button_link_1": "shopify://collections/bitmap",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_h93rFm",
-        "text_G7RRKM",
-        "buttons_bgAnEk"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/deface_bitmap_peach_back.jpg",
-        "image_2": "shopify://shop_images/deface_bitmap_white_back.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": true
       }
     },
     "image_banner_CRDUet": {
@@ -358,42 +329,6 @@
         "show_text_below": true
       }
     },
-    "slider_banner_eREQW4": {
-      "type": "slider-banner",
-      "blocks": {
-        "slide_a6UPCy": {
-          "type": "slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
-            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
-            "link": "shopify://collections/10th-year-black-edition"
-          }
-        },
-        "slide_XUkdkX": {
-          "type": "slide",
-          "settings": {
-            "video_url": "",
-            "mobile_video_url": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_a6UPCy",
-        "slide_XUkdkX"
-      ],
-      "name": "Image Slider",
-      "settings": {
-        "height": "large",
-        "mobile_height": "actual",
-        "auto_rotate": false,
-        "slideshow_speed": 5,
-        "preload_next_slide": true,
-        "pause_on_hover": true,
-        "transition_effect": "fade",
-        "transition_speed": 500
-      }
-    },
     "d3e0de88-8654-4158-bb82-9835ffb9d940": {
       "type": "newsletter",
       "blocks": {
@@ -430,9 +365,8 @@
     }
   },
   "order": [
-    "header_banner_parallel_aWzCA6",
+    "slider_banner_eREQW4",
     "featured_collection_37qppx",
-    "image_banner_Qwz9RY",
     "image_banner_CRDUet",
     "featured_collection_6XkUan",
     "image_banner_kDYUGq",
@@ -440,7 +374,6 @@
     "header_banner_parallel_gUzBeE",
     "multicolumn_mfJ7db",
     "image_banner_eCYcbU",
-    "slider_banner_eREQW4",
     "d3e0de88-8654-4158-bb82-9835ffb9d940"
   ]
 }
