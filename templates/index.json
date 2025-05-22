@@ -23,9 +23,11 @@
         "slide_XUkdkX": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/JNRTECH_BANNERDESKTOP.jpg",
             "video_url": "",
+            "mobile_image": "shopify://shop_images/JNRTECH_BANNERMOB.jpg",
             "mobile_video_url": "",
-            "link": ""
+            "link": "shopify://collections/all-junior"
           }
         }
       },
