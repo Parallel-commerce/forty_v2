@@ -372,12 +372,14 @@
   top: 0;
   left: 0;
   opacity: 0;
+  display: none;
   transition: opacity var(--transition-speed) ease-in-out,
               transform var(--transition-speed) ease-in-out;
 }
 
 .image-slider__slide.active {
   opacity: 1;
+  display: block;
   transform: translateX(0);
 }
 
@@ -418,6 +420,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .image-slider__progress {
