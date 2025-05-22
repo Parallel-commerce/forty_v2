@@ -38,7 +38,7 @@
       "name": "Image Slider",
       "settings": {
         "height": "large",
-        "mobile_height": "actual",
+        "mobile_height": "medium",
         "auto_rotate": false,
         "slideshow_speed": 5,
         "preload_next_slide": true,
