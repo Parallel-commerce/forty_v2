@@ -282,76 +282,6 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "featured_product_B7kc6d": {
-      "type": "featured-product",
-      "blocks": {
-        "text_hDgnXg": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title_rkbEmw": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "price_bMkcE4": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_9jrrzz": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_LYjUNJ": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_8qHeAj": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "share_zNJzgK": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        }
-      },
-      "block_order": [
-        "text_hDgnXg",
-        "title_rkbEmw",
-        "price_bMkcE4",
-        "variant_picker_9jrrzz",
-        "quantity_selector_LYjUNJ",
-        "buy_buttons_8qHeAj",
-        "share_zNJzgK"
-      ],
-      "name": "t:sections.featured-product.presets.name",
-      "settings": {
-        "product": "tech-gala-hydrochromic-swimshorts-black",
-        "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -363,7 +293,6 @@
     "product_features_GBVakW",
     "rich_text_aWwfxe",
     "collage_einc6h",
-    "rich_text_j3bLEz",
-    "featured_product_B7kc6d"
+    "rich_text_j3bLEz"
   ]
 }
