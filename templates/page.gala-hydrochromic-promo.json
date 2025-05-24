@@ -220,6 +220,138 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "collage_einc6h": {
+      "type": "collage",
+      "blocks": {
+        "image_UpjVDe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/40_ECOM_web-4497.jpg"
+          }
+        },
+        "image_b7tL9g": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/40_ECOM_web-5230_1.jpg"
+          }
+        },
+        "image_qw9HzA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/40_ECOM_web-5277.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_UpjVDe",
+        "image_b7tL9g",
+        "image_qw9HzA"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "none",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_j3bLEz": {
+      "type": "rich-text",
+      "blocks": {
+        "text_kyCkAw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For those who want to take the plunge, our Hydrochromic swim shorts are ideal for showing off poolside, with a unique fabrication that reveals a Forty pattern when it comes face-to-face with water.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_kyCkAw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_product_B7kc6d": {
+      "type": "featured-product",
+      "blocks": {
+        "text_hDgnXg": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_rkbEmw": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_bMkcE4": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_9jrrzz": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_LYjUNJ": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_8qHeAj": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_zNJzgK": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_hDgnXg",
+        "title_rkbEmw",
+        "price_bMkcE4",
+        "variant_picker_9jrrzz",
+        "quantity_selector_LYjUNJ",
+        "buy_buttons_8qHeAj",
+        "share_zNJzgK"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "tech-gala-hydrochromic-swimshorts-black",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -229,6 +361,9 @@
     "multicolumn_wNH3Vg",
     "174811037798259348",
     "product_features_GBVakW",
-    "rich_text_aWwfxe"
+    "rich_text_aWwfxe",
+    "collage_einc6h",
+    "rich_text_j3bLEz",
+    "featured_product_B7kc6d"
   ]
 }
