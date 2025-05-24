@@ -63,11 +63,37 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "product_features_GBVakW": {
+      "type": "product-features",
+      "blocks": {
+        "feature_CyD7Ky": {
+          "type": "feature",
+          "settings": {
+            "title": "charcoal two way reflective front zip",
+            "text": "",
+            "position_x": 52,
+            "position_y": 43
+          }
+        }
+      },
+      "block_order": [
+        "feature_CyD7Ky"
+      ],
+      "name": "Product Features",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "heading_size": "h1",
+        "image": "shopify://shop_images/40_ECOM_web-4348_a7132917-54d0-4aa8-8b45-9bc5eb1b9e37.jpg",
+        "product": ""
+      }
     }
   },
   "order": [
     "main",
     "video_9TaUdg",
-    "rich_text_aWwfxe"
+    "rich_text_aWwfxe",
+    "product_features_GBVakW"
   ]
 }
