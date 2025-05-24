@@ -32,10 +32,42 @@
         "padding_top": 0,
         "padding_bottom": 36
       }
+    },
+    "rich_text_aWwfxe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HDGnX8": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Gala Hydrochromic Windbreaker",
+            "heading_size": "h1"
+          }
+        },
+        "text_EdtF9E": {
+          "type": "text",
+          "settings": {
+            "text": "<p>An extremely limited edition piece of as part of our 10th anniversary celebrations, the Gala Hydrochromic Windbreaker uses a specialised process that applies a pigment to the fabric as it comes into contact with moisture.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HDGnX8",
+        "text_EdtF9E"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "video_9TaUdg"
+    "video_9TaUdg",
+    "rich_text_aWwfxe"
   ]
 }
