@@ -17,36 +17,25 @@
         "padding_bottom": 28
       }
     },
-    "slider_banner_39X8yd": {
-      "type": "slider-banner",
-      "blocks": {
-        "slide_mj7RdL": {
-          "type": "slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/4eb2c1787e9c4e3a9a20865f0730a19c.mp4",
-            "mobile_video_url": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_mj7RdL"
-      ],
-      "name": "Image Slider",
+    "video_9TaUdg": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
       "settings": {
-        "height": "medium",
-        "mobile_height": "large",
-        "auto_rotate": true,
-        "slideshow_speed": 5,
-        "preload_next_slide": true,
-        "pause_on_hover": true,
-        "transition_effect": "fade",
-        "transition_speed": 500
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/Untitled design.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "slider_banner_39X8yd"
+    "video_9TaUdg"
   ]
 }
