@@ -33,92 +33,6 @@
         "padding_bottom": 36
       }
     },
-    "rich_text_aWwfxe": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HDGnX8": {
-          "type": "heading",
-          "settings": {
-            "heading": "The Gala Hydrochromic Windbreaker",
-            "heading_size": "h1"
-          }
-        },
-        "text_EdtF9E": {
-          "type": "text",
-          "settings": {
-            "text": "<p>An extremely limited edition piece of as part of our 10th anniversary celebrations, the Gala Hydrochromic Windbreaker uses a specialised process that applies a pigment to the fabric as it comes into contact with moisture.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_HDGnX8",
-        "text_EdtF9E"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "product_features_GBVakW": {
-      "type": "product-features",
-      "blocks": {
-        "feature_CyD7Ky": {
-          "type": "feature",
-          "settings": {
-            "title": "charcoal two way reflective front zip",
-            "text": "",
-            "position_x": 52,
-            "position_y": 26
-          }
-        },
-        "feature_T7Vhw9": {
-          "type": "feature",
-          "settings": {
-            "title": "Double front pockets",
-            "text": "Completed with charcoal reflective zips.",
-            "position_x": 46,
-            "position_y": 46
-          }
-        },
-        "feature_HdGC7G": {
-          "type": "feature",
-          "settings": {
-            "title": "Forty box branding",
-            "text": "Feature description",
-            "position_x": 58,
-            "position_y": 38
-          }
-        },
-        "feature_z4mCG9": {
-          "type": "feature",
-          "settings": {
-            "title": "An Interior you will love",
-            "text": "Silver-metallic, water-resistant interior finish",
-            "position_x": 58,
-            "position_y": 50
-          }
-        }
-      },
-      "block_order": [
-        "feature_CyD7Ky",
-        "feature_T7Vhw9",
-        "feature_HdGC7G",
-        "feature_z4mCG9"
-      ],
-      "name": "Product Features",
-      "settings": {
-        "heading": "",
-        "text": "",
-        "heading_size": "h1",
-        "image": "shopify://shop_images/40_ECOM_web-4348_a7132917-54d0-4aa8-8b45-9bc5eb1b9e37.jpg",
-        "product": ""
-      }
-    },
     "rich_text_NMK6G3": {
       "type": "rich-text",
       "blocks": {
@@ -203,14 +117,111 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "product_features_GBVakW": {
+      "type": "product-features",
+      "blocks": {
+        "feature_CyD7Ky": {
+          "type": "feature",
+          "settings": {
+            "title": "charcoal two way reflective front zip",
+            "text": "",
+            "position_x": 52,
+            "position_y": 26
+          }
+        },
+        "feature_T7Vhw9": {
+          "type": "feature",
+          "settings": {
+            "title": "Double front pockets",
+            "text": "Completed with charcoal reflective zips.",
+            "position_x": 46,
+            "position_y": 46
+          }
+        },
+        "feature_HdGC7G": {
+          "type": "feature",
+          "settings": {
+            "title": "Forty box branding",
+            "text": "Feature description",
+            "position_x": 58,
+            "position_y": 38
+          }
+        },
+        "feature_z4mCG9": {
+          "type": "feature",
+          "settings": {
+            "title": "An Interior you will love",
+            "text": "Silver-metallic, water-resistant interior finish",
+            "position_x": 58,
+            "position_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "feature_CyD7Ky",
+        "feature_T7Vhw9",
+        "feature_HdGC7G",
+        "feature_z4mCG9"
+      ],
+      "name": "Product Features",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "heading_size": "h1",
+        "image": "shopify://shop_images/40_ECOM_web-4348_a7132917-54d0-4aa8-8b45-9bc5eb1b9e37.jpg",
+        "product": ""
+      }
+    },
+    "rich_text_aWwfxe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HDGnX8": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Gala Hydrochromic Windbreaker",
+            "heading_size": "h1"
+          }
+        },
+        "text_EdtF9E": {
+          "type": "text",
+          "settings": {
+            "text": "<p>An extremely limited edition piece of as part of our 10th anniversary celebrations, the Gala Hydrochromic Windbreaker uses a specialised process that applies a pigment to the fabric as it comes into contact with moisture.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HDGnX8",
+        "text_EdtF9E"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_6JXRxd": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width\">\n<div class=\"klaviyo-form-Vjtmyz\"></div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "video_9TaUdg",
-    "rich_text_aWwfxe",
-    "product_features_GBVakW",
     "rich_text_NMK6G3",
-    "multicolumn_wNH3Vg"
+    "multicolumn_wNH3Vg",
+    "product_features_GBVakW",
+    "rich_text_aWwfxe",
+    "custom_liquid_6JXRxd"
   ]
 }
