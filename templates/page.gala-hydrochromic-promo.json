@@ -73,12 +73,32 @@
             "title": "charcoal two way reflective front zip",
             "text": "",
             "position_x": 52,
-            "position_y": 43
+            "position_y": 26
+          }
+        },
+        "feature_T7Vhw9": {
+          "type": "feature",
+          "settings": {
+            "title": "Double front pockets",
+            "text": "Completed with charcoal reflective zips.",
+            "position_x": 46,
+            "position_y": 46
+          }
+        },
+        "feature_HdGC7G": {
+          "type": "feature",
+          "settings": {
+            "title": "Forty box branding",
+            "text": "Feature description",
+            "position_x": 58,
+            "position_y": 38
           }
         }
       },
       "block_order": [
-        "feature_CyD7Ky"
+        "feature_CyD7Ky",
+        "feature_T7Vhw9",
+        "feature_HdGC7G"
       ],
       "name": "Product Features",
       "settings": {
