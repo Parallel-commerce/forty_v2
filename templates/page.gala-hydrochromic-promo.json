@@ -11,13 +11,42 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "slider_banner_39X8yd": {
+      "type": "slider-banner",
+      "blocks": {
+        "slide_mj7RdL": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/4eb2c1787e9c4e3a9a20865f0730a19c.mp4",
+            "mobile_video_url": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_mj7RdL"
+      ],
+      "name": "Image Slider",
+      "settings": {
+        "height": "medium",
+        "mobile_height": "large",
+        "auto_rotate": true,
+        "slideshow_speed": 5,
+        "preload_next_slide": true,
+        "pause_on_hover": true,
+        "transition_effect": "fade",
+        "transition_speed": 500
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "slider_banner_39X8yd"
   ]
 }
