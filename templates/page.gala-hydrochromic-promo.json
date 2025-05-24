@@ -206,12 +206,30 @@
     },
     "custom_liquid_6JXRxd": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<div class=\"page-width\">\n<div class=\"klaviyo-form-Vjtmyz\"></div>\n</div>",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "174811037798259348": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_TRyDwT": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "klaviyo-form-Vjtmyz"
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_TRyDwT"
+      ],
+      "settings": {
+        "include_margins": true
       }
     }
   },
@@ -222,6 +240,7 @@
     "multicolumn_wNH3Vg",
     "product_features_GBVakW",
     "rich_text_aWwfxe",
-    "custom_liquid_6JXRxd"
+    "custom_liquid_6JXRxd",
+    "174811037798259348"
   ]
 }
