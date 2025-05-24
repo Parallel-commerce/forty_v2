@@ -93,12 +93,22 @@
             "position_x": 58,
             "position_y": 38
           }
+        },
+        "feature_z4mCG9": {
+          "type": "feature",
+          "settings": {
+            "title": "An Interior you will love",
+            "text": "Silver-metallic, water-resistant interior finish",
+            "position_x": 58,
+            "position_y": 50
+          }
         }
       },
       "block_order": [
         "feature_CyD7Ky",
         "feature_T7Vhw9",
-        "feature_HdGC7G"
+        "feature_HdGC7G",
+        "feature_z4mCG9"
       ],
       "name": "Product Features",
       "settings": {
@@ -108,12 +118,99 @@
         "image": "shopify://shop_images/40_ECOM_web-4348_a7132917-54d0-4aa8-8b45-9bc5eb1b9e37.jpg",
         "product": ""
       }
+    },
+    "rich_text_NMK6G3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MAEwrx": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Get Exclusive Early Access to Our 10th Anniversary Gala Hydrochromic Windbreaker</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_rmjVtT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Celebrate our decade milestone with a truly magical, limited-edition piece. Only <strong>30</strong> of these innovative windbreakers exist—and you can be first in line to snag one.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MAEwrx",
+        "text_rmjVtT"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_wNH3Vg": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_hHJXzP": {
+          "type": "column",
+          "settings": {
+            "title": "Step 1: Sign Up",
+            "text": "<p>Enter your <strong>name</strong>, <strong>email</strong>, and <strong>phone number</strong> below.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LPgfxJ": {
+          "type": "column",
+          "settings": {
+            "title": "Step 2: Wait for Your Invite",
+            "text": "<p>On <strong>Wednesday at 18:00 GMT</strong>, we’ll email you a link and <strong>unique access code</strong>.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_XkWEDd": {
+          "type": "column",
+          "settings": {
+            "title": "Step 3: Shop Early",
+            "text": "<p>From <strong>18:00 to 20:00 GMT</strong>, use your code to unlock the jacket’s product page and purchase before anyone else.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_hHJXzP",
+        "column_LPgfxJ",
+        "column_XkWEDd"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "How It Works",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "video_9TaUdg",
     "rich_text_aWwfxe",
-    "product_features_GBVakW"
+    "product_features_GBVakW",
+    "rich_text_NMK6G3",
+    "multicolumn_wNH3Vg"
   ]
 }
