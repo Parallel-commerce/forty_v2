@@ -17,6 +17,37 @@
         "padding_bottom": 28
       }
     },
+    "rich_text_NMK6G3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MAEwrx": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Get Exclusive Early Access to Our 10th Anniversary Gala Hydrochromic Windbreaker</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_rmjVtT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Celebrate our decade milestone with a truly magical, limited-edition piece. Only <strong>30</strong> of these innovative windbreakers exist—and you can be first in line to snag one.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MAEwrx",
+        "text_rmjVtT"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "174811037798259348": {
       "type": "apps",
       "blocks": {
@@ -50,37 +81,6 @@
         "padding_bottom": 36
       }
     },
-    "rich_text_NMK6G3": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_MAEwrx": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Get Exclusive Early Access to Our 10th Anniversary Gala Hydrochromic Windbreaker</strong>",
-            "heading_size": "h2"
-          }
-        },
-        "text_rmjVtT": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Celebrate our decade milestone with a truly magical, limited-edition piece. Only <strong>30</strong> of these innovative windbreakers exist—and you can be first in line to snag one.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_MAEwrx",
-        "text_rmjVtT"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "multicolumn_wNH3Vg": {
       "type": "multicolumn",
       "blocks": {
@@ -88,7 +88,7 @@
           "type": "column",
           "settings": {
             "title": "Step 1: Sign Up",
-            "text": "<p>Enter your <strong>name </strong>and <strong>email </strong>below.</p>",
+            "text": "<p>Enter your <strong>name </strong>and <strong>email </strong>at the top of the page.</p>",
             "link_label": "",
             "link": ""
           }
@@ -286,9 +286,9 @@
   },
   "order": [
     "main",
+    "rich_text_NMK6G3",
     "174811037798259348",
     "video_9TaUdg",
-    "rich_text_NMK6G3",
     "multicolumn_wNH3Vg",
     "product_features_GBVakW",
     "rich_text_aWwfxe",
