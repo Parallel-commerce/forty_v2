@@ -364,6 +364,22 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "before_after_jwjzDd": {
+      "type": "before-after",
+      "name": "Before After",
+      "settings": {
+        "heading": "BMP Photochromic",
+        "text": "<p>Introducing the <strong>BMP Photochromic Tee</strong>, the highlight of our Summer Collection and the embodiment of Forty’s core values: <strong>Design. Storytelling. Experiential. Community.</strong></p>",
+        "heading_size": "h1",
+        "before_image": "shopify://shop_images/BMP_Tee_Web-205.jpg",
+        "after_image": "shopify://shop_images/BMP_Tee_Web-240.jpg",
+        "before_label": "Before",
+        "after_label": "After",
+        "initial_position": 40,
+        "product": "bmp-photochromic-tee-white",
+        "cta_text": "Buy Now"
+      }
     }
   },
   "order": [
@@ -372,6 +388,7 @@
     "image_banner_CRDUet",
     "featured_collection_6XkUan",
     "image_banner_kDYUGq",
+    "before_after_jwjzDd",
     "featured_collection_jqyTmq",
     "header_banner_parallel_gUzBeE",
     "multicolumn_mfJ7db",
