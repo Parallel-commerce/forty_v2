@@ -29,11 +29,20 @@
             "mobile_video_url": "",
             "link": "shopify://collections/all-junior"
           }
+        },
+        "slide_HeEH3g": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/53dea5a6acd7495da6763c9834724a09.mp4",
+            "mobile_video_url": "",
+            "link": "shopify://products/bmp-photochromic-tee-white"
+          }
         }
       },
       "block_order": [
         "slide_a6UPCy",
-        "slide_XUkdkX"
+        "slide_XUkdkX",
+        "slide_HeEH3g"
       ],
       "name": "Image Slider",
       "settings": {
@@ -181,6 +190,22 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
+      }
+    },
+    "before_after_jwjzDd": {
+      "type": "before-after",
+      "name": "Before After",
+      "settings": {
+        "heading": "BMP Photochromic",
+        "text": "<p>Introducing the <strong>BMP Photochromic Tee</strong>, the highlight of our Summer Collection and the embodiment of Forty’s core values: <strong>Design. Storytelling. Experiential. Community.</strong></p>",
+        "heading_size": "h1",
+        "before_image": "shopify://shop_images/BMP_Tee_Web-205.jpg",
+        "after_image": "shopify://shop_images/BMP_Tee_Web-240.jpg",
+        "before_label": "Before",
+        "after_label": "After",
+        "initial_position": 40,
+        "product": "bmp-photochromic-tee-white",
+        "cta_text": "Buy Now"
       }
     },
     "featured_collection_jqyTmq": {
@@ -363,22 +388,6 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
-      }
-    },
-    "before_after_jwjzDd": {
-      "type": "before-after",
-      "name": "Before After",
-      "settings": {
-        "heading": "BMP Photochromic",
-        "text": "<p>Introducing the <strong>BMP Photochromic Tee</strong>, the highlight of our Summer Collection and the embodiment of Forty’s core values: <strong>Design. Storytelling. Experiential. Community.</strong></p>",
-        "heading_size": "h1",
-        "before_image": "shopify://shop_images/BMP_Tee_Web-205.jpg",
-        "after_image": "shopify://shop_images/BMP_Tee_Web-240.jpg",
-        "before_label": "Before",
-        "after_label": "After",
-        "initial_position": 40,
-        "product": "bmp-photochromic-tee-white",
-        "cta_text": "Buy Now"
       }
     }
   },
