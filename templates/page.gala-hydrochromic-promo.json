@@ -17,6 +17,23 @@
         "padding_bottom": 28
       }
     },
+    "174811037798259348": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_TRyDwT": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "<div class=\"klaviyo-form-Spx9gL\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_TRyDwT"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "video_9TaUdg": {
       "type": "video",
       "name": "t:sections.video.presets.name",
@@ -27,7 +44,7 @@
         "video": "shopify://files/videos/Untitled design.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
-        "full_width": true,
+        "full_width": false,
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 36
@@ -116,23 +133,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "174811037798259348": {
-      "type": "apps",
-      "blocks": {
-        "klaviyo_email_marketing_sms_form_embed_block_TRyDwT": {
-          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
-          "settings": {
-            "formId": "<div class=\"klaviyo-form-Spx9gL\"></div>"
-          }
-        }
-      },
-      "block_order": [
-        "klaviyo_email_marketing_sms_form_embed_block_TRyDwT"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "product_features_GBVakW": {
@@ -286,10 +286,10 @@
   },
   "order": [
     "main",
+    "174811037798259348",
     "video_9TaUdg",
     "rich_text_NMK6G3",
     "multicolumn_wNH3Vg",
-    "174811037798259348",
     "product_features_GBVakW",
     "rich_text_aWwfxe",
     "collage_einc6h",
