@@ -84,6 +84,47 @@
         "padding_bottom": 36
       }
     },
+    "parallel_shop_the_look_9cG8nx": {
+      "type": "parallel-shop-the-look",
+      "blocks": {
+        "product_dot_Gx74Fr": {
+          "type": "product_dot",
+          "settings": {
+            "product": "forty-lloyd-sweat-2-0-grey",
+            "position_x": 50,
+            "position_y": 35
+          }
+        },
+        "product_dot_kgdnGW": {
+          "type": "product_dot",
+          "settings": {
+            "product": "riley-shorts-2-0-grey",
+            "position_x": 44,
+            "position_y": 58
+          }
+        },
+        "product_dot_cQwefq": {
+          "type": "product_dot",
+          "settings": {
+            "product": "copy-of-copy-of-ayton-socks-white-black",
+            "position_x": 45,
+            "position_y": 85
+          }
+        }
+      },
+      "block_order": [
+        "product_dot_Gx74Fr",
+        "product_dot_kgdnGW",
+        "product_dot_cQwefq"
+      ],
+      "name": "Shop The Look",
+      "settings": {
+        "heading": "The Perfect Combination",
+        "button_text": "Shop All Sets",
+        "button_url": "shopify://collections/sets",
+        "look_image": "shopify://shop_images/HiRes--6.jpg"
+      }
+    },
     "image_banner_CRDUet": {
       "type": "image-banner",
       "blocks": {
@@ -345,6 +386,7 @@
   "order": [
     "slider_banner_eREQW4",
     "featured_collection_37qppx",
+    "parallel_shop_the_look_9cG8nx",
     "image_banner_CRDUet",
     "featured_collection_6XkUan",
     "image_banner_kDYUGq",
