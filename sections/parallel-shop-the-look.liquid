@@ -9,24 +9,18 @@
       "default": "Shop The Look"
     },
     {
-      "type": "select",
-      "id": "heading_alignment",
-      "label": "Heading alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "center"
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
     },
     {
       "type": "image_picker",
@@ -90,9 +84,19 @@
 
 <div class="shop-the-look">
   <div class="page-width">
-    {% if section.settings.heading != blank %}
-      <h2 class="shop-the-look__heading text-{{ section.settings.heading_alignment }}">{{ section.settings.heading }}</h2>
-    {% endif %}
+    <div class="shop-the-look__header">
+      {% if section.settings.heading != blank %}
+        <h2 class="shop-the-look__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+        <a href="{{ section.settings.button_url }}" class="link animate-arrow">
+          {{ section.settings.button_text }}
+          <span class="svg-wrapper">
+            <span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span>
+          </span>
+        </a>
+      {% endif %}
+    </div>
     
     <div class="shop-the-look__grid">
       <div class="shop-the-look__column shop-the-look__column--image">
@@ -159,21 +163,25 @@
     padding: 40px 0;
   }
 
-  .shop-the-look__heading {
+  .shop-the-look__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
-    font-size: 28px;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  .text-left {
+  .shop-the-look__heading {
+    margin: 0;
+    font-size: 28px;
     text-align: left;
   }
 
-  .text-center {
-    text-align: center;
-  }
-
+  .text-left,
+  .text-center,
   .text-right {
-    text-align: right;
+    display: none;
   }
 
   .shop-the-look__grid {
@@ -308,6 +316,32 @@
     margin: 0;
   }
 
+  .shop-the-look__button {
+    display: none;
+  }
+
+  .link.animate-arrow {
+    text-decoration: none;
+    color: var(--color-link);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .link.animate-arrow:hover {
+    color: var(--color-link-hover);
+  }
+
+  .link.animate-arrow:hover .icon-wrap {
+    transform: translateX(0.25rem);
+  }
+
+  .link.animate-arrow .icon-wrap {
+    display: inline-flex;
+    transition: transform 0.2s ease;
+  }
+
   @media screen and (max-width: 749px) {
     .shop-the-look__grid {
       grid-template-columns: 1fr;
@@ -320,6 +354,20 @@
     .shop-the-look__product-image-wrapper {
       flex: 0 0 60px;
       padding-bottom: 60px;
+    }
+
+    .shop-the-look__header {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .shop-the-look__heading {
+      width: 100%;
+    }
+
+    .link.animate-arrow {
+      margin-top: 1rem;
     }
   }
 </style>
