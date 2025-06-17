@@ -192,22 +192,6 @@
         "show_text_below": true
       }
     },
-    "before_after_jwjzDd": {
-      "type": "before-after",
-      "name": "Before After",
-      "settings": {
-        "heading": "BMP Photochromic",
-        "text": "<p>Introducing the <strong>BMP Photochromic Tee</strong>, the highlight of our Summer Collection and the embodiment of Forty’s core values: <strong>Design. Storytelling. Experiential. Community.</strong></p>",
-        "heading_size": "h1",
-        "before_image": "shopify://shop_images/BMP_Tee_Web-205.jpg",
-        "after_image": "shopify://shop_images/BMP_Tee_Web-240.jpg",
-        "before_label": "Before",
-        "after_label": "After",
-        "initial_position": 40,
-        "product": "bmp-photochromic-tee-white",
-        "cta_text": "Buy Now"
-      }
-    },
     "featured_collection_jqyTmq": {
       "type": "featured-collection",
       "settings": {
@@ -307,55 +291,6 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_eCYcbU": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_VttVq7": {
-          "type": "heading",
-          "settings": {
-            "heading": "COME SPEAK TO OUR EXPERT TEAM IN-STORE",
-            "heading_size": "h2"
-          }
-        },
-        "text_QWmpyd": {
-          "type": "text",
-          "settings": {
-            "text": "Visit out stores to shop the latest Forty Clothing, return items bought online.",
-            "text_style": "body"
-          }
-        },
-        "buttons_d9pFrN": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "VIEW OUR STORES",
-            "button_link_1": "shopify://pages/forty-stores",
-            "button_style_secondary_1": false,
-            "button_label_2": "ABOUT FORTY",
-            "button_link_2": "shopify://pages/about",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading_VttVq7",
-        "text_QWmpyd",
-        "buttons_d9pFrN"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/004_1.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "ambient",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "d3e0de88-8654-4158-bb82-9835ffb9d940": {
       "type": "newsletter",
       "blocks": {
@@ -389,6 +324,22 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "parallel_before_after_tqyfaP": {
+      "type": "parallel-before-after",
+      "name": "Before After",
+      "settings": {
+        "heading": "Before & After",
+        "text": "<p>Compare the before and after results</p>",
+        "heading_size": "h1",
+        "before_image": "shopify://shop_images/BMP_Tee_Web-205.jpg",
+        "after_image": "shopify://shop_images/BMP_Tee_Web-240.jpg",
+        "before_label": "Before",
+        "after_label": "After",
+        "initial_position": 30,
+        "product": "bmp-photochromic-tee-white",
+        "cta_text": "Buy Now"
+      }
     }
   },
   "order": [
@@ -397,11 +348,10 @@
     "image_banner_CRDUet",
     "featured_collection_6XkUan",
     "image_banner_kDYUGq",
-    "before_after_jwjzDd",
     "featured_collection_jqyTmq",
     "header_banner_parallel_gUzBeE",
     "multicolumn_mfJ7db",
-    "image_banner_eCYcbU",
-    "d3e0de88-8654-4158-bb82-9835ffb9d940"
+    "d3e0de88-8654-4158-bb82-9835ffb9d940",
+    "parallel_before_after_tqyfaP"
   ]
 }
