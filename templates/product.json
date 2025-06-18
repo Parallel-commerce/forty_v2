@@ -9,12 +9,16 @@
  */
 {
   "sections": {
-    "breadcrumb_JMKf9m": {
-      "type": "breadcrumb",
+    "parallel_breadcrumb_nyYWJF": {
+      "type": "parallel-breadcrumb",
+      "name": "Breadcrumbs",
       "settings": {
         "color_scheme": "",
-        "padding_top": 8,
-        "padding_bottom": 0
+        "separator_style": "slash",
+        "font_size": 14,
+        "show_home_icon": false,
+        "padding_top": 12,
+        "padding_bottom": 8
       }
     },
     "main": {
@@ -240,7 +244,7 @@
     }
   },
   "order": [
-    "breadcrumb_JMKf9m",
+    "parallel_breadcrumb_nyYWJF",
     "main",
     "collapsible_content_kkhXWm",
     "related-products",
