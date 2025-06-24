@@ -37,12 +37,23 @@
             "mobile_video_url": "",
             "link": "shopify://products/bmp-photochromic-tee-white"
           }
+        },
+        "slide_hyhyTw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BTO_WEBDESK.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/BTO_WEBMOBILE.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://collections/back-to-it"
+          }
         }
       },
       "block_order": [
         "slide_a6UPCy",
         "slide_XUkdkX",
-        "slide_HeEH3g"
+        "slide_HeEH3g",
+        "slide_hyhyTw"
       ],
       "name": "Image Slider",
       "settings": {
@@ -122,7 +133,9 @@
         "heading": "The Perfect Combination",
         "button_text": "Shop All Sets",
         "button_url": "shopify://collections/sets",
-        "look_image": "shopify://shop_images/HiRes--6.jpg"
+        "look_image": "shopify://shop_images/HiRes--6.jpg",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "image_banner_CRDUet": {
