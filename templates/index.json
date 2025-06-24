@@ -340,22 +340,6 @@
         "show_text_below": true
       }
     },
-    "parallel_before_after_tqyfaP": {
-      "type": "parallel-before-after",
-      "name": "Before After",
-      "settings": {
-        "heading": "BMP Photochromic Tee",
-        "text": "<p>Compare the before and after results</p>",
-        "heading_size": "h1",
-        "before_image": "shopify://shop_images/BMP_Tee_Web-205.jpg",
-        "after_image": "shopify://shop_images/BMP_Tee_Web-240.jpg",
-        "before_label": "Before",
-        "after_label": "After",
-        "initial_position": 30,
-        "product": "bmp-photochromic-tee-white",
-        "cta_text": "Buy Now"
-      }
-    },
     "multicolumn_mfJ7db": {
       "type": "multicolumn",
       "blocks": {
@@ -457,7 +441,6 @@
     "featured_collection_jqyTmq",
     "header_banner_parallel_gUzBeE",
     "image_banner_znbF4U",
-    "parallel_before_after_tqyfaP",
     "multicolumn_mfJ7db",
     "d3e0de88-8654-4158-bb82-9835ffb9d940"
   ]
