@@ -276,6 +276,7 @@
     },
     "header_banner_parallel_gUzBeE": {
       "type": "header-banner-parallel",
+      "disabled": true,
       "name": "Header Banner",
       "settings": {
         "banner_link": "shopify://collections/all-junior",
@@ -287,6 +288,56 @@
         "desktop_image_height": "medium",
         "mobile_image_height": "medium",
         "image_behavior": "none"
+      }
+    },
+    "image_banner_znbF4U": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_xHTURG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Back to it: Save £40",
+            "heading_size": "h1"
+          }
+        },
+        "text_nwqiwV": {
+          "type": "text",
+          "settings": {
+            "text": "It’s that time again. Whether it’s school, college or uni, get organised early doors and save up £40 by picking up three Forty Back to it essentials. Normally £235, now <strong>£195</strong>. A price that just adds up. ",
+            "text_style": "body"
+          }
+        },
+        "buttons_9nBHNp": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Lloyd Bundle",
+            "button_link_1": "shopify://products/back-to-it-bundle-lloyd-sweat-2-0-levanter-dorsum",
+            "button_style_secondary_1": false,
+            "button_label_2": "Shop Davidson Bundle",
+            "button_link_2": "shopify://products/back-to-it-bundle-davidson-levanter-dorsum-save-40",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_xHTURG",
+        "text_nwqiwV",
+        "buttons_9nBHNp"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/BTI_DAVIDSONECOM.jpg",
+        "image_2": "shopify://shop_images/BTO_WEBMOBILE.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "parallel_before_after_tqyfaP": {
@@ -405,6 +456,7 @@
     "image_banner_kDYUGq",
     "featured_collection_jqyTmq",
     "header_banner_parallel_gUzBeE",
+    "image_banner_znbF4U",
     "parallel_before_after_tqyfaP",
     "multicolumn_mfJ7db",
     "d3e0de88-8654-4158-bb82-9835ffb9d940"
