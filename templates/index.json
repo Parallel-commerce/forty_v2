@@ -47,13 +47,22 @@
             "mobile_video_url": "",
             "link": "shopify://collections/back-to-it"
           }
+        },
+        "slide_7QTqrB": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/1b3dfefd9e5e460db38825509c8a911d.mov",
+            "mobile_video_url": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "slide_a6UPCy",
         "slide_XUkdkX",
         "slide_HeEH3g",
-        "slide_hyhyTw"
+        "slide_hyhyTw",
+        "slide_7QTqrB"
       ],
       "name": "Image Slider",
       "settings": {
