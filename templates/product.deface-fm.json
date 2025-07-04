@@ -13,7 +13,7 @@
       "type": "parallel-breadcrumb",
       "name": "Breadcrumbs",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-4aa15a80-12dd-4d77-a424-a83bd3e80105",
         "separator_style": "slash",
         "font_size": 14,
         "show_home_icon": false,
@@ -24,6 +24,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_liquid_RM9DXV": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0463/5774/1732/files/skull_grey_ylw.png?v=1751621221\" alt=\"Logo\" style=\"width: 100px; height: auto;\">"
+          }
+        },
         "tag_yiEKTg": {
           "type": "tag",
           "settings": {
@@ -33,6 +39,7 @@
         },
         "text_YKDePX": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.metafields.custom.collection_label | metafield_text }}",
             "text_style": "uppercase"
@@ -100,6 +107,7 @@
         }
       },
       "block_order": [
+        "custom_liquid_RM9DXV",
         "tag_yiEKTg",
         "text_YKDePX",
         "title",
@@ -113,7 +121,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -168,11 +176,59 @@
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-3",
         "container_color_scheme": "scheme-1",
-        "open_first_collapsible_row": true,
+        "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_XDeXQG": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Am6KkE": {
+          "type": "heading",
+          "settings": {
+            "heading": "PIRATE RADIO",
+            "heading_size": "h1"
+          }
+        },
+        "text_PRdEd8": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>BROADCASTING IN THE AREA<br/>TRANSMITTING ON YOUR FREQUENCY!<br/>CONNECTING VIBRATION THROUGH COMMUNITY<br/>REPRESENTING OUR MUSIC BY FIGHTING THE POWERS<br/>ALWAYS ON THE MOVE BUT STAYING IN THE SAME PLACE <br/>LOCKDOWN YOUR AERIAL. TUNE IN DROP OUT<br/>DJS PLAYING WHAT YOU WANT TO HEAR<br/>NOT WHAT YOU ARE TOLD TO LISTEN TO<br/>THIS IS US THIS IS YOU<br/>DEFACEFM</h3>",
+            "text_style": "body"
+          }
+        },
+        "button_jtAyNH": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find out More",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Am6KkE",
+        "text_PRdEd8",
+        "button_jtAyNH"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/skull_grey_ylw.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-09e0674f-8c9d-4bcb-8670-2d5a2288a60e",
+        "color_scheme": "scheme-09e0674f-8c9d-4bcb-8670-2d5a2288a60e",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -247,6 +303,7 @@
     "parallel_breadcrumb_nyYWJF",
     "main",
     "collapsible_content_kkhXWm",
+    "image_with_text_XDeXQG",
     "related-products",
     "collection_list_mUYTPW"
   ]
