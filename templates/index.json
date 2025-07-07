@@ -68,10 +68,10 @@
       "settings": {
         "height": "large",
         "mobile_height": "square",
-        "auto_rotate": false,
+        "auto_rotate": true,
         "slideshow_speed": 5,
         "preload_next_slide": true,
-        "pause_on_hover": true,
+        "pause_on_hover": false,
         "transition_effect": "fade",
         "transition_speed": 500
       }
