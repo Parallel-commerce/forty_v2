@@ -12,6 +12,14 @@
     "slider_banner_eREQW4": {
       "type": "slider-banner",
       "blocks": {
+        "slide_3eRt8P": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/996522c31df54b8abbde681c02a5e053.mov",
+            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/996522c31df54b8abbde681c02a5e053.mov",
+            "link": ""
+          }
+        },
         "slide_7QTqrB": {
           "type": "slide",
           "settings": {
@@ -26,16 +34,6 @@
             "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
             "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
             "link": "shopify://collections/10th-year-black-edition"
-          }
-        },
-        "slide_XUkdkX": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/JNRTECH_BANNERDESKTOP.jpg",
-            "video_url": "",
-            "mobile_image": "shopify://shop_images/JNRTECH_BANNERMOB.jpg",
-            "mobile_video_url": "",
-            "link": "shopify://collections/all-junior"
           }
         },
         "slide_HeEH3g": {
@@ -58,9 +56,9 @@
         }
       },
       "block_order": [
+        "slide_3eRt8P",
         "slide_7QTqrB",
         "slide_a6UPCy",
-        "slide_XUkdkX",
         "slide_HeEH3g",
         "slide_hyhyTw"
       ],
