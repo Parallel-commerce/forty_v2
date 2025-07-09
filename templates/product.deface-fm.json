@@ -206,8 +206,8 @@
           "type": "button",
           "settings": {
             "button_label": "Find out More",
-            "button_link": "#",
-            "button_style_secondary": false
+            "button_link": "https://fortyclothing.com/blogs/news/pirate-radio-deface-fm",
+            "button_style_secondary": true
           }
         }
       },
