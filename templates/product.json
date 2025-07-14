@@ -64,10 +64,16 @@
             "show_gift_card_recipient": true
           }
         },
-        "share": {
-          "type": "share",
+        "smile_io_smile_points_on_product_page_mXgaQd": {
+          "type": "shopify://apps/smile-io/blocks/smile-points-on-product-page/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
           "settings": {
-            "share_label": "Share"
+            "primary_colour": "#121212",
+            "secondary_colour": "#ffffff",
+            "preview_scenario": "customer_can_earn_points",
+            "should_show_icon": false,
+            "should_show_points_label": true,
+            "points_text_logged_in": "<p>Earn [points_amount] when you buy this item.</p>",
+            "points_text_logged_out": "<p>Members earn [points_amount] when they buy this item. <a href=\"/account/register/\">Sign up</a> or <a href=\"/account/login/\">log in</a>.</p>"
           }
         },
         "icon_with_text_RRDehf": {
@@ -97,6 +103,12 @@
             "image_ratio": "square",
             "enable_quick_add": true
           }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
         }
       },
       "block_order": [
@@ -107,14 +119,15 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "share",
+        "smile_io_smile_points_on_product_page_mXgaQd",
         "icon_with_text_RRDehf",
-        "f7a58491-1754-42d3-96c2-6cdd772a2fc9"
+        "f7a58491-1754-42d3-96c2-6cdd772a2fc9",
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
-        "media_size": "medium",
+        "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
