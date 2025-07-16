@@ -331,6 +331,7 @@
         "text_nwqiwV",
         "buttons_9nBHNp"
       ],
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/BTI_DAVIDSONECOM.jpg",
