@@ -99,9 +99,27 @@
         "show_collection_description": true,
         "color_scheme": "scheme-1"
       }
+    },
+    "17526810067bc3eaad": {
+      "type": "apps",
+      "blocks": {
+        "bundilo_bundle_builder_star_rating_6APD37": {
+          "type": "shopify://apps/bundilo-bundle-builder/blocks/star_rating/ae40f86b-c39a-4722-a4a1-10e785191601",
+          "settings": {
+            "inputValueBundle": "back-to-it"
+          }
+        }
+      },
+      "block_order": [
+        "bundilo_bundle_builder_star_rating_6APD37"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
+    "17526810067bc3eaad",
     "image_banner_w8rtbh",
     "banner",
     "product-grid",
