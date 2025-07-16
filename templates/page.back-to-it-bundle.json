@@ -15,9 +15,27 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "1752681134c69c384d": {
+      "type": "apps",
+      "blocks": {
+        "bundilo_bundle_builder_star_rating_Hq4ecJ": {
+          "type": "shopify://apps/bundilo-bundle-builder/blocks/star_rating/ae40f86b-c39a-4722-a4a1-10e785191601",
+          "settings": {
+            "inputValueBundle": "back-to-it"
+          }
+        }
+      },
+      "block_order": [
+        "bundilo_bundle_builder_star_rating_Hq4ecJ"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1752681134c69c384d"
   ]
 }
