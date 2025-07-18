@@ -46,6 +46,7 @@
         },
         "slide_hyhyTw": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BTO_WEBDESK.jpg",
             "video_url": "",
