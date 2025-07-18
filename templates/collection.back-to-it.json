@@ -15,24 +15,24 @@
         "heading_AgamgB": {
           "type": "heading",
           "settings": {
-            "heading": "Back to it: Save £40",
+            "heading": "Back to it: Save £60",
             "heading_size": "h1"
           }
         },
         "text_PxUwQt": {
           "type": "text",
           "settings": {
-            "text": "It’s that time again. Whether it’s school, college or uni, get organised early doors and save up £40 by picking up three Forty Back to it essentials. Normally £235, now <strong>£195</strong>. A price that just adds up. ",
+            "text": "It’s that time again. Whether it’s school, college or uni, get organised early doors and save up £60 by picking up three Forty Back to it essentials. Normally £255, now <strong>£195</strong>. A price that just adds up. ",
             "text_style": "body"
           }
         },
         "buttons_hqWQdr": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Lloyd Bundle",
-            "button_link_1": "shopify://products/back-to-it-bundle-lloyd-sweat-2-0-levanter-dorsum",
+            "button_label_1": "SHOP BACK TO IT BUNDLE",
+            "button_link_1": "shopify://products/back-to-it-bundle",
             "button_style_secondary_1": false,
-            "button_label_2": "Shop Davidson Bundle",
+            "button_label_2": "",
             "button_link_2": "shopify://products/back-to-it-bundle-davidson-levanter-dorsum-save-40",
             "button_style_secondary_2": false
           }
@@ -43,11 +43,10 @@
         "text_PxUwQt",
         "buttons_hqWQdr"
       ],
-      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/BTI_DAVIDSONECOM.jpg",
-        "image_2": "shopify://shop_images/BTO_WEBMOBILE.jpg",
+        "image": "shopify://shop_images/BTO9X16NEWV2.jpg",
+        "image_2": "shopify://shop_images/BTO4X5NEWV2.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
