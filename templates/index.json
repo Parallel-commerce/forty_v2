@@ -46,11 +46,10 @@
         },
         "slide_hyhyTw": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/BTO_WEBDESK.jpg",
+            "image": "shopify://shop_images/BTO_BANNER2Desktop.jpg",
             "video_url": "",
-            "mobile_image": "shopify://shop_images/BTO_WEBMOBILE.jpg",
+            "mobile_image": "shopify://shop_images/BTO_BANNER2MOB.jpg",
             "mobile_video_url": "",
             "link": "shopify://collections/back-to-it"
           }
