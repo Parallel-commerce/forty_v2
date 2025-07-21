@@ -164,10 +164,19 @@
         "disabled": false,
         "settings": {}
       },
-      "15539626159989124859": {
-        "type": "shopify://apps/maxbundle-product-bundles/blocks/app-embed/469560a3-d600-4f5e-a767-2a4cdaceacca",
-        "disabled": true,
-        "settings": {}
+      "9377937747802625048": {
+        "type": "shopify://apps/biscuits-bundles/blocks/biscuits-app-embed/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
+        "disabled": false,
+        "settings": {
+          "quickadd_action": "replace",
+          "quick_add_button_classes": "",
+          "quickview_action": "hide",
+          "quick_add_selector": "",
+          "quick_view_selector": "",
+          "grid_item_selector": "",
+          "product_form_selector": "",
+          "custom_css": ""
+        }
       }
     },
     "color_schemes": {
