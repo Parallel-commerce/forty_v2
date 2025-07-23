@@ -12,6 +12,16 @@
     "slider_banner_eREQW4": {
       "type": "slider-banner",
       "blocks": {
+        "slide_hyhyTw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/SS25SALE_BANNERDT.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/SS25SALE_BANNERMOB.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://collections/summer-sale"
+          }
+        },
         "slide_3eRt8P": {
           "type": "slide",
           "settings": {
@@ -43,24 +53,14 @@
             "mobile_video_url": "",
             "link": "shopify://products/bmp-photochromic-tee-white"
           }
-        },
-        "slide_hyhyTw": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BTO_BANNER2Desktop.jpg",
-            "video_url": "",
-            "mobile_image": "shopify://shop_images/BTO_BANNER2MOB.jpg",
-            "mobile_video_url": "",
-            "link": "shopify://collections/back-to-it"
-          }
         }
       },
       "block_order": [
+        "slide_hyhyTw",
         "slide_3eRt8P",
         "slide_7QTqrB",
         "slide_a6UPCy",
-        "slide_HeEH3g",
-        "slide_hyhyTw"
+        "slide_HeEH3g"
       ],
       "name": "Image Slider",
       "settings": {
