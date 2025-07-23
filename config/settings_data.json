@@ -464,7 +464,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "#HeaderMenu-summer-sale {color: #d6101c;}"
+      "#HeaderMenu-summer-sale {color: #d6101c;}",
+      "#HeaderMenu-summer-sale.active {color: #d6101c;}"
     ]
   }
 }
