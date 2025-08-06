@@ -45,8 +45,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/BTO9X16NEWV2.jpg",
-        "image_2": "shopify://shop_images/BTO4X5NEWV2.jpg",
+        "image": "shopify://shop_images/BTO_HERO2.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
