@@ -23,7 +23,7 @@
         "slide_tVNLKy": {
           "type": "slide",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/1b3dfefd9e5e460db38825509c8a911d.mov",
+            "video_url": "",
             "mobile_video_url": "",
             "link": ""
           }
@@ -32,6 +32,7 @@
       "block_order": [
         "slide_tVNLKy"
       ],
+      "disabled": true,
       "name": "Image Slider",
       "settings": {
         "height": "large",
@@ -57,7 +58,6 @@
       "block_order": [
         "logo_rwVCMG"
       ],
-      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/FULL_1.jpg",
         "image_overlay_opacity": 0,
