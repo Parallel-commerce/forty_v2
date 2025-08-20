@@ -17,6 +17,27 @@
         "padding_bottom": 36
       }
     },
+    "parallel_cart_upsell_fwMPPY": {
+      "type": "parallel-cart-upsell",
+      "name": "Cart Upsell",
+      "settings": {
+        "products": [
+          "rig-cross-body-bag-black",
+          "copy-of-copy-of-ayton-socks-white-black",
+          "forty-ben-camo-2-0-white"
+        ],
+        "heading": "Add on a Forty favourite before you go.",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "subtext": "",
+        "subtext_alignment": "center",
+        "full_width": false,
+        "picker_type": "select",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "cart-footer": {
       "type": "main-cart-footer",
       "blocks": {
@@ -89,6 +110,7 @@
   },
   "order": [
     "cart-items",
+    "parallel_cart_upsell_fwMPPY",
     "cart-footer",
     "collection_list_GTqJNQ"
   ]
