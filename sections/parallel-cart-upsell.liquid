@@ -235,12 +235,17 @@
       </div>
     {%- else -%}
       <div class="cart-upsell cart-upsell--placeholder">
-        <h2 class="cart-upsell__heading">
-          Select a product to display
-        </h2>
-        <p class="cart-upsell__subtext">
-          Choose a product in the theme customizer to show an upsell offer.
-        </p>
+        {%- if section.settings.heading != blank -%}
+          <h2 class="cart-upsell__heading {{ section.settings.heading_size }} text-{{ section.settings.heading_alignment }}">
+            {{ section.settings.heading | escape }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.subtext != blank -%}
+          <div class="cart-upsell__subtext rte text-{{ section.settings.subtext_alignment }}">
+            {{ section.settings.subtext }}
+          </div>
+        {%- endif -%}
       </div>
     {%- endunless -%}
   </div>
