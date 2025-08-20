@@ -270,6 +270,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    align-items: stretch;
   }
 
   .cart-upsell__heading {
@@ -297,13 +298,14 @@
 
   .cart-upsell__product-card {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 1.5rem;
     padding: 1.5rem;
     border: 1px solid rgba(var(--color-foreground), 0.08);
     border-radius: 0.5rem;
     background: rgba(var(--color-background), 1);
     position: relative;
+    height: 100%;
   }
 
   .cart-upsell__product-image {
@@ -323,6 +325,9 @@
     flex: 1;
     text-align: left;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .cart-upsell__product-title {
@@ -496,6 +501,7 @@
       text-align: left;
       gap: 1rem;
       padding: 1rem;
+      height: 100%;
     }
 
     .cart-upsell__product-info {
