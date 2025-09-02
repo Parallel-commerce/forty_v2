@@ -10,7 +10,7 @@
 {
   "sections": {
     "slider_banner_eREQW4": {
-      "type": "slider-banner",
+      "type": "parallel-slider-banner",
       "blocks": {
         "slide_hyhyTw": {
           "type": "slide",
@@ -176,7 +176,7 @@
       }
     },
     "image_banner_CRDUet": {
-      "type": "image-banner",
+      "type": "parallel-image-banner",
       "blocks": {
         "text_CKcPAN": {
           "type": "text",
@@ -245,7 +245,7 @@
       }
     },
     "image_banner_kDYUGq": {
-      "type": "image-banner",
+      "type": "parallel-image-banner",
       "blocks": {
         "text_jmCFe9": {
           "type": "text",
@@ -329,7 +329,7 @@
       }
     },
     "image_banner_znbF4U": {
-      "type": "image-banner",
+      "type": "parallel-image-banner",
       "blocks": {
         "heading_xHTURG": {
           "type": "heading",

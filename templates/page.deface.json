@@ -18,7 +18,7 @@
       }
     },
     "slider_banner_mVUPiR": {
-      "type": "slider-banner",
+      "type": "parallel-slider-banner",
       "blocks": {
         "slide_tVNLKy": {
           "type": "slide",
@@ -46,7 +46,7 @@
       }
     },
     "image_banner_EYgG3c": {
-      "type": "image-banner",
+      "type": "parallel-image-banner",
       "blocks": {
         "logo_rwVCMG": {
           "type": "logo",

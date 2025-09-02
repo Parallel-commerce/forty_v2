@@ -10,7 +10,7 @@
 {
   "sections": {
     "image_banner_QqCHRw": {
-      "type": "image-banner",
+      "type": "parallel-image-banner",
       "blocks": {
         "heading_f8KTyy": {
           "type": "heading",

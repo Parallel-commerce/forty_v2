@@ -1,3 +1,8 @@
+{% comment %}
+  ** Developed by: Matt Collins & Parallel Commerce
+  ** Description: This is an alternative image banner section that allows for a logo to be added to the banner.
+{% endcomment %}
+
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
@@ -507,7 +512,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Parallel Image Banner",
       "blocks": [
         {
           "type": "logo"
