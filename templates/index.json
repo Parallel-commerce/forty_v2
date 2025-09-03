@@ -313,7 +313,7 @@
       }
     },
     "header_banner_parallel_gUzBeE": {
-      "type": "header-banner-parallel",
+      "type": "parallel-header-banner",
       "disabled": true,
       "name": "Header Banner",
       "settings": {
