@@ -17,32 +17,19 @@
         "padding_bottom": 28
       }
     },
-    "image_banner_EYgG3c": {
-      "type": "parallel-image-banner",
-      "blocks": {
-        "heading_NWn7Na": {
-          "type": "heading",
-          "settings": {
-            "heading": "Essentials",
-            "heading_size": "hxxl"
-          }
-        }
-      },
-      "block_order": [
-        "heading_NWn7Na"
-      ],
+    "parallel_banner_single_nFPg8z": {
+      "type": "parallel-banner-single",
+      "name": "Parallel Banner Single",
       "settings": {
-        "image": "shopify://shop_images/BENJAMIN25_BANNER.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
+        "image": "shopify://shop_images/ESSENTIALS_1920x1080_e9dd0dda-aeac-4e09-b734-c1f5d9c300c9.jpg",
+        "banner_link": "",
+        "mobile_image": "shopify://shop_images/ESSENTIALS_1080x1080_d3a948d9-0a38-4081-9397-d27cc5b2f81c.jpg",
+        "mobile_aspect_ratio": "square",
+        "banner_height": 60,
         "color_scheme": "",
-        "image_behavior": "ambient",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "full_width": true,
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "featured_collection_D9nQ8J": {
@@ -298,7 +285,7 @@
   },
   "order": [
     "main",
-    "image_banner_EYgG3c",
+    "parallel_banner_single_nFPg8z",
     "featured_collection_D9nQ8J",
     "image_with_text_4x9qkL",
     "featured_collection_pgYC6k",
