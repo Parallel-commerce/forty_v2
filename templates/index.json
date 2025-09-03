@@ -244,44 +244,19 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_kDYUGq": {
-      "type": "parallel-image-banner",
-      "blocks": {
-        "text_jmCFe9": {
-          "type": "text",
-          "settings": {
-            "text": "The FORTY essential collection is a foundational range which has recently evolved, to focus on creating a more premium collection",
-            "text_style": "body"
-          }
-        },
-        "buttons_Fa9DLC": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "SHOP ESSENTIALS",
-            "button_link_1": "shopify://collections/essentials",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_jmCFe9",
-        "buttons_Fa9DLC"
-      ],
+    "parallel_banner_single_Py4gLe": {
+      "type": "parallel-banner-single",
+      "name": "Parallel Banner Single",
       "settings": {
         "image": "shopify://shop_images/ESSENTIALS_1920x1080_e9dd0dda-aeac-4e09-b734-c1f5d9c300c9.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-24b71442-3b31-494f-a0ce-063632fdf458",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "banner_link": "shopify://collections/essentials",
+        "mobile_image": "shopify://shop_images/ESSENTIALS_1080x1080_d3a948d9-0a38-4081-9397-d27cc5b2f81c.jpg",
+        "mobile_aspect_ratio": "square",
+        "banner_height": 60,
+        "color_scheme": "",
+        "full_width": true,
+        "margin_top": 20,
+        "margin_bottom": 20
       }
     },
     "featured_collection_jqyTmq": {
@@ -312,22 +287,7 @@
         "padding_bottom": 36
       }
     },
-    "header_banner_parallel_gUzBeE": {
-      "type": "parallel-header-banner",
-      "disabled": true,
-      "name": "Header Banner",
-      "settings": {
-        "banner_link": "shopify://collections/all-junior",
-        "desktop_video_url": "",
-        "desktop_image": "shopify://shop_images/JNRTECH_BANNERDESKTOP.jpg",
-        "mobile_video_url": "",
-        "mobile_image": "shopify://shop_images/JNRTECH_BANNERMOB.jpg",
-        "image_overlay_opacity": 0,
-        "desktop_image_height": "medium",
-        "mobile_image_height": "medium",
-        "image_behavior": "none"
-      }
-    },
+
     "image_banner_znbF4U": {
       "type": "parallel-image-banner",
       "blocks": {
@@ -377,6 +337,54 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
+      }
+    },
+    "collection_list_dc7xJG": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_hpeHVf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "all-tops"
+          }
+        },
+        "featured_collection_GjapWE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hoodies"
+          }
+        },
+        "featured_collection_chLBQg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bottoms"
+          }
+        },
+        "featured_collection_8WB3kx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sets"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_hpeHVf",
+        "featured_collection_GjapWE",
+        "featured_collection_chLBQg",
+        "featured_collection_8WB3kx"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "multicolumn_mfJ7db": {
@@ -468,54 +476,6 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "collection_list_dc7xJG": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_hpeHVf": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "all-tops"
-          }
-        },
-        "featured_collection_GjapWE": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "hoodies"
-          }
-        },
-        "featured_collection_chLBQg": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bottoms"
-          }
-        },
-        "featured_collection_8WB3kx": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "sets"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_hpeHVf",
-        "featured_collection_GjapWE",
-        "featured_collection_chLBQg",
-        "featured_collection_8WB3kx"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "portrait",
-        "columns_desktop": 4,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -525,9 +485,8 @@
     "featured_collection_L6Y9r7",
     "image_banner_CRDUet",
     "featured_collection_6XkUan",
-    "image_banner_kDYUGq",
+    "parallel_banner_single_Py4gLe",
     "featured_collection_jqyTmq",
-    "header_banner_parallel_gUzBeE",
     "image_banner_znbF4U",
     "collection_list_dc7xJG",
     "multicolumn_mfJ7db",

@@ -17,59 +17,19 @@
         "padding_bottom": 28
       }
     },
-    "slider_banner_mVUPiR": {
-      "type": "parallel-slider-banner",
-      "blocks": {
-        "slide_tVNLKy": {
-          "type": "slide",
-          "settings": {
-            "video_url": "",
-            "mobile_video_url": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_tVNLKy"
-      ],
-      "disabled": true,
-      "name": "Image Slider",
+    "parallel_banner_single_P6PTHP": {
+      "type": "parallel-banner-single",
+      "name": "Parallel Banner Single",
       "settings": {
-        "height": "large",
-        "mobile_height": "square",
-        "auto_rotate": false,
-        "slideshow_speed": 5,
-        "preload_next_slide": true,
-        "pause_on_hover": true,
-        "transition_effect": "fade",
-        "transition_speed": 500
-      }
-    },
-    "image_banner_EYgG3c": {
-      "type": "parallel-image-banner",
-      "blocks": {
-        "logo_rwVCMG": {
-          "type": "logo",
-          "settings": {
-            "header_logo": "shopify://shop_images/DEFACE_LOGO.png"
-          }
-        }
-      },
-      "block_order": [
-        "logo_rwVCMG"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/FULL_1.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "top-right",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
+        "image": "shopify://shop_images/UV_web-4979.jpg",
+        "banner_link": "",
+        "mobile_image": "shopify://shop_images/DEFACE_1080x1080_b77415da-bce9-49a2-8aed-64b1546ac28b.jpg",
+        "mobile_aspect_ratio": "square",
+        "banner_height": 60,
         "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "full_width": true,
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "featured_collection_D9nQ8J": {
@@ -120,7 +80,7 @@
         "button_jBz8KA": {
           "type": "button",
           "settings": {
-            "button_label": "Shop all DEFACE",
+            "button_label": "SHOP ALL DEFACE",
             "button_link": "shopify://collections/deface",
             "button_style_secondary": false
           }
@@ -133,8 +93,8 @@
       ],
       "settings": {
         "image": "shopify://shop_images/UV-5092.jpg",
-        "height": "large",
-        "desktop_image_width": "large",
+        "height": "medium",
+        "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
@@ -327,8 +287,7 @@
   },
   "order": [
     "main",
-    "slider_banner_mVUPiR",
-    "image_banner_EYgG3c",
+    "parallel_banner_single_P6PTHP",
     "featured_collection_D9nQ8J",
     "image_with_text_4x9qkL",
     "featured_collection_pgYC6k",
