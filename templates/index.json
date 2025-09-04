@@ -15,9 +15,9 @@
         "slide_hyhyTw": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/SS25SALE_BANNERDTv3.jpg",
+            "image": "shopify://shop_images/SS25SALE_BANNERDT_ex15.jpg",
             "video_url": "",
-            "mobile_image": "shopify://shop_images/SS25SALE_BANNERMOBv3.jpg",
+            "mobile_image": "shopify://shop_images/SS25SALE_BANNERMOB_ex15.jpg",
             "mobile_video_url": "",
             "link": "shopify://collections/summer-sale"
           }
@@ -287,7 +287,6 @@
         "padding_bottom": 36
       }
     },
-
     "image_banner_znbF4U": {
       "type": "parallel-image-banner",
       "blocks": {
