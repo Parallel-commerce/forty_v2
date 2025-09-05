@@ -11,6 +11,8 @@
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+  {{ 'component-product-details-accordion.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loyalty-points.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -254,6 +256,109 @@
                     </div>
                   </details>
                 </div>
+              {%- when 'product_details_accordion' -%}
+                {%- assign has_content = false -%}
+                {%- if block.settings.description != blank or block.settings.features != blank or block.settings.fabric_care != blank or block.settings.fit_sizing != blank -%}
+                  {%- assign has_content = true -%}
+                {%- endif -%}
+                
+                {%- if has_content -%}
+                  <div class="product__details-accordion" {{ block.shopify_attributes }}>
+                    {%- assign first_accordion_opened = false -%}
+                    
+                    {%- if block.settings.description != blank -%}
+                      <details class="product__detail-item"{% if block.settings.open_first_accordion and first_accordion_opened == false %} open{% assign first_accordion_opened = true %}{% endif %}>
+                        <summary class="product__detail-summary">
+                          <h3 class="product__detail-title">Product Description</h3>
+                          <svg class="product__detail-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </summary>
+                        <div class="product__detail-content rte">
+                          {{ block.settings.description }}
+                        </div>
+                      </details>
+                    {%- endif -%}
+                    
+                    {%- if block.settings.features != blank -%}
+                      <details class="product__detail-item"{% if block.settings.open_first_accordion and first_accordion_opened == false %} open{% assign first_accordion_opened = true %}{% endif %}>
+                        <summary class="product__detail-summary">
+                          <h3 class="product__detail-title">Features & Benefits</h3>
+                          <svg class="product__detail-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </summary>
+                        <div class="product__detail-content rte">
+                          {{ block.settings.features }}
+                        </div>
+                      </details>
+                    {%- endif -%}
+                    
+                    {%- if block.settings.fabric_care != blank -%}
+                      <details class="product__detail-item"{% if block.settings.open_first_accordion and first_accordion_opened == false %} open{% assign first_accordion_opened = true %}{% endif %}>
+                        <summary class="product__detail-summary">
+                          <h3 class="product__detail-title">Fabric and Care</h3>
+                          <svg class="product__detail-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </summary>
+                        <div class="product__detail-content rte">
+                          {{ block.settings.fabric_care }}
+                        </div>
+                      </details>
+                    {%- endif -%}
+                    
+                    {%- assign fit_content = product.metafields.custom.fit -%}
+                    {%- assign model_sizing_content = product.metafields.custom.model_sizing -%}
+                    {%- if fit_content != blank or model_sizing_content != blank -%}
+                      <details class="product__detail-item"{% if block.settings.open_first_accordion and first_accordion_opened == false %} open{% assign first_accordion_opened = true %}{% endif %}>
+                        <summary class="product__detail-summary">
+                          <h3 class="product__detail-title">Fit & Model Sizing</h3>
+                          <svg class="product__detail-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </summary>
+                        <div class="product__detail-content rte">
+                          {%- if fit_content != blank -%}
+                            <div class="fit-content">
+                              {{ fit_content }}
+                            </div>
+                          {%- endif -%}
+                          {%- if model_sizing_content != blank -%}
+                            <div class="model-sizing-content">
+                              {{ model_sizing_content }}
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </details>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- when 'loyalty_points' -%}
+                {%- if block.settings.show_loyalty_points -%}
+                  {%- assign product_price = product.selected_or_first_available_variant.price -%}
+                  {%- assign points_per_pound = block.settings.points_per_pound | default: 10 -%}
+                  {%- assign points_earned = product_price | divided_by: 100 | times: points_per_pound -%}
+                  {%- assign points_value = points_earned | divided_by: 100.0 -%}
+                  
+                  <div class="product__loyalty-points color-{{ block.settings.color_scheme }}" {{ block.shopify_attributes }}>
+                    <div class="loyalty-points__content">
+                      <p class="loyalty-points__earn">
+                        Earn <strong>{{ points_earned }} points</strong> (worth £{{ points_value | round: 2 }}) on this purchase
+                      </p>
+                      <p class="loyalty-points__info">
+                        You get {{ points_per_pound }} points for every £1 you spend. 100 points = £1.
+                      </p>
+                      {%- unless customer -%}
+                        <p class="loyalty-points__signup">
+                          <a href="{{ routes.account_register_url }}" class="loyalty-points__signup-link">
+                            Sign up now
+                          </a>
+                        </p>
+                      {%- endunless -%}
+                    </div>
+                  </div>
+                {%- endif -%}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -1206,6 +1311,65 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type": "product_details_accordion",
+      "name": "Product Details Accordion",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "open_first_accordion",
+          "label": "Open first accordion by default",
+          "default": false,
+          "info": "When enabled, the first accordion section with content will be open when the page loads"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Product Description",
+          "info": "Detailed product description content"
+        },
+        {
+          "type": "richtext",
+          "id": "features",
+          "label": "Features & Benefits",
+          "info": "Product features and benefits content"
+        },
+        {
+          "type": "richtext",
+          "id": "fabric_care",
+          "label": "Fabric and Care",
+          "info": "Fabric composition and care instructions"
+        }
+      ]
+    },
+    {
+      "type": "loyalty_points",
+      "name": "Loyalty Points",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_loyalty_points",
+          "label": "Show loyalty points",
+          "default": true,
+          "info": "Display the points earned for this product purchase"
+        },
+        {
+          "type": "number",
+          "id": "points_per_pound",
+          "label": "Points per £1 spent",
+          "default": 10,
+          "info": "How many points customers earn for every £1 spent"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
         }
       ]
     },
