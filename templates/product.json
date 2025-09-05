@@ -53,34 +53,6 @@
             "swatch_shape": "square"
           }
         },
-        "biscuits_bundles_biscuits_bundle_form_rxWzi4": {
-          "type": "shopify://apps/biscuits-bundles/blocks/biscuits-bundle-form/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
-          "settings": {
-            "text_color": "#121212",
-            "card_color": "#fff",
-            "input_type": "rectangle",
-            "input_text_color": "#121212",
-            "input_color": "#fff",
-            "display_shadow": false,
-            "display_selection_count": false,
-            "display_running_totals": false,
-            "enable_product_links": false,
-            "card_padding": 10,
-            "grid_gap": 10,
-            "border_color": "#E1E1E1",
-            "border_radius": 0,
-            "highlight_type": "outline",
-            "selected_text_color": "#121212",
-            "selected_color": "#848484",
-            "border_thickness": 1,
-            "divider_color": "#E1E1E1",
-            "important_color": "#DD1D1D",
-            "padding_top": 0,
-            "padding_bottom": 0,
-            "custom_css": "",
-            "custom_js": ""
-          }
-        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -92,31 +64,21 @@
             "show_gift_card_recipient": true
           }
         },
-        "smile_io_smile_points_on_product_page_mXgaQd": {
-          "type": "shopify://apps/smile-io/blocks/smile-points-on-product-page/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+        "product_details_accordion_AGkxfF": {
+          "type": "product_details_accordion",
           "settings": {
-            "primary_colour": "#121212",
-            "secondary_colour": "#ffffff",
-            "preview_scenario": "customer_can_earn_points",
-            "should_show_icon": false,
-            "should_show_points_label": true,
-            "points_text_logged_in": "<p>Earn [points_amount] when you buy this item.</p>",
-            "points_text_logged_out": "<p>Members earn [points_amount] when they buy this item. <a href=\"/account/register/\">Sign up</a> or <a href=\"/account/login/\">log in</a>.</p>"
+            "open_first_accordion": false,
+            "description": "{{ product.description }}",
+            "features": "{{ product.metafields.custom.key_features_benefits | metafield_tag }}",
+            "fabric_care": "{{ product.metafields.custom.fabric_care | metafield_tag }}"
           }
         },
-        "icon_with_text_RRDehf": {
-          "type": "icon-with-text",
+        "loyalty_points_QEL9J7": {
+          "type": "loyalty_points",
           "settings": {
-            "layout": "vertical",
-            "icon_1": "truck",
-            "image_1": "shopify://shop_images/FreeShipping_1.png",
-            "heading_1": "Free Shipping on orders over £90",
-            "icon_2": "map_pin",
-            "image_2": "shopify://shop_images/CollectInstore.png",
-            "heading_2": "In-Store Collections",
-            "icon_3": "stopwatch",
-            "image_3": "shopify://shop_images/ReturnInstore.png",
-            "heading_3": "Free In-Store Returns"
+            "show_loyalty_points": true,
+            "points_per_pound": 10,
+            "color_scheme": "background-1"
           }
         },
         "f7a58491-1754-42d3-96c2-6cdd772a2fc9": {
@@ -145,11 +107,10 @@
         "title",
         "price",
         "variant_picker",
-        "biscuits_bundles_biscuits_bundle_form_rxWzi4",
         "quantity_selector",
         "buy_buttons",
-        "smile_io_smile_points_on_product_page_mXgaQd",
-        "icon_with_text_RRDehf",
+        "product_details_accordion_AGkxfF",
+        "loyalty_points_QEL9J7",
         "f7a58491-1754-42d3-96c2-6cdd772a2fc9",
         "share"
       ],
