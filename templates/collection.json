@@ -9,8 +9,27 @@
  */
 {
   "sections": {
+    "parallel_collection_banner_T4NQxC": {
+      "type": "parallel-collection-banner",
+      "name": "|| Collection Banner",
+      "settings": {
+        "collection_1": "deface",
+        "collection_2": "lifestyle",
+        "collection_3": "essentials",
+        "collection_4": "tech-pack",
+        "collection_5": "all-junior",
+        "collection_6": "",
+        "show_collection_description": false,
+        "show_short_collection_description": true,
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": false,
         "show_short_collection_description": true,
@@ -40,18 +59,11 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "collection_header_46kEaa": {
-      "type": "collection-header",
-      "settings": {
-        "show_collection_description": true,
-        "color_scheme": "scheme-1"
-      }
     }
   },
   "order": [
+    "parallel_collection_banner_T4NQxC",
     "banner",
-    "product-grid",
-    "collection_header_46kEaa"
+    "product-grid"
   ]
 }
