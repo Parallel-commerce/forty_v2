@@ -9,6 +9,29 @@
  */
 {
   "sections": {
+    "rich_text_c3d93L": {
+      "type": "rich-text",
+      "blocks": {
+        "text_6REm8Q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use code <strong>EX15</strong> for an extra <strong>15% </strong>off sale items</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_6REm8Q"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
@@ -109,6 +132,7 @@
     }
   },
   "order": [
+    "rich_text_c3d93L",
     "cart-items",
     "parallel_cart_upsell_fwMPPY",
     "cart-footer",
