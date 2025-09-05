@@ -339,7 +339,7 @@
                   {%- assign product_price = product.selected_or_first_available_variant.price -%}
                   {%- assign points_per_pound = block.settings.points_per_pound | default: 10 -%}
                   {%- assign points_earned = product_price | divided_by: 100 | times: points_per_pound -%}
-                  {%- assign points_value = points_earned | divided_by: 100.0 -%}
+                  {%- assign points_value = points_earned | divided_by: 100.0 | round: 2 -%}
                   
                   <div class="product__loyalty-points color-{{ block.settings.color_scheme }}" {{ block.shopify_attributes }}>
                     <div class="loyalty-points__content">
