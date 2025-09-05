@@ -133,15 +133,6 @@
     "collapsible_content_kkhXWm": {
       "type": "collapsible-content",
       "blocks": {
-        "collapsible_row_DDXBDJ": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "DESCRIPTION",
-            "icon": "none",
-            "row_content": "{{ product.description }}",
-            "page": ""
-          }
-        },
         "size_guide_dzMAth": {
           "type": "size_guide",
           "settings": {
@@ -160,7 +151,6 @@
         }
       },
       "block_order": [
-        "collapsible_row_DDXBDJ",
         "size_guide_dzMAth",
         "collapsible_row_qQrbrd"
       ],
@@ -173,7 +163,7 @@
         "layout": "none",
         "color_scheme": "scheme-2",
         "container_color_scheme": "scheme-1",
-        "open_first_collapsible_row": true,
+        "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "padding_top": 36,
