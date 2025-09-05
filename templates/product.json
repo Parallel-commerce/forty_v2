@@ -46,15 +46,6 @@
           "type": "price",
           "settings": {}
         },
-        "product_details_accordion_AGkxfF": {
-          "type": "product_details_accordion",
-          "settings": {
-            "open_first_accordion": false,
-            "description": "{{ product.description }}",
-            "features": "{{ product.metafields.custom.key_features_benefits | metafield_tag }}",
-            "fabric_care": "{{ product.metafields.custom.fabric_care | metafield_tag }}"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -71,6 +62,15 @@
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
+          }
+        },
+        "product_details_accordion_AGkxfF": {
+          "type": "product_details_accordion",
+          "settings": {
+            "open_first_accordion": false,
+            "description": "{{ product.description }}",
+            "features": "{{ product.metafields.custom.key_features_benefits | metafield_tag }}",
+            "fabric_care": "{{ product.metafields.custom.fabric_care | metafield_tag }}"
           }
         },
         "loyalty_points_QEL9J7": {
@@ -106,10 +106,10 @@
         "text_YKDePX",
         "title",
         "price",
-        "product_details_accordion_AGkxfF",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "product_details_accordion_AGkxfF",
         "loyalty_points_QEL9J7",
         "f7a58491-1754-42d3-96c2-6cdd772a2fc9",
         "share"
