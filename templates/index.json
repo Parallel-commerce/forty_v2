@@ -15,13 +15,14 @@
         "slide_3eRt8P": {
           "type": "slide",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/996522c31df54b8abbde681c02a5e053.mov",
-            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/996522c31df54b8abbde681c02a5e053.mov",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
+            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
             "link": "https://fortyclothing.com/products/deface-pirate-tee-black?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web"
           }
         },
         "slide_7QTqrB": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/1b3dfefd9e5e460db38825509c8a911d.mov",
             "mobile_video_url": "",
@@ -30,6 +31,7 @@
         },
         "slide_a6UPCy": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
             "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
@@ -38,6 +40,7 @@
         },
         "slide_HeEH3g": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/53dea5a6acd7495da6763c9834724a09.mp4",
             "mobile_video_url": "",
