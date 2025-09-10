@@ -21,9 +21,9 @@
       "type": "parallel-banner-single",
       "name": "Parallel Banner Single",
       "settings": {
-        "image": "shopify://shop_images/UV_web-4979.jpg",
+        "image": "shopify://shop_images/DEAFCE_WIDE.jpg",
         "banner_link": "",
-        "mobile_image": "shopify://shop_images/DEFACE_1080x1080_b77415da-bce9-49a2-8aed-64b1546ac28b.jpg",
+        "mobile_image": "shopify://shop_images/DEFACE_SQUARE.jpg",
         "mobile_aspect_ratio": "square",
         "banner_height": 60,
         "color_scheme": "",
