@@ -21,9 +21,9 @@
       "type": "parallel-banner-single",
       "name": "Parallel Banner Single",
       "settings": {
-        "image": "shopify://shop_images/ESSENTIALS_1920x1080_e9dd0dda-aeac-4e09-b734-c1f5d9c300c9.jpg",
+        "image": "shopify://shop_images/ESSENTIALS_WIDE.jpg",
         "banner_link": "",
-        "mobile_image": "shopify://shop_images/ESSENTIALS_1080x1080_d3a948d9-0a38-4081-9397-d27cc5b2f81c.jpg",
+        "mobile_image": "shopify://shop_images/ESSENTIALS_SQUARE.jpg",
         "mobile_aspect_ratio": "square",
         "banner_height": 60,
         "color_scheme": "",
@@ -147,7 +147,7 @@
         "product_mnaQTh": {
           "type": "product",
           "settings": {
-            "product": "essential-tom-hoodie-varsity-green",
+            "product": "essential-kelso-gilet-grey",
             "second_image": false
           }
         },
