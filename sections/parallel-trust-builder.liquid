@@ -1,0 +1,723 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "|| Trust Builder",
+  "settings": [
+    {
+      "type": "select",
+      "id": "logged_state",
+      "label": "Show when customer is",
+      "options": [
+        {
+          "value": "both",
+          "label": "Both signed in and out"
+        },
+        {
+          "value": "signed_out",
+          "label": "Signed out"
+        },
+        {
+          "value": "signed_in",
+          "label": "Signed in"
+        }
+      ],
+      "default": "both"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "t:sections.rich-text.settings.full_width.label"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+            "type": "select",
+            "id": "icon",
+            "options": [
+              {
+                "value": "none",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__1.label"
+              },
+              {
+                "value": "apple",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__2.label"
+              },
+              {
+                "value": "banana",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__3.label"
+              },
+              {
+                "value": "bottle",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__4.label"
+              },
+              {
+                "value": "box",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__5.label"
+              },
+              {
+                "value": "carrot",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__6.label"
+              },
+              {
+                "value": "chat_bubble",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__7.label"
+              },
+              {
+                "value": "check_mark",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__8.label"
+              },
+              {
+                "value": "clipboard",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__9.label"
+              },
+              {
+                "value": "dairy",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__10.label"
+              },
+              {
+                "value": "dairy_free",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__11.label"
+              },
+              {
+                "value": "dryer",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__12.label"
+              },
+              {
+                "value": "eye",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__13.label"
+              },
+              {
+                "value": "fire",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__14.label"
+              },
+              {
+                "value": "gluten_free",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__15.label"
+              },
+              {
+                "value": "heart",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__16.label"
+              },
+              {
+                "value": "iron",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__17.label"
+              },
+              {
+                "value": "leaf",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__18.label"
+              },
+              {
+                "value": "leather",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__19.label"
+              },
+              {
+                "value": "lightning_bolt",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__20.label"
+              },
+              {
+                "value": "lipstick",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__21.label"
+              },
+              {
+                "value": "lock",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__22.label"
+              },
+              {
+                "value": "map_pin",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__23.label"
+              },
+              {
+                "value": "nut_free",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__24.label"
+              },
+              {
+                "value": "pants",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__25.label"
+              },
+              {
+                "value": "paw_print",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__26.label"
+              },
+              {
+                "value": "pepper",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__27.label"
+              },
+              {
+                "value": "perfume",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__28.label"
+              },
+              {
+                "value": "plane",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__29.label"
+              },
+              {
+                "value": "plant",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__30.label"
+              },
+              {
+                "value": "price_tag",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__31.label"
+              },
+              {
+                "value": "question_mark",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__32.label"
+              },
+              {
+                "value": "recycle",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__33.label"
+              },
+              {
+                "value": "return",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__34.label"
+              },
+              {
+                "value": "ruler",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__35.label"
+              },
+              {
+                "value": "serving_dish",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__36.label"
+              },
+              {
+                "value": "shirt",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__37.label"
+              },
+              {
+                "value": "shoe",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__38.label"
+              },
+              {
+                "value": "silhouette",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__39.label"
+              },
+              {
+                "value": "snowflake",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__40.label"
+              },
+              {
+                "value": "star",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__41.label"
+              },
+              {
+                "value": "stopwatch",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__42.label"
+              },
+              {
+                "value": "truck",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__43.label"
+              },
+              {
+                "value": "washing",
+                "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__44.label"
+              }
+            ],
+            "default": "check_mark",
+            "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.label"
+          },
+        {
+          "type": "select",
+          "id": "background_shape",
+          "label": "Background Shape",
+          "options": [
+            {
+              "value": "square",
+              "label": "Square"
+            },
+            {
+              "value": "circle",
+              "label": "Circle"
+            }
+          ],
+          "default": "square"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_background",
+          "label": "Show background",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#f4f4f4"
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Icon Color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "icon_size",
+          "label": "Icon/Image Size",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small (40px)"
+            },
+            {
+              "value": "medium",
+              "label": "Medium (60px)"
+            },
+            {
+              "value": "large",
+              "label": "Large (80px)"
+            }
+          ],
+          "default": "medium"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "|| Trust Builder",
+    }
+  ],
+}
+{% endschema %}
+
+{% assign show_state = section.settings.logged_state %}
+{% assign show_section = false %}
+{% if show_state == 'signed_in' and customer %}
+  {% assign show_section = true %}
+{% elsif show_state == 'signed_out' and customer == null %}
+  {% assign show_section = true %}
+{% elsif show_state == 'both' %}
+  {% assign show_section = true %}
+{% endif %}
+
+{% if show_section %}
+  <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+    <div class="content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %}content-container--full-width{% endif %} section-{{ section.id }}-padding">
+      <div class="{% if section.settings.full_width %} page-width{% endif %}">
+        <div class="trust-builder__wrapper">
+          {% for block in section.blocks %}
+            <div class="trust-builder__block{% if section.settings.text_alignment == 'center' %} trust-builder__center{% endif %}" {{ block.shopify_attributes }}>
+              {% if block.settings.image %}
+                {%- assign image_size = block.settings.icon_size | default: 'medium' -%}
+                {%- if image_size == 'small' -%}
+                  {%- assign image_width = 40 -%}
+                {%- elsif image_size == 'large' -%}
+                  {%- assign image_width = 80 -%}
+                {%- else -%}
+                  {%- assign image_width = 60 -%}
+                {%- endif -%}
+                <div class="trust-builder__image trust-builder__size-{{ image_size }}{% if block.settings.show_background %} trust-builder__background-{{ block.settings.background_shape }}{% endif %}"{% if block.settings.show_background %} style="background-color: {{ block.settings.background_color }};"{% endif %}>
+                  {{ block.settings.image | image_url: width: image_width | image_tag: loading: 'lazy', width: image_width }}
+                </div>
+              {% elsif block.settings.icon %}
+                {%- if block.settings.icon != 'none' -%}
+                  <div class="trust-builder__icon trust-builder__size-{{ block.settings.icon_size | default: 'medium' }}{% if block.settings.show_background %} trust-builder__background-{{ block.settings.background_shape }}{% endif %}"{% if block.settings.show_background %} style="background-color: {{ block.settings.background_color }};"{% endif %}>    
+                    {%- assign file = block.settings.icon | replace: '_', '-' | prepend: 'icon-' | append: '.svg' -%}
+                    <span class="svg-wrapper trust-builder__svg-{{ block.settings.icon_size | default: 'medium' }}" style="--icon-color: {{ block.settings.icon_color }};">{{ file | inline_asset_content }}</span>
+                  </div>
+                {%- endif -%}
+              {% endif %}
+              <div class="trust-builder__content" style="text-align: {{ section.settings.text_alignment }};">
+                <h3 class="trust-builder__title">{{ block.settings.title }}</h3>
+                {% if block.settings.subtitle != blank %}
+                  <h4 class="trust-builder__subtitle">{{ block.settings.subtitle }}</h4>
+                {% endif %}
+                <p class="trust-builder__description">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="trust-builder__pagination" aria-label="Trust builder navigation" data-total-blocks="{{ section.blocks.size }}">
+          {% for block in section.blocks %}
+            <button class="trust-builder__pagination-dot" 
+                    aria-label="Go to slide {{ forloop.index }}"
+                    data-index="{{ forloop.index0 }}"
+                    {% if forloop.first %}aria-current="true"{% endif %}>
+              <span class="visually-hidden">Slide {{ forloop.index }}</span>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .trust-builder {
+    padding: 10px 5px;
+  }
+  .trust-builder__wrapper {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+    gap: 2rem;
+  }
+  .trust-builder__wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .trust-builder__block {
+    min-width: calc(25% - 1.5rem);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .trust-builder__block.trust-builder__center {
+    text-align: center;
+  }
+
+  .trust-builder__icon,
+  .trust-builder__image {
+    width: 30%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .trust-builder__center .trust-builder__icon,
+  .trust-builder__center .trust-builder__image {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    width: 30%;
+  }
+  
+  /* Size variations */
+  .trust-builder__size-small {
+    max-width: 40px;
+  }
+  
+  .trust-builder__size-medium {
+    max-width: 60px;
+  }
+  
+  .trust-builder__size-large {
+    max-width: 80px;
+  }
+  .trust-builder__block:hover .trust-builder__icon,
+  .trust-builder__block:hover .trust-builder__image {
+    transform: scale(1.05);
+  }
+  .trust-builder__background-square {
+    border-radius: 6px;
+  }
+  .trust-builder__background-circle {
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+  .trust-builder__image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .trust-builder__title {
+    font-size: 18px;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+  .trust-builder__subtitle {
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: normal;
+  }
+  .trust-builder__description {
+    font-size: 10px;
+    margin: 0;
+  }
+  
+  .trust-builder__pagination {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .trust-builder__pagination {
+      display: flex;
+    }
+  }
+  
+  .trust-builder__pagination-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .trust-builder__pagination-dot[aria-current="true"] {
+    background: #000;
+    transform: scale(1.2);
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .trust-builder__wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+    }
+    .trust-builder__block {
+      min-width: 100%;
+    }
+  }
+  .svg-wrapper {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* SVG size variations */
+  .trust-builder__svg-small {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .trust-builder__svg-medium {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .trust-builder__svg-large {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .svg-wrapper svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--icon-color);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.querySelector('.trust-builder__wrapper');
+    const dots = document.querySelectorAll('.trust-builder__pagination-dot');
+    const pagination = document.querySelector('.trust-builder__pagination');
+    let index = 0;
+    const blocks = wrapper.children;
+    const blockWidth = wrapper.clientWidth;
+    let scrollInterval;
+    let isPaused = false;
+
+    function updateDots() {
+      dots.forEach((dot, i) => {
+        dot.setAttribute('aria-current', i === index);
+      });
+    }
+
+    function checkPaginationVisibility() {
+      const totalBlocks = parseInt(pagination.dataset.totalBlocks);
+      const visibleBlocks = Math.floor(wrapper.clientWidth / (blockWidth / totalBlocks));
+      
+      if (window.innerWidth > 768) {
+        pagination.style.display = totalBlocks > visibleBlocks ? 'flex' : 'none';
+      } else {
+        pagination.style.display = 'flex';
+      }
+    }
+
+    function rotateBlocks() {
+      if (!isPaused) {
+        index = (index + 1) % blocks.length;
+        wrapper.scrollTo({
+          left: blockWidth * index,
+          behavior: 'smooth'
+        });
+        updateDots();
+      }
+    }
+
+    function startAutoScroll() {
+      if (window.innerWidth <= 768) {
+        scrollInterval = setInterval(rotateBlocks, 3000);
+      }
+    }
+
+    function stopAutoScroll() {
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+      }
+    }
+
+    // Handle dot clicks
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        wrapper.scrollTo({
+          left: blockWidth * index,
+          behavior: 'smooth'
+        });
+        updateDots();
+      });
+    });
+
+    // Handle touch events
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    wrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      isPaused = true;
+    });
+
+    wrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      setTimeout(() => {
+        isPaused = false;
+      }, 1000);
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left
+        index = Math.min(index + 1, blocks.length - 1);
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right
+        index = Math.max(index - 1, 0);
+      }
+      wrapper.scrollTo({
+        left: blockWidth * index,
+        behavior: 'smooth'
+      });
+      updateDots();
+    }
+
+    // Handle scroll events
+    wrapper.addEventListener('scroll', () => {
+      const newIndex = Math.round(wrapper.scrollLeft / blockWidth);
+      if (newIndex !== index) {
+        index = newIndex;
+        updateDots();
+      }
+    });
+
+    // Start auto-scroll on mobile
+    startAutoScroll();
+
+    // Check pagination visibility on load and resize
+    checkPaginationVisibility();
+    window.addEventListener('resize', function() {
+      stopAutoScroll();
+      startAutoScroll();
+      checkPaginationVisibility();
+    });
+  });
+</script>
