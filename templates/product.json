@@ -234,6 +234,70 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "parallel_trust_builder_Ex4ene": {
+      "type": "parallel-trust-builder",
+      "blocks": {
+        "trust_item_wp9NJ8": {
+          "type": "trust_item",
+          "settings": {
+            "image": "shopify://shop_images/forty-free-shipping.png",
+            "icon": "check_mark",
+            "background_shape": "square",
+            "show_background": false,
+            "background_color": "#f4f4f4",
+            "icon_color": "#000000",
+            "icon_size": "small",
+            "title": "",
+            "subtitle": "Free Shipping over £90",
+            "description": ""
+          }
+        },
+        "trust_item_fLqDmM": {
+          "type": "trust_item",
+          "settings": {
+            "image": "shopify://shop_images/forty-reviews.png",
+            "icon": "check_mark",
+            "background_shape": "square",
+            "show_background": false,
+            "background_color": "#f4f4f4",
+            "icon_color": "#000000",
+            "icon_size": "small",
+            "title": "",
+            "subtitle": "3K+ Reviews",
+            "description": ""
+          }
+        },
+        "trust_item_9afkWf": {
+          "type": "trust_item",
+          "settings": {
+            "image": "shopify://shop_images/forty-loyalty.png",
+            "icon": "check_mark",
+            "background_shape": "square",
+            "show_background": false,
+            "background_color": "#f4f4f4",
+            "icon_color": "#000000",
+            "icon_size": "small",
+            "title": "",
+            "subtitle": "Loyalty Program",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_wp9NJ8",
+        "trust_item_fLqDmM",
+        "trust_item_9afkWf"
+      ],
+      "name": "|| Trust Builder",
+      "settings": {
+        "logged_state": "both",
+        "color_scheme": "",
+        "full_width": true,
+        "text_alignment": "left",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
     }
   },
   "order": [
@@ -241,6 +305,7 @@
     "main",
     "collapsible_content_kkhXWm",
     "related-products",
-    "collection_list_mUYTPW"
+    "collection_list_mUYTPW",
+    "parallel_trust_builder_Ex4ene"
   ]
 }
