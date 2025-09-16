@@ -63,6 +63,70 @@
         "transition_speed": 500
       }
     },
+    "parallel_trust_builder_MPctNB": {
+      "type": "parallel-trust-builder",
+      "blocks": {
+        "trust_item_Gyx98d": {
+          "type": "trust_item",
+          "settings": {
+            "image": "shopify://shop_images/forty-free-shipping.png",
+            "icon": "check_mark",
+            "background_shape": "square",
+            "show_background": false,
+            "background_color": "#f4f4f4",
+            "icon_color": "#000000",
+            "icon_size": "medium",
+            "title": "",
+            "subtitle": "Free Delivery over £90",
+            "description": ""
+          }
+        },
+        "trust_item_rqHrHY": {
+          "type": "trust_item",
+          "settings": {
+            "image": "shopify://shop_images/forty-reviews.png",
+            "icon": "check_mark",
+            "background_shape": "square",
+            "show_background": false,
+            "background_color": "#f4f4f4",
+            "icon_color": "#000000",
+            "icon_size": "medium",
+            "title": "",
+            "subtitle": "3K+ Reviews",
+            "description": ""
+          }
+        },
+        "trust_item_yTxeDD": {
+          "type": "trust_item",
+          "settings": {
+            "image": "shopify://shop_images/forty-loyalty.png",
+            "icon": "check_mark",
+            "background_shape": "square",
+            "show_background": false,
+            "background_color": "#f4f4f4",
+            "icon_color": "#000000",
+            "icon_size": "medium",
+            "title": "",
+            "subtitle": "Loyalty Program",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_Gyx98d",
+        "trust_item_rqHrHY",
+        "trust_item_yTxeDD"
+      ],
+      "name": "|| Trust Builder",
+      "settings": {
+        "logged_state": "both",
+        "color_scheme": "",
+        "full_width": false,
+        "text_alignment": "center",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
     "featured_collection_L6Y9r7": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -440,6 +504,7 @@
   },
   "order": [
     "slider_banner_eREQW4",
+    "parallel_trust_builder_MPctNB",
     "featured_collection_L6Y9r7",
     "featured_collection_37qppx",
     "parallel_shop_the_look_9cG8nx",
