@@ -15,9 +15,9 @@
       "settings": {
         "color_scheme": "",
         "separator_style": "slash",
-        "font_size": 14,
+        "font_size": 12,
         "show_home_icon": false,
-        "padding_top": 12,
+        "padding_top": 8,
         "padding_bottom": 8
       }
     },
