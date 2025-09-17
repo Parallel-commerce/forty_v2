@@ -75,7 +75,7 @@
             "show_background": false,
             "background_color": "#f4f4f4",
             "icon_color": "#000000",
-            "icon_size": "medium",
+            "icon_size": "small",
             "title": "",
             "subtitle": "Free Delivery over £90",
             "description": ""
@@ -90,7 +90,7 @@
             "show_background": false,
             "background_color": "#f4f4f4",
             "icon_color": "#000000",
-            "icon_size": "medium",
+            "icon_size": "small",
             "title": "",
             "subtitle": "3K+ Reviews",
             "description": ""
@@ -105,7 +105,7 @@
             "show_background": false,
             "background_color": "#f4f4f4",
             "icon_color": "#000000",
-            "icon_size": "medium",
+            "icon_size": "small",
             "title": "",
             "subtitle": "Loyalty Program",
             "description": ""
