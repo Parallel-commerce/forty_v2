@@ -46,6 +46,14 @@
           "type": "price",
           "settings": {}
         },
+        "loyalty_points_simple_3XmmHD": {
+          "type": "loyalty_points_simple",
+          "settings": {
+            "show_loyalty_points": true,
+            "points_per_pound": 10,
+            "color_scheme": "background-1"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -106,6 +114,7 @@
         "text_YKDePX",
         "title",
         "price",
+        "loyalty_points_simple_3XmmHD",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
