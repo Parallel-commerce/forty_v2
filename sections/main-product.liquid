@@ -338,13 +338,14 @@
                 {%- if block.settings.show_loyalty_points -%}
                   {%- assign product_price = product.selected_or_first_available_variant.price -%}
                   {%- assign points_per_pound = block.settings.points_per_pound | default: 10 -%}
-                  {%- assign points_earned = product_price | divided_by: 100 | times: points_per_pound -%}
-                  {%- assign points_value = points_earned | divided_by: 100.0 | round: 2 -%}
+                  {%- assign product_price_decimal = product_price | times: 1.0 -%}
+                  {%- assign points_earned = product_price_decimal | divided_by: 100 | times: points_per_pound -%}
+                  {%- assign points_value = points_earned | divided_by: 100 | times: 100 -%}
                   
                   <div class="product__loyalty-points color-{{ block.settings.color_scheme }}" {{ block.shopify_attributes }}>
                     <div class="loyalty-points__content">
                       <p class="loyalty-points__earn">
-                        Earn <strong>{{ points_earned }} points</strong> (worth £{{ points_value | round: 2 }}) on this purchase
+                        Earn <strong>{{ points_value | money }} worth of points</strong> on this purchase ({{ points_earned | round }} points)
                       </p>
                       <p class="loyalty-points__info">
                         You get {{ points_per_pound }} points for every £1 you spend. 100 points = £1.
@@ -356,6 +357,22 @@
                           </a>
                         </p>
                       {%- endunless -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- when 'loyalty_points_simple' -%}
+                {%- if block.settings.show_loyalty_points -%}
+                  {%- assign product_price = product.selected_or_first_available_variant.price -%}
+                  {%- assign points_per_pound = block.settings.points_per_pound | default: 10 -%}
+                  {%- assign product_price_decimal = product_price | times: 1.0 -%}
+                  {%- assign points_earned = product_price_decimal | divided_by: 100 | times: points_per_pound -%}
+                  {%- assign points_value = points_earned | divided_by: 100 | times: 100 -%}
+                  
+                  <div class="product__loyalty-points_simple color-{{ block.settings.color_scheme }}" {{ block.shopify_attributes }}>
+                    <div class="loyalty-points__content_simple">
+                      <p class="loyalty-points__earn_simple">
+                        Earn <strong>{{ points_value | money }} worth of points</strong> on this purchase
+                      </p>
                     </div>
                   </div>
                 {%- endif -%}
@@ -1357,6 +1374,33 @@
           "label": "Show loyalty points",
           "default": true,
           "info": "Display the points earned for this product purchase"
+        },
+        {
+          "type": "number",
+          "id": "points_per_pound",
+          "label": "Points per £1 spent",
+          "default": 10,
+          "info": "How many points customers earn for every £1 spent"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
+        }
+      ]
+    },
+    {
+      "type": "loyalty_points_simple",
+      "name": "Loyalty Points (Simple)",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_loyalty_points",
+          "label": "Show loyalty points",
+          "default": true,
+          "info": "Display the monetary value of points earned for this product purchase"
         },
         {
           "type": "number",

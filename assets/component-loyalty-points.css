@@ -28,9 +28,26 @@
   border-color: rgba(var(--color-accent-2), 0.2);
 }
 
+.product__loyalty-points_simple{
+
+}
+
 .loyalty-points__content {
   text-align: center;
 }
+
+.loyalty-points__content_simple {
+  text-align: left;
+}
+
+.loyalty-points__earn_simple {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(var(--color-foreground));
+  line-height: 1.4;
+}
+
 
 .loyalty-points__earn {
   margin: 0 0 0.4rem 0;
