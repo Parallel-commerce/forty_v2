@@ -49,6 +49,10 @@
           "type": "title",
           "settings": {}
         },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
         "loyalty_points_simple_VDrmiU": {
           "type": "loyalty_points_simple",
           "settings": {
@@ -56,10 +60,6 @@
             "points_per_pound": 10,
             "color_scheme": "scheme-4aa15a80-12dd-4d77-a424-a83bd3e80105"
           }
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -122,8 +122,8 @@
         "tag_yiEKTg",
         "text_YKDePX",
         "title",
-        "loyalty_points_simple_VDrmiU",
         "price",
+        "loyalty_points_simple_VDrmiU",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
