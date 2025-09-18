@@ -1,0 +1,895 @@
+{%- comment -%}
+  Description: This section displays customer spending progress and promotion stages. Shows current cart value and progress towards next promotion level.
+{%- endcomment -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+  <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+    <div class="content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %}content-container--full-width{% endif %} section-{{ section.id }}-padding">
+      <div class="{% if section.settings.full_width %} page-width{% endif %}">
+        <div class="promotion-bar__wrapper">
+          <div class="promotion-bar__content">
+            {% comment %} Calculate current cart total {% endcomment %}
+            {% assign cart_total = cart.total_price | money_without_currency | remove: ',' | times: 1 %}
+            {% assign cart_total_formatted = cart.total_price | money %}
+            
+            {% comment %} Find current and next promotion stages {% endcomment %}
+            {% assign next_stage = null %}
+            {% assign current_stage = null %}
+            {% assign stages = section.blocks | where: 'type', 'promotion_stage' | sort: 'settings.threshold' %}
+            
+            {% for stage in stages %}
+              {% assign stage_threshold = stage.settings.threshold | times: 100 %}
+              {% if cart_total >= stage_threshold %}
+                {% assign current_stage = stage %}
+              {% elsif next_stage == null and cart_total < stage_threshold %}
+                {% assign next_stage = stage %}
+              {% endif %}
+            {% endfor %}
+            
+            {% comment %} Get first and highest achieved stages {% endcomment %}
+            {% assign first_achieved = '' %}
+            {% assign highest_achieved = '' %}
+            {% for stage in stages %}
+              {% assign stage_threshold = stage.settings.threshold | times: 100 %}
+              {% if cart_total >= stage_threshold %}
+                {% if first_achieved == blank %}
+                  {% assign first_achieved = stage.settings.name %}
+                {% endif %}
+                {% assign highest_achieved = stage.settings.name %}
+              {% endif %}
+            {% endfor %}
+            
+            {% comment %} Build display text {% endcomment %}
+            {% assign achieved_stages = '' %}
+            {% if first_achieved != blank and highest_achieved != blank %}
+              {% if first_achieved == highest_achieved %}
+                {% assign achieved_stages = first_achieved %}
+              {% else %}
+                {% assign achieved_stages = first_achieved | append: ' and ' | append: highest_achieved %}
+              {% endif %}
+            {% endif %}
+            
+            {% comment %} Compact text format {% endcomment %}
+            <div class="promotion-bar__compact-text">
+              <p class="promotion-bar__spending-text">
+                You have spent <span class="promotion-bar__amount">{{ cart_total_formatted }}</span>.
+                {% if next_stage %}
+                  {% assign next_threshold = next_stage.settings.threshold | times: 100 %}
+                  {% assign remaining_amount = next_threshold | minus: cart_total %}
+                  <span class="promotion-bar__away-from-text">You are <span class="promotion-bar__remaining">{{ remaining_amount | money }}</span> away from <span class="promotion-bar__next-stage">{{ next_stage.settings.name }}</span>.</span>
+                {% else %}
+                  <span class="promotion-bar__max-level">{{ section.settings.max_level_message | default: "You've reached the highest promotion level!" }}</span>
+                {% endif %}
+                {% if achieved_stages != blank %}
+                  Currently you have: <span class="promotion-bar__achieved-list">{{ achieved_stages }}</span>.
+                {% endif %}
+              </p>
+            </div>
+            
+            {% comment %} Compact progress bar with stage markers {% endcomment %}
+            {% assign max_threshold = 0 %}
+            {% for stage in stages %}
+              {% assign stage_threshold = stage.settings.threshold | times: 100 %}
+              {% if stage_threshold > max_threshold %}
+                {% assign max_threshold = stage_threshold %}
+              {% endif %}
+            {% endfor %}
+            
+            <div class="promotion-bar__progress-container">
+              <div class="promotion-bar__progress-bar-wrapper">
+                <div class="promotion-bar__progress-bar">
+                  <div class="promotion-bar__progress-fill" style="width: {% if max_threshold > 0 %}{{ cart_total | times: 100 | divided_by: max_threshold }}{% else %}0{% endif %}%;">&nbsp;</div>
+                </div>
+                
+                {% comment %} Stage markers positioned along the progress bar {% endcomment %}
+                {% for stage in stages %}
+                  {% assign stage_threshold = stage.settings.threshold | times: 100 %}
+                  {% assign marker_position = stage_threshold | times: 100 | divided_by: max_threshold %}
+                  {% assign is_current = false %}
+                  {% assign is_achieved = false %}
+                  {% assign is_next = false %}
+                  
+                  {% if cart_total >= stage_threshold %}
+                    {% assign is_achieved = true %}
+                    {% if stage == current_stage %}
+                      {% assign is_current = true %}
+                    {% endif %}
+                  {% elsif stage == next_stage %}
+                    {% assign is_next = true %}
+                  {% endif %}
+                  
+                  <div class="promotion-bar__stage-marker{% if is_current %} promotion-bar__stage-marker--current{% endif %}{% if is_achieved %} promotion-bar__stage-marker--achieved{% endif %}{% if is_next %} promotion-bar__stage-marker--next{% endif %}" 
+                       style="left: {{ marker_position }}%;" 
+                       {{ stage.shopify_attributes }}>
+                    <div class="promotion-bar__marker-dot">
+                      {% if is_achieved %}
+                        <div class="promotion-bar__marker-checkmark">✓</div>
+                      {% else %}
+                        <div class="promotion-bar__marker-number">{{ forloop.index }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              
+              {% comment %} Debug info removed - congratulations message is working {% endcomment %}
+              
+              {% comment %} Congratulations message for achieved stages {% endcomment %}
+              {% if achieved_stages != blank %}
+                <div class="promotion-bar__congratulations">
+                  <p class="promotion-bar__congratulations-text">
+                    Congratulations! You have unlocked: <span class="promotion-bar__unlocked-stages">{{ achieved_stages }}</span>
+                  </p>
+                </div>
+              {% else %}
+                {% comment %} Show message when no stages are achieved {% endcomment %}
+                <div class="promotion-bar__congratulations" style="display: none;">
+                  <p class="promotion-bar__congratulations-text">
+                    Congratulations! You have unlocked: <span class="promotion-bar__unlocked-stages"></span>
+                  </p>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% schema %}
+{
+  "name": "|| Promotion Bar",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "max_level_message",
+      "label": "Max Level Message",
+      "default": "You've reached the highest promotion level!"
+    },
+    {
+      "type": "header",
+      "content": "General Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "amount_color",
+      "label": "Amount text color",
+      "default": "#007bff"
+    },
+    {
+      "type": "header",
+      "content": "Progress Bar Colors"
+    },
+    {
+      "type": "color",
+      "id": "progress_bar_color",
+      "label": "Progress bar background",
+      "default": "#e9ecef"
+    },
+    {
+      "type": "color",
+      "id": "progress_fill_color",
+      "label": "Progress bar fill",
+      "default": "#28a745"
+    },
+    {
+      "type": "header",
+      "content": "Stage Marker Colors"
+    },
+    {
+      "type": "color",
+      "id": "stage_marker_color",
+      "label": "Default marker background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "stage_marker_border_color",
+      "label": "Marker border",
+      "default": "#dee2e6"
+    },
+    {
+      "type": "color",
+      "id": "achieved_marker_color",
+      "label": "Achieved stages",
+      "default": "#28a745"
+    },
+    {
+      "type": "color",
+      "id": "current_marker_color",
+      "label": "Current stage",
+      "default": "#007bff"
+    },
+    {
+      "type": "color",
+      "id": "next_marker_color",
+      "label": "Next stage",
+      "default": "#6c757d"
+    },
+    {
+      "type": "header",
+      "content": "Congratulations Colors"
+    },
+    {
+      "type": "color",
+      "id": "congratulations_bg_color",
+      "label": "Congratulations background",
+      "default": "#d4edda"
+    },
+    {
+      "type": "color",
+      "id": "congratulations_text_color",
+      "label": "Congratulations text",
+      "default": "#155724"
+    },
+    {
+      "type": "color",
+      "id": "unlocked_stages_color",
+      "label": "Unlocked stages text",
+      "default": "#28a745"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promotion_stage",
+      "name": "Promotion Stage",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Stage Name",
+          "info": "Name shown in congratulations message",
+          "default": "Bronze"
+        },
+        {
+          "type": "number",
+          "id": "threshold",
+          "label": "Spending Threshold ($)",
+          "info": "Minimum cart value to unlock this stage",
+          "default": 100
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Stage Description",
+          "info": "Description of benefits (not currently displayed)",
+          "default": "Great job! You've unlocked this promotion level."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "|| Promotion Bar",
+      "blocks": [
+        {
+          "type": "promotion_stage",
+          "settings": {
+            "name": "Bronze",
+            "threshold": 50,
+            "description": "Welcome to Bronze level! Enjoy exclusive benefits."
+          }
+        },
+        {
+          "type": "promotion_stage",
+          "settings": {
+            "name": "Silver",
+            "threshold": 100,
+            "description": "Silver level unlocked! You get priority support."
+          }
+        },
+        {
+          "type": "promotion_stage",
+          "settings": {
+            "name": "Gold",
+            "threshold": 250,
+            "description": "Gold level achieved! Enjoy free shipping and exclusive offers."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  :root {
+    --promotion-bg-color: {{ section.settings.background_color | default: '#f8f9fa' }};
+    --promotion-text-color: {{ section.settings.text_color | default: '#333333' }};
+    --promotion-amount-color: {{ section.settings.amount_color | default: '#007bff' }};
+    --promotion-progress-bg: {{ section.settings.progress_bar_color | default: '#e9ecef' }};
+    --promotion-progress-fill: {{ section.settings.progress_fill_color | default: '#28a745' }};
+    --promotion-marker-color: {{ section.settings.stage_marker_color | default: '#ffffff' }};
+    --promotion-marker-border: {{ section.settings.stage_marker_border_color | default: '#dee2e6' }};
+    --promotion-achieved-color: {{ section.settings.achieved_marker_color | default: '#28a745' }};
+    --promotion-current-color: {{ section.settings.current_marker_color | default: '#007bff' }};
+    --promotion-next-color: {{ section.settings.next_marker_color | default: '#6c757d' }};
+    --promotion-congrats-bg: {{ section.settings.congratulations_bg_color | default: '#d4edda' }};
+    --promotion-congrats-text: {{ section.settings.congratulations_text_color | default: '#155724' }};
+    --promotion-unlocked-color: {{ section.settings.unlocked_stages_color | default: '#28a745' }};
+  }
+  
+  .promotion-bar__wrapper {
+    padding: 12px 16px;
+    margin: 0 auto;
+    max-width: 800px;
+    background: var(--promotion-bg-color);
+  }
+  
+  .promotion-bar__content {
+    text-align: center;
+  }
+  
+  .promotion-bar__compact-text {
+    margin: 0;
+  }
+  
+  .promotion-bar__spending-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--promotion-text-color);
+  }
+  
+  .promotion-bar__amount {
+    font-weight: bold;
+    color: var(--promotion-amount-color);
+  }
+  
+  .promotion-bar__remaining {
+    font-weight: bold;
+    color: #e67e22;
+  }
+  
+  .promotion-bar__next-stage {
+    font-weight: 600;
+    color: #2c5aa0;
+  }
+  
+  .promotion-bar__achieved-list {
+    font-weight: 600;
+    color: #28a745;
+  }
+  
+  .promotion-bar__max-level {
+    font-weight: 600;
+    color: #28a745;
+  }
+  
+  .promotion-bar__progress-container {
+    margin-top: 12px;
+    min-height: 40px;
+    display: block !important;
+  }
+  
+  .promotion-bar__progress-bar-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 8px 0;
+    min-height: 30px;
+    display: block !important;
+  }
+  
+  .promotion-bar__progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--promotion-progress-bg);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .promotion-bar__progress-fill {
+    height: 100%;
+    background: var(--promotion-progress-fill);
+    border-radius: 4px;
+    transition: width 0.8s ease;
+    position: relative;
+  }
+  
+  .promotion-bar__progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .promotion-bar__stage-marker {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+  }
+  
+  .promotion-bar__marker-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 6px auto;
+    border: 2px solid var(--promotion-marker-border);
+    background: var(--promotion-marker-color);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .promotion-bar__stage-marker--achieved .promotion-bar__marker-dot {
+    background: var(--promotion-achieved-color);
+    border-color: var(--promotion-achieved-color);
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  .promotion-bar__stage-marker--current .promotion-bar__marker-dot {
+    background: var(--promotion-current-color);
+    border-color: var(--promotion-current-color);
+    color: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.3);
+  }
+  
+  .promotion-bar__stage-marker--next .promotion-bar__marker-dot {
+    border-color: var(--promotion-next-color);
+    color: var(--promotion-next-color);
+    background: white;
+  }
+  
+  .promotion-bar__marker-checkmark {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  .promotion-bar__marker-number {
+    font-size: 9px;
+  }
+  
+  .promotion-bar__congratulations {
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    background: var(--promotion-congrats-bg);
+    border-radius: 6px;
+    border-left: 4px solid var(--promotion-achieved-color);
+  }
+  
+  .promotion-bar__congratulations-text {
+    margin: 0;
+    font-size: 14px;
+    color: var(--promotion-congrats-text);
+    font-weight: 500;
+  }
+  
+  .promotion-bar__unlocked-stages {
+    font-weight: 600;
+    color: var(--promotion-unlocked-color);
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+    .promotion-bar__wrapper {
+      padding: 10px 12px;
+    }
+    
+    .promotion-bar__spending-text {
+      font-size: 13px;
+    }
+    
+    .promotion-bar__progress-bar-wrapper {
+      margin-bottom: 15px;
+      padding: 6px 0;
+    }
+    
+    .promotion-bar__progress-bar {
+      height: 6px;
+    }
+    
+    .promotion-bar__stage-marker {
+      transform: translateX(-50%) translateY(-70%);
+    }
+    
+    .promotion-bar__marker-dot {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .promotion-bar__marker-checkmark {
+      font-size: 9px;
+    }
+    
+    .promotion-bar__marker-number {
+      font-size: 8px;
+    }
+    
+    .promotion-bar__congratulations {
+      margin-top: 12px;
+      padding: 10px;
+    }
+    
+    .promotion-bar__congratulations-text {
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .promotion-bar__wrapper {
+      padding: 8px 10px;
+    }
+    
+    .promotion-bar__spending-text {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    
+    .promotion-bar__progress-bar-wrapper {
+      margin-bottom: 12px;
+      padding: 4px 0;
+    }
+    
+    .promotion-bar__congratulations {
+      margin-top: 10px;
+      padding: 8px;
+    }
+    
+    .promotion-bar__congratulations-text {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const spendingText = document.querySelector('.promotion-bar__spending-text');
+    const amountSpan = document.querySelector('.promotion-bar__amount');
+    const remainingSpan = document.querySelector('.promotion-bar__remaining');
+    const nextStageSpan = document.querySelector('.promotion-bar__next-stage');
+    const achievedListSpan = document.querySelector('.promotion-bar__achieved-list');
+    const maxLevelSpan = document.querySelector('.promotion-bar__max-level');
+    const progressBar = document.querySelector('.promotion-bar__progress-fill');
+    const stageMarkers = document.querySelectorAll('.promotion-bar__stage-marker');
+    const congratulationsContainer = document.querySelector('.promotion-bar__congratulations');
+    const unlockedStagesSpan = document.querySelector('.promotion-bar__unlocked-stages');
+    
+    if (!spendingText) return;
+    
+    // Get initial values from the section
+    const sectionData = {
+      cartTotal: {{ cart.total_price | json }},
+      currency: {{ cart.currency.iso_code | json }},
+      currencyFormat: {{ cart.currency.symbol | json }},
+      stages: [
+        {% for stage in section.blocks %}
+          {% if stage.type == 'promotion_stage' %}
+            {
+              name: {{ stage.settings.name | json }},
+              threshold: {{ stage.settings.threshold | times: 100 | json }},
+              description: {{ stage.settings.description | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {% endif %}
+        {% endfor %}
+      ]
+    };
+    
+    // Format currency amount
+    function formatCurrency(amount) {
+      try {
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: sectionData.currency
+        }).format(amount / 100);
+      } catch (error) {
+        // Fallback to simple formatting if currency is not supported
+        return sectionData.currencyFormat + (amount / 100).toFixed(2);
+      }
+    }
+    
+    // Calculate progress percentage
+    function calculateProgress(cartTotal) {
+      const maxThreshold = Math.max(...sectionData.stages.map(stage => stage.threshold));
+      return maxThreshold > 0 ? Math.min((cartTotal / maxThreshold) * 100, 100) : 0;
+    }
+    
+    // Update compact text display and progress bar
+    function updateCompactText(cartTotal) {
+      // Calculate progress percentage
+      const maxThreshold = Math.max(...sectionData.stages.map(stage => stage.threshold));
+      const progressPercentage = maxThreshold > 0 ? Math.min((cartTotal / maxThreshold) * 100, 100) : 0;
+      
+      // Update progress bar
+      if (progressBar) {
+        progressBar.style.transition = 'width 0.8s ease-in-out';
+        progressBar.style.width = progressPercentage + '%';
+      }
+      
+      // Update stage markers
+      stageMarkers.forEach((marker, index) => {
+        const stage = sectionData.stages[index];
+        if (!stage) return;
+        
+        const isAchieved = cartTotal >= stage.threshold;
+        const isCurrent = isAchieved && (index === sectionData.stages.length - 1 || cartTotal < sectionData.stages[index + 1]?.threshold);
+        const isNext = !isAchieved && (index === 0 || cartTotal >= sectionData.stages[index - 1]?.threshold);
+        
+        // Remove all state classes
+        marker.classList.remove('promotion-bar__stage-marker--achieved', 'promotion-bar__stage-marker--current', 'promotion-bar__stage-marker--next');
+        
+        // Add appropriate state class
+        if (isAchieved) {
+          marker.classList.add('promotion-bar__stage-marker--achieved');
+        } else if (isCurrent) {
+          marker.classList.add('promotion-bar__stage-marker--current');
+        } else if (isNext) {
+          marker.classList.add('promotion-bar__stage-marker--next');
+        }
+      });
+      
+      // Find current and next stages
+      let currentStage = null;
+      let nextStage = null;
+      
+      for (let i = 0; i < sectionData.stages.length; i++) {
+        const stage = sectionData.stages[i];
+        if (cartTotal >= stage.threshold) {
+          currentStage = stage;
+        } else if (!nextStage) {
+          nextStage = stage;
+          break;
+        }
+      }
+      
+      // Find achieved stages
+      const achievedStages = sectionData.stages.filter(stage => cartTotal >= stage.threshold);
+      
+      // Get first and highest achieved stage names for display
+      let achievedNames = '';
+      if (achievedStages.length > 0) {
+        const firstStage = achievedStages[0];
+        const highestStage = achievedStages[achievedStages.length - 1];
+        
+        if (firstStage.name === highestStage.name) {
+          achievedNames = firstStage.name;
+        } else {
+          achievedNames = firstStage.name + ' and ' + highestStage.name;
+        }
+      }
+      
+      // Update current spending amount
+      if (amountSpan) {
+        amountSpan.textContent = formatCurrency(cartTotal);
+      }
+      
+      // Update next stage info
+      if (nextStage) {
+        const remainingAmount = nextStage.threshold - cartTotal;
+        if (remainingSpan) {
+          remainingSpan.textContent = formatCurrency(remainingAmount);
+          remainingSpan.style.display = 'inline';
+        }
+        if (nextStageSpan) {
+          nextStageSpan.textContent = nextStage.name;
+          nextStageSpan.style.display = 'inline';
+        }
+        // Hide max level message
+        if (maxLevelSpan) {
+          maxLevelSpan.style.display = 'none';
+        }
+        // Show the "You are away from" text
+        const awayFromText = spendingText.querySelector('.promotion-bar__away-from-text');
+        if (awayFromText) {
+          awayFromText.style.display = 'inline';
+        }
+      } else {
+        // Show max level message
+        if (maxLevelSpan) {
+          maxLevelSpan.style.display = 'inline';
+        }
+        // Hide next stage elements
+        if (remainingSpan) {
+          remainingSpan.style.display = 'none';
+        }
+        if (nextStageSpan) {
+          nextStageSpan.style.display = 'none';
+        }
+        // Hide the "You are away from" text when all stages are achieved
+        const awayFromText = spendingText.querySelector('.promotion-bar__away-from-text');
+        if (awayFromText) {
+          awayFromText.style.display = 'none';
+        }
+      }
+      
+      // Update achieved stages list
+      if (achievedListSpan) {
+        if (achievedNames) {
+          achievedListSpan.textContent = achievedNames;
+          achievedListSpan.style.display = 'inline';
+        } else {
+          achievedListSpan.style.display = 'none';
+        }
+      }
+      
+      // Update congratulations message
+      if (congratulationsContainer && unlockedStagesSpan) {
+        if (achievedNames) {
+          unlockedStagesSpan.textContent = achievedNames;
+          congratulationsContainer.style.display = 'block';
+          console.log('Showing congratulations for:', achievedNames);
+        } else {
+          congratulationsContainer.style.display = 'none';
+          console.log('Hiding congratulations - no achieved stages');
+        }
+      }
+      
+    }
+    
+    
+    // Listen for cart updates
+    function setupCartListeners() {
+      // Listen for Shopify's standard cart events
+      document.addEventListener('cart:updated', function(event) {
+        console.log('Cart updated event received:', event);
+        if (event.detail && event.detail.cart) {
+          updateCompactText(event.detail.cart.total_price);
+        } else {
+          // Fallback: fetch cart data
+          fetchCartData();
+        }
+      });
+      
+      // Listen for cart item updates
+      document.addEventListener('cart:item-updated', function(event) {
+        console.log('Cart item updated event received:', event);
+        if (event.detail && event.detail.cart) {
+          updateCompactText(event.detail.cart.total_price);
+        } else {
+          fetchCartData();
+        }
+      });
+      
+      // Listen for cart item additions
+      document.addEventListener('cart:item-added', function(event) {
+        console.log('Cart item added event received:', event);
+        if (event.detail && event.detail.cart) {
+          updateCompactText(event.detail.cart.total_price);
+        } else {
+          fetchCartData();
+        }
+      });
+      
+      // Listen for cart item removals
+      document.addEventListener('cart:item-removed', function(event) {
+        console.log('Cart item removed event received:', event);
+        if (event.detail && event.detail.cart) {
+          updateCompactText(event.detail.cart.total_price);
+        } else {
+          fetchCartData();
+        }
+      });
+      
+      // Listen for custom cart events that might be used by the theme
+      document.addEventListener('cart:refresh', function(event) {
+        console.log('Cart refresh event received:', event);
+        fetchCartData();
+      });
+      
+      // Listen for form submissions that might add items to cart
+      document.addEventListener('submit', function(event) {
+        const form = event.target;
+        if (form && form.action && form.action.includes('/cart/add')) {
+          console.log('Add to cart form submitted');
+          // Wait a moment for the cart to update, then fetch data
+          setTimeout(fetchCartData, 500);
+        }
+      });
+      
+      // Listen for clicks on add to cart buttons
+      document.addEventListener('click', function(event) {
+        const button = event.target.closest('[data-add-to-cart], .btn-cart, .add-to-cart, [name="add"]');
+        if (button) {
+          console.log('Add to cart button clicked');
+          setTimeout(fetchCartData, 1000);
+        }
+      });
+    }
+    
+    // Fetch cart data from Shopify's cart API
+    function fetchCartData() {
+      fetch('/cart.js')
+        .then(response => response.json())
+        .then(cart => {
+          console.log('Fetched cart data:', cart);
+          updateCompactText(cart.total_price);
+        })
+        .catch(error => {
+          console.error('Error fetching cart data:', error);
+        });
+    }
+    
+    // Initialize with current cart total
+    updateCompactText(sectionData.cartTotal);
+    
+    // Setup cart listeners
+    setupCartListeners();
+    
+    // Also listen for manual cart updates (for custom cart implementations)
+    const observer = new MutationObserver(function(mutations) {
+      let shouldCheckCart = false;
+      
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList' || mutation.type === 'characterData') {
+          // Check if any cart-related elements have changed
+          const cartSelectors = [
+            '[data-cart-total]', '.cart-total', '.cart__total', '.cart-drawer__total',
+            '.cart-count', '.cart-count-bubble', '[data-cart-count]',
+            '.cart-item', '.cart__item', '[data-cart-item]',
+            '.cart-drawer', '.cart', '[data-cart]'
+          ];
+          
+          cartSelectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+              if (mutation.target === element || element.contains(mutation.target)) {
+                shouldCheckCart = true;
+              }
+            });
+          });
+        }
+      });
+      
+      if (shouldCheckCart) {
+        console.log('Cart-related DOM mutation detected, fetching cart data');
+        fetchCartData();
+      }
+    });
+    
+    // Start observing
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+    
+    // Periodic check as a final fallback (every 5 seconds)
+    setInterval(function() {
+      fetchCartData();
+    }, 5000);
+  });
+</script>
+
