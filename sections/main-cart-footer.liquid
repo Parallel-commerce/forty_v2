@@ -37,11 +37,33 @@
         </cart-note>
       {%- endif -%}
 
+
       <div class="cart__blocks">
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
+            {%- when 'loyalty_display' -%}
+              {%- if cart.total_price > 0 -%}
+                {%- assign loyalty_rate = block.settings.loyalty_rate | divided_by: 100.0 -%}
+                {%- assign loyalty_points = cart.total_price | times: loyalty_rate | round -%}
+                {%- assign loyalty_value = loyalty_points | money -%}
+                {%- assign loyalty_message = block.settings.loyalty_message | default: "You'll earn {amount} in loyalty points with this purchase" -%}
+                {%- assign loyalty_message = loyalty_message | replace: '{amount}', loyalty_value -%}
+                
+                <div class="loyalty-display color-{{ section.settings.color_scheme }}" {{ block.shopify_attributes }}>
+                  <div class="loyalty-info">
+                    <span class="loyalty-text">
+                      {{ loyalty_message }}
+                    </span>
+                  </div>
+                  {%- unless customer -%}
+                    <a href="{{ block.settings.signup_link }}" class="loyalty-signup-link">
+                      {{ block.settings.signup_text }}
+                    </a>
+                  {%- endunless -%}
+                </div>
+              {%- endif -%}
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
                 <div>
@@ -133,6 +155,102 @@
   </div>
 </div>
 
+<style>
+  .loyalty-display {
+    margin: 16px 0;
+    padding: 12px 16px;
+    background: rgba(var(--color-background), 0.5);
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .loyalty-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgb(var(--color-accent-1));
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .loyalty-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .loyalty-icon {
+    font-size: 18px;
+    opacity: 0.8;
+  }
+  
+  .loyalty-text {
+    font-size: 14px;
+    color: rgb(var(--color-foreground));
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  
+  .loyalty-text strong {
+    color: rgb(var(--color-accent-1));
+    font-weight: 600;
+  }
+  
+  .loyalty-signup-link {
+    display: inline-block;
+    font-size: 12px;
+    color: rgb(var(--color-accent-1));
+    text-decoration: underline;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+  }
+  
+  .loyalty-signup-link:hover {
+    opacity: 0.7;
+  }
+  
+  @media (max-width: 768px) {
+    .loyalty-display {
+      margin: 12px 0;
+      padding: 10px 12px;
+    }
+    
+    .loyalty-info {
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .loyalty-icon {
+      font-size: 16px;
+    }
+    
+    .loyalty-text {
+      font-size: 13px;
+    }
+    
+    .loyalty-signup-link {
+      font-size: 11px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .loyalty-display {
+      margin: 10px 0;
+      padding: 8px 10px;
+    }
+    
+    .loyalty-text {
+      font-size: 12px;
+    }
+  }
+</style>
+
 {% schema %}
 {
   "name": "t:sections.main-cart-footer.name",
@@ -172,12 +290,67 @@
       "limit": 1
     },
     {
+      "type": "loyalty_display",
+      "name": "Loyalty Points Display",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "loyalty_rate",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "unit": "%",
+          "label": "Loyalty points rate",
+          "info": "Percentage of purchase amount earned as loyalty points",
+          "default": 10
+        },
+        {
+          "type": "text",
+          "id": "loyalty_message",
+          "label": "Loyalty message",
+          "default": "You'll earn {amount} in loyalty points with this purchase",
+          "info": "Use {amount} as placeholder for the loyalty value"
+        },
+        {
+          "type": "text",
+          "id": "signup_link",
+          "label": "Signup link",
+          "default": "/account/register",
+          "info": "URL for the loyalty program signup page"
+        },
+        {
+          "type": "text",
+          "id": "signup_text",
+          "label": "Signup link text",
+          "default": "Sign up for loyalty program",
+          "info": "Text displayed for the signup link"
+        }
+      ]
+    },
+    {
       "type": "buttons",
       "name": "t:sections.main-cart-footer.blocks.buttons.name",
       "limit": 1
     },
     {
       "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.main-cart-footer.name",
+      "blocks": [
+        {
+          "type": "subtotal"
+        },
+        {
+          "type": "loyalty_display"
+        },
+        {
+          "type": "buttons"
+        }
+      ]
     }
   ]
 }
