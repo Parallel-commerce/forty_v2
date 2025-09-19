@@ -46,6 +46,11 @@
   font-weight: 500;
   color: rgb(var(--color-foreground));
   line-height: 1.4;
+  background:black;
+  color:white;
+  border-radius:8px;
+  border:3px solid #ece95e;
+  padding:5px 10px;
 }
 
 
