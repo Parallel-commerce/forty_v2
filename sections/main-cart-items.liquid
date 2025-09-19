@@ -30,7 +30,16 @@
     {% render 'shipping-bar' %}
 
     <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      <div>
+        <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+        {%- if cart.item_count > 0 -%}
+          {%- assign cart_total_pounds = cart.total_price | divided_by: 100 -%}
+          {%- assign loyalty_points = cart_total_pounds | round -%}
+          {%- assign loyalty_value_pence = loyalty_points | times: 10 -%}
+          {%- assign loyalty_value = loyalty_value_pence | money -%}
+          <p style="background:black; border-radius:8px; color:white; padding:10px; border:3px solid #ece95e;">You will earn <span style="color: #ece95e; text-decoration: none; font-weight: bold;">{{ loyalty_value }}</span> worth of points ({{ loyalty_points }} points) with <a href="https://www.fortyloyalty.com" style="color: #ece95e; text-decoration: underline; font-weight: bold;">Forty Loyalty</a> on your next purchase.</p>
+        {%- endif -%}
+      </div>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>
