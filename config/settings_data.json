@@ -163,20 +163,6 @@
         "type": "shopify://apps/sami-b2b-lock/blocks/app-embed/8d86a3b4-97b3-44ab-adc1-ec01c5a89da9",
         "disabled": false,
         "settings": {}
-      },
-      "9377937747802625048": {
-        "type": "shopify://apps/biscuits-bundles/blocks/biscuits-app-embed/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
-        "disabled": false,
-        "settings": {
-          "quickadd_action": "replace",
-          "quick_add_button_classes": "",
-          "quickview_action": "hide",
-          "quick_add_selector": "",
-          "quick_view_selector": "",
-          "grid_item_selector": "",
-          "product_form_selector": "",
-          "custom_css": ""
-        }
       }
     },
     "color_schemes": {
@@ -463,8 +449,6 @@
     }
   },
   "platform_customizations": {
-    "custom_css": [
-      "#HeaderMenu-summer-sale {color: #d6101c;}"
-    ]
+    "custom_css": []
   }
 }
