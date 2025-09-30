@@ -3637,3 +3637,12 @@ div[os-name="Color"] {
       color:#000;
       word-break: break-word;
 }
+
+/* Menu Customisations */
+#HeaderMenu-sale {
+  color: #d6101c;
+}
+
+#HeaderDrawer-sale{
+  color: #d6101c;
+}
