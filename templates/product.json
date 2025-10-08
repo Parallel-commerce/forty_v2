@@ -221,11 +221,21 @@
             "row_content": "",
             "page": "delivery-information"
           }
+        },
+        "collapsible_row_awtCJy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Christmas Returns",
+            "icon": "none",
+            "row_content": "",
+            "page": "christmas-returns"
+          }
         }
       },
       "block_order": [
         "size_guide_dzMAth",
-        "collapsible_row_qQrbrd"
+        "collapsible_row_qQrbrd",
+        "collapsible_row_awtCJy"
       ],
       "settings": {
         "caption": "",
