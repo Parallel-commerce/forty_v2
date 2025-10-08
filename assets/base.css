@@ -3654,3 +3654,7 @@ div[os-name="Color"] {
 #HeaderMenu-clothing-sale{
   color: #d6101c;
 }
+
+.mega-menu__link--level-2:hover {
+  text-decoration: none !important;
+}
