@@ -61,6 +61,12 @@
             "swatch_shape": "square"
           }
         },
+        "custom_liquid_ckAb3t": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% comment %}\nShow only for tagged products (toggle per product).\nRemove the IF if you want it on all products using this template.\n{% endcomment %}\n{% if product.tags contains 'pickup-event' %}\n  <div class=\"store-pickup mt-4\">\n    <label for=\"preferred-store-{{ section.id }}\" class=\"block text-sm font-medium\">\n      Preferred store for collection\n    </label>\n\n    {%- comment -%}\n    Tie this input to the product form using form=\"product-form-{{ section.id }}\"\n    because this block sits outside the <form> in Dawn’s markup.\n    {%- endcomment -%}\n    <select\n      id=\"preferred-store-{{ section.id }}\"\n      name=\"properties[Preferred Store]\"\n      form=\"product-form-{{ section.id }}\"\n      required\n      class=\"mt-1 w-full\"\n      aria-required=\"true\"\n    >\n      <option value=\"\" disabled selected>Select a store</option>\n      <option value=\"Silverburn\">Silverburn</option>\n      <option value=\"Glasgow Fort\">Glasgow Fort</option>\n    </select>\n\n    <p class=\"mt-2 text-xs opacity-75\">\n      You’ll receive your allocated time slot by email after checkout.\n    </p>\n  </div>\n{% endif %}"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -116,6 +122,7 @@
         "price",
         "loyalty_points_simple_3XmmHD",
         "variant_picker",
+        "custom_liquid_ckAb3t",
         "quantity_selector",
         "buy_buttons",
         "product_details_accordion_AGkxfF",
