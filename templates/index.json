@@ -12,6 +12,16 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
+        "slide_XTQB7K": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/FTY_BANNERDESKTOP.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/FTY_BANNERMOB.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://collections/lifestyle"
+          }
+        },
         "slide_3eRt8P": {
           "type": "slide",
           "settings": {
@@ -46,6 +56,7 @@
         }
       },
       "block_order": [
+        "slide_XTQB7K",
         "slide_3eRt8P",
         "slide_7QTqrB",
         "slide_a6UPCy",
