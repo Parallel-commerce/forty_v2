@@ -125,7 +125,11 @@
     </div>
     {%- if show_badges -%}
       <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-        {{ 'products.product.on_sale' | t }}
+        {%- if product.tags contains 'BF25' -%}
+          Black Friday
+        {%- else -%}
+          {{ 'products.product.on_sale' | t }}
+        {%- endif -%}
       </span>
       <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
         {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -}}
