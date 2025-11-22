@@ -74,6 +74,36 @@
         "transition_speed": 500
       }
     },
+    "parallel_slider_banner_UTGPAH": {
+      "type": "parallel-slider-banner",
+      "blocks": {
+        "slide_xCCBjA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BF25_BANNERDESKTOP.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/BF25_BANNERDESKTOP.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://collections/lifestyle"
+          }
+        }
+      },
+      "block_order": [
+        "slide_xCCBjA"
+      ],
+      "disabled": true,
+      "name": "Black Friday Banner",
+      "settings": {
+        "height": "large",
+        "mobile_height": "square",
+        "auto_rotate": false,
+        "slideshow_speed": 9,
+        "preload_next_slide": false,
+        "pause_on_hover": false,
+        "transition_effect": "fade",
+        "transition_speed": 500
+      }
+    },
     "parallel_trust_builder_MPctNB": {
       "type": "parallel-trust-builder",
       "blocks": {
@@ -515,6 +545,7 @@
   },
   "order": [
     "slider_banner_eREQW4",
+    "parallel_slider_banner_UTGPAH",
     "parallel_trust_builder_MPctNB",
     "featured_collection_L6Y9r7",
     "featured_collection_37qppx",
