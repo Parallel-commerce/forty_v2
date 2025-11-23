@@ -48,6 +48,7 @@
         },
         "loyalty_points_simple_3XmmHD": {
           "type": "loyalty_points_simple",
+          "disabled": true,
           "settings": {
             "show_loyalty_points": true,
             "points_per_pound": 10,
@@ -56,7 +57,6 @@
         },
         "klarna_on_site_messaging_app_block_a4HPbb": {
           "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
-          "disabled": true,
           "settings": {
             "data_key": "credit-promotion-badge",
             "theme": "default",
@@ -94,6 +94,7 @@
         },
         "loyalty_points_QEL9J7": {
           "type": "loyalty_points",
+          "disabled": true,
           "settings": {
             "show_loyalty_points": true,
             "points_per_pound": 10,
@@ -165,7 +166,7 @@
             "icon_color": "#000000",
             "icon_size": "small",
             "title": "",
-            "subtitle": "Free Shipping over £90",
+            "subtitle": "Free Shipping over £120",
             "description": ""
           }
         },
