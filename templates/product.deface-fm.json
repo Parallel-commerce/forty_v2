@@ -53,8 +53,19 @@
           "type": "price",
           "settings": {}
         },
+        "klarna_on_site_messaging_app_block_CHAtT9": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "credit-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
         "loyalty_points_simple_VDrmiU": {
           "type": "loyalty_points_simple",
+          "disabled": true,
           "settings": {
             "show_loyalty_points": true,
             "points_per_pound": 10,
@@ -90,6 +101,7 @@
         },
         "loyalty_points_TpaAPB": {
           "type": "loyalty_points",
+          "disabled": true,
           "settings": {
             "show_loyalty_points": true,
             "points_per_pound": 10,
@@ -122,6 +134,7 @@
         "text_YKDePX",
         "title",
         "price",
+        "klarna_on_site_messaging_app_block_CHAtT9",
         "loyalty_points_simple_VDrmiU",
         "variant_picker",
         "quantity_selector",
