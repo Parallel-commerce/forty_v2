@@ -62,6 +62,7 @@
         "slide_a6UPCy",
         "slide_HeEH3g"
       ],
+      "disabled": true,
       "name": "Image Slider",
       "settings": {
         "height": "large",
@@ -91,7 +92,6 @@
       "block_order": [
         "slide_xCCBjA"
       ],
-      "disabled": true,
       "name": "Black Friday Banner",
       "settings": {
         "height": "large",
