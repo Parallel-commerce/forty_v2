@@ -9,6 +9,21 @@
  */
 {
   "sections": {
+    "parallel_banner_single_VdcFGY": {
+      "type": "parallel-banner-single",
+      "name": "|| Banner Single",
+      "settings": {
+        "image": "shopify://shop_images/BF25_BANNERDESKTOP.jpg",
+        "banner_link": "",
+        "mobile_image": "shopify://shop_images/BF25_BANNERMOB.jpg",
+        "mobile_aspect_ratio": "square",
+        "banner_height": 70,
+        "color_scheme": "",
+        "full_width": true,
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
@@ -65,6 +80,7 @@
         "slide_a6UPCy",
         "slide_HeEH3g"
       ],
+      "disabled": true,
       "name": "Image Slider",
       "settings": {
         "height": "large",
@@ -547,6 +563,7 @@
     }
   },
   "order": [
+    "parallel_banner_single_VdcFGY",
     "slider_banner_eREQW4",
     "parallel_slider_banner_UTGPAH",
     "parallel_trust_builder_MPctNB",
