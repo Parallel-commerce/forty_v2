@@ -28,16 +28,6 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
-        "slide_XTQB7K": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BF25_BANNERDESKTOP.jpg",
-            "video_url": "",
-            "mobile_image": "shopify://shop_images/BF25_BANNERMOB.jpg",
-            "mobile_video_url": "",
-            "link": "shopify://collections/lifestyle"
-          }
-        },
         "slide_3eRt8P": {
           "type": "slide",
           "settings": {
@@ -48,7 +38,6 @@
         },
         "slide_7QTqrB": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/1b3dfefd9e5e460db38825509c8a911d.mov",
             "mobile_video_url": "",
@@ -57,7 +46,6 @@
         },
         "slide_a6UPCy": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
             "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
@@ -66,7 +54,6 @@
         },
         "slide_HeEH3g": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/53dea5a6acd7495da6763c9834724a09.mp4",
             "mobile_video_url": "",
@@ -75,7 +62,6 @@
         }
       },
       "block_order": [
-        "slide_XTQB7K",
         "slide_3eRt8P",
         "slide_7QTqrB",
         "slide_a6UPCy",
