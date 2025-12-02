@@ -11,6 +11,7 @@
   "sections": {
     "parallel_banner_single_VdcFGY": {
       "type": "parallel-banner-single",
+      "disabled": true,
       "name": "|| Banner Single",
       "settings": {
         "image": "shopify://shop_images/BF25_CYBERMONDAY_BANNERDESKTOP.jpg",
@@ -80,7 +81,6 @@
         "slide_a6UPCy",
         "slide_HeEH3g"
       ],
-      "disabled": true,
       "name": "Image Slider",
       "settings": {
         "height": "large",
@@ -137,7 +137,7 @@
             "icon_color": "#000000",
             "icon_size": "small",
             "title": "",
-            "subtitle": "Free Delivery for Cyber Monday",
+            "subtitle": "Free Delivery over £90",
             "description": ""
           }
         },
