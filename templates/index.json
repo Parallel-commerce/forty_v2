@@ -28,14 +28,6 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
-        "slide_3eRt8P": {
-          "type": "slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
-            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
-            "link": "shopify://collections/planet-forty"
-          }
-        },
         "slide_7QTqrB": {
           "type": "slide",
           "settings": {
@@ -51,12 +43,20 @@
             "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
             "link": "shopify://collections/10th-year-black-edition"
           }
+        },
+        "slide_3eRt8P": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
+            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
+            "link": "shopify://collections/planet-forty"
+          }
         }
       },
       "block_order": [
-        "slide_3eRt8P",
         "slide_7QTqrB",
-        "slide_a6UPCy"
+        "slide_a6UPCy",
+        "slide_3eRt8P"
       ],
       "name": "Image Slider",
       "settings": {
