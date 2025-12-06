@@ -28,20 +28,20 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
-        "slide_7QTqrB": {
-          "type": "slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/c7d2b64dcc8c4913a32fdcb292785062.mp4",
-            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/4ef359cb486c49c6b50910ee3ee4e8e8.mp4",
-            "link": "shopify://collections/deface"
-          }
-        },
         "slide_a6UPCy": {
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
             "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
             "link": "shopify://collections/10th-year-black-edition"
+          }
+        },
+        "slide_7QTqrB": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/c7d2b64dcc8c4913a32fdcb292785062.mp4",
+            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/4ef359cb486c49c6b50910ee3ee4e8e8.mp4",
+            "link": "shopify://collections/deface"
           }
         },
         "slide_3eRt8P": {
@@ -54,8 +54,8 @@
         }
       },
       "block_order": [
-        "slide_7QTqrB",
         "slide_a6UPCy",
+        "slide_7QTqrB",
         "slide_3eRt8P"
       ],
       "name": "Image Slider",
