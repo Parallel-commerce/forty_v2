@@ -163,6 +163,11 @@
         "type": "shopify://apps/sami-b2b-lock/blocks/app-embed/8d86a3b4-97b3-44ab-adc1-ec01c5a89da9",
         "disabled": false,
         "settings": {}
+      },
+      "14824862318023893024": {
+        "type": "shopify://apps/lockpro/blocks/star_rating/0b688959-65fa-46c1-b806-91e180306d46",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
