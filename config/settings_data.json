@@ -166,7 +166,7 @@
       },
       "14824862318023893024": {
         "type": "shopify://apps/lockpro/blocks/star_rating/0b688959-65fa-46c1-b806-91e180306d46",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
