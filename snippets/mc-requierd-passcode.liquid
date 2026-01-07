@@ -1,0 +1,964 @@
+{% assign content_restriction = content_restriction | default: '0' %}
+{% assign remove_pages = "login,register,404,reset_password" | split: ',' %}
+{% unless remove_pages contains template.name %}
+<style>
+.mc-mainDiv {
+    visibility: visible !important;
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999999999999999 !important;
+    background-color: #ffffff !important;
+}
+
+.mc-cardStyle {
+    width: 500px;
+    height: 390px;
+    border-color: white;
+    background: #fafafa;
+    padding: 36px 0;
+    border-radius: 4px;
+    margin: 30px 0;
+    box-shadow: 0px 0 2px 0 rgba(0, 0, 0, 0.25);
+    overflow: auto;
+}
+
+.mc-cardStyle-2 {
+    width: 500px;
+    height: 390px;
+    border-color: white;
+    background: #fafafa;
+    padding: 36px 0;
+    border-radius: 4px;
+    margin: 30px 0;
+    box-shadow: 0px 0 2px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+#mc-passcodelogo {
+    max-height: {{key}};
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-formTitle {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #000000;
+    text-align: center;
+    font-size: 18px;
+}
+
+.mc-inputLabel {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 6px;
+    margin-top: 24px;
+}
+
+.mc-inputDiv {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.mc-passcode-input {
+    height: 40px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    border: solid 1px #ccc;
+    padding: 0 11px;
+}
+
+.mc-passcode-input:disabled {
+    cursor: not-allowed;
+    border: solid 1px #eee;
+}
+
+.mc-buttonWrapper {
+    margin-top: 40px;
+}
+
+.mc-submitButton {
+    width: 175px;
+    height: 40px;
+    margin: auto;
+    display: block;
+    color: #fff;
+    background-color: #23222a;
+    border-color: #000000;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.mc-backButton {
+    position: absolute;
+    box-shadow: none;
+    font-weight: 500;
+    top: 84% !important;
+    left: 90px !important;
+    border-radius: 3px !important;
+    cursor: pointer !important;
+    font-size: 42px;
+}
+
+.mc-submitButton:disabled {
+    border: 1px solid #cccccc;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+.mc-logo {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+}
+
+.mc-logo-pre {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+
+.extra {
+    padding: 6px;
+}
+</style>
+
+<div class="mc-mainDiv" id="mc-mainDiv">
+    <div class="" id="mc-backButton">
+        <a class="mc-backButton" onclick="history.back()">⇤</a>
+    </div>
+
+    <!-- Restriction -->
+    <div id="restrict_type">
+        <h2 id="message_restriction"></h2>
+    </div>
+
+    <div class="mc-cardStyle" id="passcode_type">
+        <form action="" method="post" name="mc-passcode-form" id="mc-passcode-form">
+            <h2 class="mc-formTitle">Title</h2>
+
+            <div class="mc-inputDiv">
+                <label class="mc-inputLabel" for="mc-passcode-input">
+                    Password Title
+                </label>
+                <input type="password" id="mc-passcode-input" name="mc-password" class="mc-passcode-input" required autofocus />
+                <span class="mc-passcode-error" id="mc-passcode-error"></span>
+            </div>
+
+            <div class="mc-buttonWrapper">
+                <button type="submit" id="mc-passcode-submit" class="mc-submitButton">
+                    <span>Continue</span>
+                </button>
+            </div>
+
+            <div class="extra"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+const element = document.querySelector("#restrict_type");
+
+const MC_MAIN_DIV_HTML = document.getElementById("mc-mainDiv").innerHTML;
+let MC_LOCK_DATA;
+let MC_C_COUNTRY_NAME;
+const mc_lock_all_product_with_collection = "{{ mc_lock_all_product_with_collection }}" === "true";
+const MC_MAIN_PASSCODE_FORM_HTML = document.getElementById("mc-passcode-form").innerHTML;
+const MC_EXCLUDE_PAGE_PASSCODE = "login,register,404,reset_password";
+
+const MC_OBSERVER = new MutationObserver(function() {
+    if (document.getElementById("mc-mainDiv").style.display === "none") {
+        document.getElementById("mc-mainDiv").style.setProperty("display", "flex", "important");
+    }
+    if (document.getElementById("mc-mainDiv").style.visibility !== "visible") {
+        document.getElementById("mc-mainDiv").style.setProperty("visibility", "visible", "important");
+    }
+    if (document.getElementById("mc-mainDiv").classList.contains("__web-inspector-hide-shortcut__")) {
+        document.getElementById("mc-mainDiv").classList.remove("__web-inspector-hide-shortcut__");
+    }
+});
+
+const MC_CONFIG_OBSERVER = {
+    attributeFilter: ["class", "style"],
+    attributes: true
+
+};
+
+function mcGetProductCollections(isObj = false) {
+    let productCollections = "";
+    {% if template.name == "product" %}
+    {% for collection in product.collections %}
+    productCollections += "{{ collection.id }}";
+    {% if forloop.last == false %}
+    productCollections += ",";
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    if (isObj) {
+        return productCollections ? productCollections.split(",") : [];
+    }
+    return productCollections;
+
+}
+
+let MC_PRODUCT_COLLECTIONS = mcGetProductCollections();
+
+function mcSetCookie(cvalue, exdays, extraInfo = {}) {
+
+    const cnameArray = getMcCookieName();
+
+    let cname;
+    if (Object.keys(extraInfo).length > 0) {
+        const { cookieId } = extraInfo;
+        if (cookieId) {
+            cname = cnameArray.find(cnameEx => cnameEx.includes(cookieId));
+        }
+    }
+
+    cname = cname || cnameArray[0];
+
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    window.location.reload();
+
+}
+
+function getMcCookieName() {
+
+    const mc_template = "{{ template.name }}";
+    const mc_product_id = "{{ product.id }}";
+    const mc_collection_id = "{{ collection.id }}";
+    const mc_page_id = "{{ page.id }}";
+    const mc_customer_id = "{{ customer.id }}";
+
+    if (mc_template === "product") {
+        const productCollections = mcGetProductCollections(true);
+        let productCnames = [`mc-login-${mc_template}-${mc_product_id}`];
+        if (productCollections) {
+            productCollections.forEach(collect => {
+                productCnames.push(`mc-login-collection-${collect}`);
+            });
+        }
+
+        return productCnames;
+    } else if (mc_template === "collection") {
+        return [`mc-login-${mc_template}-${mc_collection_id}`];
+    } else if (mc_page_id) {
+        return [`mc-login-${mc_template}-${mc_page_id}`];
+    }
+    return [`mc-login-${mc_template}-all`];
+}
+
+function mcGetCookie() {
+    const cnameArray = getMcCookieName();
+    let cookieValue;
+    cnameArray.forEach(cname => {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let c of ca) {
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                cookieValue = c.substring(name.length, c.length);
+            }
+        }
+    });
+    return cookieValue;
+}
+
+function onMcFormSubmit(event) {
+    
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const mc_template = "{{ template.name }}";
+    const mc_product_id = "{{ product.id }}";
+    const mc_collection_id = "{{ collection.id }}";
+    const mc_page_id = "{{ page.id }}";
+    const mc_customer_id = "{{ customer.id }}";
+    const mc_country = "{{ countryname }}";
+    let mc_customer_tags = "";
+    {% for tag in customer.tags %}
+    {% if forloop.last %}
+    mc_customer_tags += "{{ tag }}";
+    {% else %}
+    mc_customer_tags += "{{ tag }},";
+    {% endif %}
+    {% endfor %}
+    
+    const mcPasscode = document.getElementById("mc-passcode-input").value;
+    const errorNode = document.getElementById("mc-passcode-error");
+    
+    if (!mcPasscode) {
+        errorNode.innerHTML = "{{ mc_required_login_passcode_required_text }}";
+    } else {
+        errorNode.innerHTML = "";
+        fetch('https://forcelogin.magecomp.net/api/passcode-check', {
+            method: "POST",
+            body: JSON.stringify({
+                passcode: mcPasscode,
+                shop: "{{ shop.permanent_domain }}",
+                product_id: mc_product_id,
+                collection_id: mc_collection_id,
+                page_id: mc_page_id,
+                customer_id: mc_customer_id,
+                customer_tags: mc_customer_tags,
+                template: mc_template,
+                country: MC_C_COUNTRY_NAME,
+                product_collections: mcGetProductCollections(true),
+                  current_path: window.location.pathname.replace(/^\/|\/$/g, ""), 
+            }),
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(res => {
+            if (res.status === 1) {
+                let cookieId = res.data?.data?.cookieId;
+                mcSetCookie(mcGenerateString(), 1, { cookieId });
+            } else {
+                errorNode.innerHTML = res.data.error;
+            }
+        })
+        .catch(e => console.error(e));
+    }
+}
+
+function mcGenerateString() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '_';
+    const charactersLength = characters.length;
+    for (let i = 0; i < 32; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+function isTodayInSelectedDays(selected_days) {
+  if (!selected_days || typeof selected_days !== 'string') return false;
+
+  const today = new Date();
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+
+  const currentDay = days[today.getDay()];
+
+  const selectedDaysArray = selected_days.split(',').map(day => day.trim());
+  return selectedDaysArray.includes(currentDay);
+}
+
+console.log(isTodayInSelectedDays()); 
+
+function isDateInRange(startDate, endDate) {
+    
+    // Get current UTC date
+    const now = new Date();
+    const currentDate = new Date(Date.UTC(
+        now.getUTCFullYear(),
+        now.getUTCMonth(),
+        now.getUTCDate(),
+        now.getUTCHours(),
+        now.getUTCMinutes(),
+        now.getUTCSeconds()
+    ));
+
+    // Parse startDate and endDate as UTC
+    // Expected format: "YYYY-MM-DD HH:MM:SS"
+    const startParts = startDate.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/);
+    const endParts = endDate.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/);
+
+    if (!startParts || !endParts) {
+        console.log("❌ [Date Check] Invalid date format for start or end date:", startDate, endDate);
+        return true; // Allow access if date format is invalid to avoid blocking due to bad data
+    }
+
+    const start = new Date(Date.UTC(
+        parseInt(startParts[1]), // year
+        parseInt(startParts[2]) - 1, // month (0-based)
+        parseInt(startParts[3]), // day
+        parseInt(startParts[4]), // hours
+        parseInt(startParts[5]), // minutes
+        parseInt(startParts[6]) // seconds
+    ));
+
+    const end = new Date(Date.UTC(
+        parseInt(endParts[1]), // year
+        parseInt(endParts[2]) - 1, // month (0-based)
+        parseInt(endParts[3]), // day
+        parseInt(endParts[4]), // hours
+        parseInt(endParts[5]), // minutes
+        parseInt(endParts[6]) // seconds
+    ));
+
+    // Ensure dates are valid
+    if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+        console.log("❌ [Date Check] Invalid start or end date:", startDate, endDate);
+        return true; // Allow access if dates are invalid to avoid blocking due to bad data
+    }
+
+    // Check if current UTC date is within the range (inclusive)
+    const isInRange = currentDate >= start && currentDate <= end;
+    console.log("🚀 [Date Check] Current UTC Date:", currentDate.toUTCString(), "Start:", start.toUTCString(), "End:", end.toUTCString(), "In Range:", isInRange);
+    return isInRange;
+}
+
+function onMcCheckValidity() {
+
+
+    var currentCookie = mcGetCookie();
+    if (currentCookie) {
+        // console.log("✅ [Cookie Check] Valid cookie found, access granted.");
+        return true;
+    }
+
+    const mc_template = "{{ template.name }}";
+    const mc_is_login_coustomer = "{{ customer.id }}" ? true : false;
+    var mc_target_id = null;
+
+    switch (mc_template) {
+        case 'product':
+            mc_target_id = "{{ product.id }}";
+            break;
+        case 'collection':
+            mc_target_id = "{{ collection.id }}";
+            break;
+        case 'page':
+            mc_target_id = "{{ page.id }}";
+            break;
+        case 'blog':
+            mc_target_id = "{{ blog.id }}";
+            break;
+        default:
+            mc_target_id = null;
+            break;
+    }
+
+    let mc_required_login_json_data;
+
+    try {
+        mc_required_login_json_data = JSON.parse(`{{ mc_required_login_json_data }}`);
+        
+    } catch (e) {
+        return true;
+    }
+
+    for (let index = 0; index < mc_required_login_json_data.length; index++) {
+
+        const entry = mc_required_login_json_data[index];
+
+//---START TAG----
+
+ if (mc_is_login_coustomer) {
+            let rawEntryTags = entry.customer_tages ?? entry.customer_tags ?? "";
+
+            if (rawEntryTags) {
+                // Normalize tags (string → array)
+                let entryTags = Array.isArray(rawEntryTags)
+                    ? rawEntryTags.map(t => String(t).trim())
+                    : String(rawEntryTags).split(',').map(t => t.trim());
+
+                // Build logged-in customer's tag array
+                const mc_customer_tags = [
+                    {% for tag in customer.tags %}
+                    "{{ tag }}"{% if forloop.last == false %}, {% endif %}
+                    {% endfor %}
+                ];
+            console.log(mc_customer_tags);
+
+                // match?
+                const hasMatch = mc_customer_tags.some(tag =>
+                    entryTags.includes(String(tag).trim())
+                );
+
+                if (hasMatch) {
+                    console.log("✔ TAG BYPASS — Customer tag matched:", entryTags);
+                    return true; // ALLOW ACCESS, skip all restrictions
+                }
+            }
+        }
+//---END TAG----
+
+
+  // Step 0: Check if date-based restriction is enabled and if current date is within range
+        if (entry.is_date_between_enable === 1 && entry.start_date && entry.end_date) {
+            if (!isDateInRange(entry.start_date, entry.end_date)) {
+                continue; 
+            } else {
+            
+            }
+        }
+         if (entry.isRepeatePasscode === 1) {
+  if (!isTodayInSelectedDays(entry.selected_days)) {
+    continue; // skip this one if today is not in selected days
+  }
+  else {
+            
+            }
+
+  // today is allowed — proceed with logic
+}
+    const currentUrl = window.location.pathname;
+    console.log("🚀 ~ onMcCheckValidity ~ currentUrl:", currentUrl)
+    // const isAllowed = allowedUrls.includes(currentUrl);
+
+
+        // Step 1: Collection-level Lock Check for Products
+        if (mc_template === "product" && mc_lock_all_product_with_collection && entry.collection_restrict?.length > 0) {
+            const productCollections = mcGetProductCollections(true);
+           
+            const isCollectionExcluded = entry.isCollectionExcluded === 1 || entry.isCollectionExcluded === true;
+            const isCollectionInList = productCollections.some(collect => entry.collection_restrict.map(String).includes(String(collect)));
+         
+            if (isCollectionExcluded) {
+               
+                if (isCollectionInList) {
+                   
+                    continue; // Skip to next restriction entry
+                } else {
+                   
+                    MC_LOCK_DATA = {
+                        is_restricted_by_content: entry.is_restricted_by_content,
+                        is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                        is_only_guest: entry.is_only_guest,
+                        contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+                    };
+                    
+
+                    if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                        
+                        return true;
+                    }
+
+                    let lockData = setMcLockData(MC_LOCK_DATA);
+                  
+                    return !lockData;
+                }
+            } else {
+                // If isCollectionExcluded is false, restrict products in collection_restrict
+                if (isCollectionInList) {
+                    
+                    MC_LOCK_DATA = {
+                        is_restricted_by_content: entry.is_restricted_by_content,
+                        is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                        is_only_guest: entry.is_only_guest,
+                        contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+                    };
+
+                    
+                    if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                       
+                        return true;
+                    }
+
+                    let lockData = setMcLockData(MC_LOCK_DATA);
+                   
+                    return !lockData;
+                }
+            }
+        }
+
+        // Step 2: Collection-level Restriction Check
+        if (mc_template === "collection" && entry.collection_restrict?.length > 0) {
+            const isCollectionExcluded = entry.isCollectionExcluded === 1 || entry.isCollectionExcluded === true;
+            const isCollectionInList = entry.collection_restrict.map(String).includes(String(mc_target_id));
+
+        
+            if (isCollectionExcluded) {
+               
+                if (isCollectionInList) {
+                    
+                    continue; // Skip to next restriction entry
+
+                } else {
+                   
+                    MC_LOCK_DATA = {
+                        is_restricted_by_content: entry.is_restricted_by_content,
+                        is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                        is_only_guest: entry.is_only_guest,
+                        contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+                    };
+
+                    if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                        return true;
+                    }
+
+                    let lockData = setMcLockData(MC_LOCK_DATA);
+                    return !lockData;
+                }
+
+            } else {
+                // If isCollectionExcluded is false, restrict collections in collection_restrict
+                if (isCollectionInList) {
+                    MC_LOCK_DATA = {
+                        is_restricted_by_content: entry.is_restricted_by_content,
+                        is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                        is_only_guest: entry.is_only_guest,
+                        contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+                    };
+
+
+                    if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                        return true;
+                    }
+
+                    let lockData = setMcLockData(MC_LOCK_DATA);
+                    return !lockData;
+                }
+            }
+        }
+
+        // Step 3: Product-specific Restriction Check
+        if (entry.hasOwnProperty('product_restrict') && mc_template === "product") {
+            const isExcluded = entry.isProductExcluded === 1 || entry.isProductExcluded === true;
+            const isProductInList = entry.product_restrict.map(String).includes(String(mc_target_id));
+          
+
+            if (isExcluded) {
+                // If isProductExcluded is true, exclude products in product_restrict (allow them)
+                if (isProductInList) {
+                    
+                    continue; // Skip to next restriction entry
+                } else { 
+                    // Restrict all other products
+                   
+                    MC_LOCK_DATA = {
+                        is_restricted_by_content: entry.is_restricted_by_content,
+                        is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                        is_only_guest: entry.is_only_guest,
+                        contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+                    };
+
+                   
+
+                    if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                        return true;
+                    }
+
+                    let lockData = setMcLockData(MC_LOCK_DATA);
+                    return !lockData;
+                }
+
+            } else {
+                // If isProductExcluded is false, restrict products in product_restrict
+                if (isProductInList) {
+                    MC_LOCK_DATA = {
+                        is_restricted_by_content: entry.is_restricted_by_content,
+                        is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                        is_only_guest: entry.is_only_guest,
+                        contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+                    };
+
+                    if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                        return true;
+                    }
+
+                    let lockData = setMcLockData(MC_LOCK_DATA);
+                    return !lockData;
+
+                }
+            }
+        }
+
+        // Step 4: General Product Restriction
+
+        if (
+            mc_template === "product" &&
+            entry.hasOwnProperty('apply_to_all_product') &&
+            entry.apply_to_all_product === 1
+        ) {
+            
+            MC_LOCK_DATA = {
+                is_restricted_by_content: entry.is_restricted_by_content,
+                is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                is_only_guest: entry.is_only_guest,
+                contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+            };
+
+
+            if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                return true;
+            }
+
+            let lockData = setMcLockData(MC_LOCK_DATA);
+            return !lockData;
+
+        }
+
+        // Step 5: Page-level Restriction 
+
+        if (
+            entry.hasOwnProperty('page_restrict') &&
+            entry.page_restrict.map(String).includes(String(mc_target_id))
+        ) { 
+        
+            MC_LOCK_DATA = {
+                is_restricted_by_content: entry.is_restricted_by_content,
+                is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                is_only_guest: entry.is_only_guest,
+                contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+            };
+
+          
+
+            if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+             
+                return true;
+            }
+
+            let lockData = setMcLockData(MC_LOCK_DATA);
+         
+            return !lockData;
+        }
+        
+            const currentPath = window.location.pathname.replace(/^\/+|\/+$/g, ''); // 'collections/all'
+
+            if (entry.isWholesite === 1) {
+                const isWebpageExcluded = entry.isWebpageExcluded === 1 || entry.isWebpageExcluded === true;
+                const isWholesite = entry.isWholesite === 1 || entry.isWholesite === true;
+
+                const normalizedExcludes = entry.pageexclude.map(path => path.replace(/^\/+|\/+$/g, ''));
+                const isCollectionInExcludeList = normalizedExcludes.includes(currentPath);
+
+
+                if (isWholesite) {
+                    if (isWebpageExcluded && isCollectionInExcludeList) {
+                       
+                        return true; // or continue; inside a loop
+                    }
+
+                    // Apply restriction
+                    MC_LOCK_DATA = {
+                        is_restricted_by_content: entry.is_restricted_by_content,
+                        is_restricted_by_passcode: entry.is_restricted_by_passcode,
+                        is_only_guest: entry.is_only_guest,
+                        contant:entry.contant,
+                        customer_tages:entry.customer_tages,
+
+                    };
+
+                    if (mc_is_login_coustomer && MC_LOCK_DATA.is_only_guest) {
+                       
+                        return true;
+                    }
+
+                    let lockData = setMcLockData(MC_LOCK_DATA);
+                    console.log("🚀 ~ onMcCheckValidity ~ lockData:", lockData)
+                   
+                    return !lockData;
+                }
+            }
+    }
+
+    // Step 6: No Restrictions Found
+   
+    return true;
+}
+
+function setMcLockData(targetData) {
+
+    console.log("🚀 ~ setMcLockData ~ targetData:", targetData);
+
+    // Normalize passcode_countries to an array
+    let passcodeCountries = [];
+    if (typeof targetData.passcode_countries === 'string') {
+        passcodeCountries = targetData.passcode_countries.split(',').map(country => country.trim());
+    } else if (Array.isArray(targetData.passcode_countries)) {
+        passcodeCountries = targetData.passcode_countries;
+    }
+
+    // Check if the user's country is allowed (empty passcode_countries means all countries are allowed)
+    let register = passcodeCountries.length === 0 || (MC_C_COUNTRY_NAME && passcodeCountries.includes(MC_C_COUNTRY_NAME));
+    if (!register) {
+        // If country is not allowed, hide both passcode form and content
+        if (document.getElementById("mc-passcode-form")) {
+            document.getElementById("mc-passcode-form").style.display = "none";
+        }
+
+        if (document.getElementById("passcode_type")) {
+            document.getElementById("passcode_type").style.display = "none";
+        }
+
+        if (document.getElementById("message_restriction")) {
+            document.getElementById("message_restriction").innerHTML = "";
+            document.getElementById("message_restriction").style.display = "none";
+        }
+        return false;
+    }
+
+    if (targetData?.is_restricted_by_content) {
+        // Show content restriction message
+        if (document.getElementById("message_restriction")) {
+            document.getElementById("message_restriction").innerHTML = targetData?.contant || "";
+            document.getElementById("message_restriction").style.display = "block";
+        }
+
+        // Hide passcode form
+        if (document.getElementById("mc-passcode-form")) {
+            document.getElementById("mc-passcode-form").style.display = "none";
+            document.getElementById("mc-passcode-form").innerHTML = "";
+        }
+
+        if (document.getElementById("passcode_type")) {
+            document.getElementById("passcode_type").style.display = "none";
+        }
+
+    } else if (targetData?.is_restricted_by_passcode) {
+        // Show passcode form only if no content restriction or bypassed
+        if (document.getElementById("mc-passcode-form")) {
+            document.getElementById("mc-passcode-form").style.display = "block";
+        }
+
+        if (document.getElementById("passcode_type")) {
+            document.getElementById("passcode_type").style.display = "block";
+        }
+
+        // Hide content restriction message
+        if (document.getElementById("message_restriction")) {
+            document.getElementById("message_restriction").innerHTML = "";
+            document.getElementById("message_restriction").style.display = "none";
+        }
+    } else {
+        // No restrictions apply, hide both
+        if (document.getElementById("mc-passcode-form")) {
+            document.getElementById("mc-passcode-form").style.display = "none";
+        }
+        if (document.getElementById("passcode_type")) {
+            document.getElementById("passcode_type").style.display = "none";
+        }
+        if (document.getElementById("message_restriction")) {
+            document.getElementById("message_restriction").innerHTML = "";
+            document.getElementById("message_restriction").style.display = "none";
+        }
+    }
+    return register;
+}
+function onMcNodeRemove(event) {
+    addMcPasscodeFormToBody();
+}
+
+function addMcPasscodeFormToBody() {
+    MC_OBSERVER.disconnect();
+    document.getElementById("mc-mainDiv").removeEventListener("DOMNodeRemoved", onMcNodeRemove);
+    document.getElementById("mc-mainDiv").remove();
+    
+    const newDiv = document.createElement('div');
+    newDiv.style.display = "block !important";
+    newDiv.setAttribute("id", "mc-mainDiv");
+    newDiv.setAttribute("class", "mc-mainDiv");
+    newDiv.innerHTML = MC_MAIN_DIV_HTML;
+    document.body.prepend(newDiv);
+    subscribeMcLoginEvent();
+}
+
+function subscribeMcLoginEvent() {
+    MC_OBSERVER.disconnect();
+    if (!onMcCheckValidity()) {
+        document.getElementById("mc-mainDiv").style.setProperty("display", "flex", "important");
+        document.getElementById("mc-mainDiv").style.setProperty("visibility", "visible", "important");
+        MC_OBSERVER.observe(document.getElementById("mc-mainDiv"), MC_CONFIG_OBSERVER);
+        document.getElementById("mc-passcode-submit")?.addEventListener("click", onMcFormSubmit);
+        document.getElementById("mc-passcode-form")?.addEventListener("submit", onMcFormSubmit);
+        document.getElementById("mc-mainDiv").addEventListener("DOMNodeRemoved", onMcNodeRemove);
+    } else {
+        document.getElementById("mc-mainDiv").style.setProperty("display", "none", "important");
+        document.getElementById("mc-mainDiv").style.setProperty("visibility", "hidden", "important");
+    }
+    
+    if (!MC_C_COUNTRY_NAME) {
+        fetch("https://ipapi.co/json/")
+            .then(response => response.json())
+            .then(data => {
+                MC_C_COUNTRY_NAME = data.country;
+                subscribeMcLoginEvent();
+            });
+    }
+}
+
+subscribeMcLoginEvent();
+
+const mc_content_restriction = "{{content_restriction}}";
+console.log("🚀 ~ mc_content_restriction:", mc_content_restriction);
+</script>
+
+<!-- Content Restriction -->
+{% if content_restriction == '1' %}
+<section id="content-protection-section"></section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const disable_right_click = true;
+    const disable_copy_paste = true;
+    const disable_keyboard_shortcuts = true;
+    const disable_drag_drop = true;
+
+    if (disable_right_click) {
+        document.addEventListener("contextmenu", event => event.preventDefault());
+    }
+
+    if (disable_copy_paste) {
+        document.addEventListener("copy", event => event.preventDefault());
+        document.addEventListener("cut", event => event.preventDefault());
+        document.addEventListener("paste", event => event.preventDefault());
+    }
+
+    if (disable_keyboard_shortcuts) {
+        document.addEventListener("keydown", event => {
+            if (
+                (event.ctrlKey && ["u", "U", "c", "C", "v", "V", "i", "I", "j", "J"].includes(event.key)) ||
+                (event.ctrlKey && event.shiftKey && ["i", "I", "j", "J"].includes(event.key)) ||
+                (event.metaKey && event.altKey && ["i", "I", "j", "J"].includes(event.key)) ||
+                event.key === "F12"
+            ) {
+                event.preventDefault();
+            }
+        });
+    }
+
+    if (disable_drag_drop) {
+        document.addEventListener("dragstart", event => event.preventDefault());
+    }
+});
+</script>
+{% endif %}
+{% endunless %}
+
