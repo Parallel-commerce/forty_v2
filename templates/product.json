@@ -48,6 +48,7 @@
         },
         "loyalty_points_simple_3XmmHD": {
           "type": "loyalty_points_simple",
+          "disabled": true,
           "settings": {
             "show_loyalty_points": true,
             "points_per_pound": 10,
