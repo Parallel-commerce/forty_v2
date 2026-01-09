@@ -28,6 +28,16 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
+        "slide_mWUeb3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/FORTY_SALE26_BANNERDESKTOP.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/FORTY_SALE26_BANNERMOB.jpg",
+            "mobile_video_url": "",
+            "link": ""
+          }
+        },
         "slide_9DiFxQ": {
           "type": "slide",
           "settings": {
@@ -64,6 +74,7 @@
         }
       },
       "block_order": [
+        "slide_mWUeb3",
         "slide_9DiFxQ",
         "slide_a6UPCy",
         "slide_7QTqrB",
