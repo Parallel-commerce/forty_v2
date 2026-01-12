@@ -136,7 +136,7 @@
       }
     },
     "product_features_GBVakW": {
-      "type": "product-features",
+      "type": "parallel-product-features",
       "blocks": {
         "feature_CyD7Ky": {
           "type": "feature",

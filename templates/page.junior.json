@@ -18,7 +18,7 @@
       }
     },
     "header_banner_parallel_bekU87": {
-      "type": "header-banner-parallel",
+      "type": "parallel-header-banner",
       "name": "Header Banner",
       "settings": {
         "banner_link": "",
