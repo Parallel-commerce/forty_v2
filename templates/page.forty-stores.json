@@ -128,51 +128,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "image_with_text_hfEHxB": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_bXxRLx": {
-          "type": "heading",
-          "settings": {
-            "heading": "GLASGOW SILVERBURN",
-            "heading_size": "h2"
-          }
-        },
-        "text_ApcgUK": {
-          "type": "text",
-          "settings": {
-            "text": "<p><a href=\"https://maps.app.goo.gl/tzt47qmdHV43ecsu7\" target=\"_blank\" title=\"https://maps.app.goo.gl/tzt47qmdHV43ecsu7\">Unit H1A<br/>Silverburn Shopping<br/>Centre<br/>Glasgow <br/>G53 6AG<br/><br/></a><a href=\"tel:+44 141 739 1090\" title=\"tel:+44 141 739 1090\">+44 141 739 1090</a></p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_bXxRLx",
-        "text_ApcgUK"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/046.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
     "image_banner_f9jbaJ",
     "image_with_text_iYHVx4",
-    "image_with_text_keKk3N",
-    "image_with_text_hfEHxB"
+    "image_with_text_keKk3N"
   ]
 }
