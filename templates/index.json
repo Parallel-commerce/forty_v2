@@ -473,16 +473,6 @@
     "multicolumn_mfJ7db": {
       "type": "multicolumn",
       "blocks": {
-        "column_rhUM6W": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/046.jpg",
-            "title": "Silverburn",
-            "text": "",
-            "link_label": "Get Directions",
-            "link": "https://www.google.com/maps/dir//Silverburn,+Barrhead+Rd,+Glasgow+G53+6AG,+United+Kingdom/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x48884884761c9f83:0xe28ba00b39e9cd65?sa=X&ved=1t:57443&ictx=111"
-          }
-        },
         "column_eHQiPd": {
           "type": "column",
           "settings": {
@@ -505,7 +495,6 @@
         }
       },
       "block_order": [
-        "column_rhUM6W",
         "column_eHQiPd",
         "column_P9JimD"
       ],
@@ -514,7 +503,7 @@
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "column_alignment": "left",
         "background_style": "none",
         "button_label": "More Information",
