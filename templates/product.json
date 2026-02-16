@@ -166,7 +166,7 @@
             "icon_color": "#000000",
             "icon_size": "small",
             "title": "",
-            "subtitle": "Free Shipping for Cyber Monday",
+            "subtitle": "Free Shipping over £90",
             "description": ""
           }
         },
@@ -234,21 +234,11 @@
             "row_content": "",
             "page": "delivery-information"
           }
-        },
-        "collapsible_row_awtCJy": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "CHRISTMAS RETURNS",
-            "icon": "none",
-            "row_content": "",
-            "page": "christmas-returns"
-          }
         }
       },
       "block_order": [
         "size_guide_dzMAth",
-        "collapsible_row_qQrbrd",
-        "collapsible_row_awtCJy"
+        "collapsible_row_qQrbrd"
       ],
       "settings": {
         "caption": "",
