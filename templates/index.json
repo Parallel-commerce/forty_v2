@@ -50,6 +50,7 @@
         },
         "slide_a6UPCy": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
             "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
@@ -66,6 +67,7 @@
         },
         "slide_3eRt8P": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
             "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
