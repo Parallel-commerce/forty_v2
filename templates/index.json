@@ -332,6 +332,7 @@
     },
     "parallel_banner_single_Py4gLe": {
       "type": "parallel-banner-single",
+      "disabled": true,
       "name": "Parallel Banner Single",
       "settings": {
         "image": "shopify://shop_images/ESSENTIALS_WIDE.jpg",
@@ -550,6 +551,58 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "parallel_shop_the_look_QVzTdD": {
+      "type": "parallel-shop-the-look",
+      "blocks": {
+        "product_dot_eNY9Hn": {
+          "type": "product_dot",
+          "settings": {
+            "product": "murgatroyd-beanie-black",
+            "position_x": 43,
+            "position_y": 8
+          }
+        },
+        "product_dot_ExnJmY": {
+          "type": "product_dot",
+          "settings": {
+            "product": "murgatroyd-felt-applique-bomber-black",
+            "position_x": 54,
+            "position_y": 50
+          }
+        },
+        "product_dot_WEaVdi": {
+          "type": "product_dot",
+          "settings": {
+            "product": "murgatroyd-felt-applique-hoodie-black",
+            "position_x": 38,
+            "position_y": 70
+          }
+        },
+        "product_dot_djCKYc": {
+          "type": "product_dot",
+          "settings": {
+            "product": "tech-murgatroyd-open-hem-jogger-black-copy",
+            "position_x": 70,
+            "position_y": 92
+          }
+        }
+      },
+      "block_order": [
+        "product_dot_eNY9Hn",
+        "product_dot_ExnJmY",
+        "product_dot_WEaVdi",
+        "product_dot_djCKYc"
+      ],
+      "name": "|| Shop The Look",
+      "settings": {
+        "heading": "The Murgatroyd Collection",
+        "button_text": "View All Murgatroyd",
+        "button_url": "shopify://collections/murgatroyd",
+        "look_image": "shopify://shop_images/FORTY_-_ECOM_LIFESTYLE_SS261359.jpg",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -560,6 +613,7 @@
     "featured_collection_L6Y9r7",
     "featured_collection_37qppx",
     "parallel_shop_the_look_9cG8nx",
+    "parallel_shop_the_look_QVzTdD",
     "image_banner_CRDUet",
     "parallel_banner_single_Py4gLe",
     "featured_collection_jqyTmq",
