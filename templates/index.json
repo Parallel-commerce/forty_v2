@@ -138,7 +138,7 @@
             "icon_color": "#000000",
             "icon_size": "small",
             "title": "",
-            "subtitle": "Free Delivery over £90",
+            "subtitle": "Free Delivery over £50",
             "description": ""
           }
         },
@@ -285,6 +285,58 @@
         "button_text": "Shop All Sets",
         "button_url": "shopify://collections/sets",
         "look_image": "shopify://shop_images/HiRes--6.jpg",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "parallel_shop_the_look_QVzTdD": {
+      "type": "parallel-shop-the-look",
+      "blocks": {
+        "product_dot_eNY9Hn": {
+          "type": "product_dot",
+          "settings": {
+            "product": "murgatroyd-beanie-black",
+            "position_x": 43,
+            "position_y": 8
+          }
+        },
+        "product_dot_ExnJmY": {
+          "type": "product_dot",
+          "settings": {
+            "product": "murgatroyd-felt-applique-bomber-black",
+            "position_x": 54,
+            "position_y": 50
+          }
+        },
+        "product_dot_WEaVdi": {
+          "type": "product_dot",
+          "settings": {
+            "product": "murgatroyd-felt-applique-hoodie-black",
+            "position_x": 38,
+            "position_y": 70
+          }
+        },
+        "product_dot_djCKYc": {
+          "type": "product_dot",
+          "settings": {
+            "product": "tech-murgatroyd-open-hem-jogger-black-copy",
+            "position_x": 70,
+            "position_y": 92
+          }
+        }
+      },
+      "block_order": [
+        "product_dot_eNY9Hn",
+        "product_dot_ExnJmY",
+        "product_dot_WEaVdi",
+        "product_dot_djCKYc"
+      ],
+      "name": "|| Shop The Look",
+      "settings": {
+        "heading": "The Murgatroyd Collection",
+        "button_text": "View All Murgatroyd",
+        "button_url": "shopify://collections/murgatroyd",
+        "look_image": "shopify://shop_images/FORTY_-_ECOM_LIFESTYLE_SS261359.jpg",
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -548,58 +600,6 @@
       "settings": {
         "color_scheme": "background-1",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "parallel_shop_the_look_QVzTdD": {
-      "type": "parallel-shop-the-look",
-      "blocks": {
-        "product_dot_eNY9Hn": {
-          "type": "product_dot",
-          "settings": {
-            "product": "murgatroyd-beanie-black",
-            "position_x": 43,
-            "position_y": 8
-          }
-        },
-        "product_dot_ExnJmY": {
-          "type": "product_dot",
-          "settings": {
-            "product": "murgatroyd-felt-applique-bomber-black",
-            "position_x": 54,
-            "position_y": 50
-          }
-        },
-        "product_dot_WEaVdi": {
-          "type": "product_dot",
-          "settings": {
-            "product": "murgatroyd-felt-applique-hoodie-black",
-            "position_x": 38,
-            "position_y": 70
-          }
-        },
-        "product_dot_djCKYc": {
-          "type": "product_dot",
-          "settings": {
-            "product": "tech-murgatroyd-open-hem-jogger-black-copy",
-            "position_x": 70,
-            "position_y": 92
-          }
-        }
-      },
-      "block_order": [
-        "product_dot_eNY9Hn",
-        "product_dot_ExnJmY",
-        "product_dot_WEaVdi",
-        "product_dot_djCKYc"
-      ],
-      "name": "|| Shop The Look",
-      "settings": {
-        "heading": "The Murgatroyd Collection",
-        "button_text": "View All Murgatroyd",
-        "button_url": "shopify://collections/murgatroyd",
-        "look_image": "shopify://shop_images/FORTY_-_ECOM_LIFESTYLE_SS261359.jpg",
         "padding_top": 40,
         "padding_bottom": 52
       }
