@@ -25,6 +25,32 @@
   margin-bottom: 24px;
 }
 
+.shipping-bar-loyalty {
+  margin-top: 0.75rem;
+  padding: 6px 12px;
+  background-color: #000;
+  border: 2px solid #ece95e;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.shipping-bar-loyalty strong {
+  color: #ece95e;
+}
+
+.shipping-bar-loyalty a {
+  color: #ece95e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.shipping-bar-loyalty a:hover {
+  text-decoration: underline;
+}
+
 /* Debug styles (commented out in Liquid) */
 .shipping-bar-debug {
   font-size: 0.875rem;

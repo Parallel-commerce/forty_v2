@@ -35,6 +35,21 @@ class ShippingBar {
 
     shippingBarProgress.style.width = `${percentage}%`;
 
+    // Updating loyalty points display
+    // Rate: £1 = 10 points, 100 points = £1
+    // cartTotal is in pence; points = cartTotal / 10; points value in pence = points (since 100pts = 100p = £1)
+    const loyaltyEl = shippingBar.querySelector('#shipping-bar-loyalty');
+    if (loyaltyEl) {
+      if (cartTotal > 0) {
+        const points = Math.round(cartTotal / 10);
+        const pointsValueFormatted = this.formatMoney(points, shippingBar.dataset.moneyFormat);
+        loyaltyEl.innerHTML = `You'll earn <strong>${pointsValueFormatted} worth of points</strong> with <a href="/pages/forty-loyalty">Forty Loyalty</a>`;
+        loyaltyEl.removeAttribute('hidden');
+      } else {
+        loyaltyEl.setAttribute('hidden', '');
+      }
+    }
+
   }
 
   hideShippingBar() {
@@ -98,7 +113,6 @@ class ShippingBar {
     return fetch('/cart.js')
         .then(response => response.json())
         .then(cart => {
-            console.log("Cart total (in cents):", cart.total_price); // DEBUGGING
             return cart.total_price; 
         })
         .catch(error => {
