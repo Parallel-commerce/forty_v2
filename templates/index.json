@@ -82,6 +82,7 @@
         "slide_7QTqrB",
         "slide_3eRt8P"
       ],
+      "disabled": true,
       "name": "Image Slider",
       "settings": {
         "height": "large",
@@ -100,18 +101,17 @@
         "slide_xCCBjA": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BF25_BANNERDESKTOP.jpg",
+            "image": "shopify://shop_images/FORTY_SALE26_BANNERDESKTOPNEW.jpg",
             "video_url": "",
-            "mobile_image": "shopify://shop_images/BF25_BANNERDESKTOP.jpg",
+            "mobile_image": "shopify://shop_images/FORTY_SALE26_BANNERMOBNEW.jpg",
             "mobile_video_url": "",
-            "link": "shopify://collections/lifestyle"
+            "link": "shopify://collections/all-sale"
           }
         }
       },
       "block_order": [
         "slide_xCCBjA"
       ],
-      "disabled": true,
       "name": "Black Friday Banner",
       "settings": {
         "height": "large",
