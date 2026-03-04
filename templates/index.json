@@ -28,6 +28,16 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
+        "slide_a6UPCy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/FORTY_SALE26_BANNERDESKTOPNEW.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
+            "mobile_image": "shopify://shop_images/FORTY_SALE26_BANNERMOBNEW.jpg",
+            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
+            "link": "shopify://collections/all-sale"
+          }
+        },
         "slide_mWUeb3": {
           "type": "slide",
           "settings": {
@@ -46,15 +56,6 @@
             "mobile_image": "shopify://shop_images/YONJUU_BANNER_MOB.jpg",
             "mobile_video_url": "",
             "link": "shopify://collections/yonjuu"
-          }
-        },
-        "slide_a6UPCy": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/2503a53fc8634e2690fb2030cbd27ee2.mp4",
-            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/23a8a1a7e2fd4cb2beaa20fbd60af4f4.mp4",
-            "link": "shopify://collections/10th-year-black-edition"
           }
         },
         "slide_7QTqrB": {
@@ -76,13 +77,12 @@
         }
       },
       "block_order": [
+        "slide_a6UPCy",
         "slide_mWUeb3",
         "slide_9DiFxQ",
-        "slide_a6UPCy",
         "slide_7QTqrB",
         "slide_3eRt8P"
       ],
-      "disabled": true,
       "name": "Image Slider",
       "settings": {
         "height": "large",
@@ -112,6 +112,7 @@
       "block_order": [
         "slide_xCCBjA"
       ],
+      "disabled": true,
       "name": "Black Friday Banner",
       "settings": {
         "height": "large",
