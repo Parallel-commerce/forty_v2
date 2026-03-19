@@ -2931,6 +2931,21 @@ details-disclosure > details {
   word-break: break-word;
 }
 
+.badge--custom-label {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  border-color: rgb(var(--color-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.card__badge--custom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
 .gradient {
   background: rgb(var(--color-background));
   background: var(--gradient-background);

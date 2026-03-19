@@ -1492,3 +1492,18 @@ a.product__text {
     border: none;
   }
 }
+
+.product__media-wrapper--badged {
+  position: relative;
+}
+
+.product__custom-badges {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.3rem;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}

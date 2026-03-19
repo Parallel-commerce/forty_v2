@@ -169,6 +169,14 @@
               </span>
             {%- endif -%}
           </div>
+          {%- assign custom_badges = card_product.metafields.custom.badge.value -%}
+          {%- if custom_badges != blank -%}
+            <div class="card__badge top right card__badge--custom">
+              {%- for badge_text in custom_badges -%}
+                <span class="badge badge--custom-label">{{ badge_text }}</span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
         </div>
       </div>
       <div class="card__content">
