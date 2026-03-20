@@ -1493,10 +1493,6 @@ a.product__text {
   }
 }
 
-.product__media-wrapper--badged {
-  position: relative;
-}
-
 .product__custom-badges {
   position: absolute;
   bottom: 1.3rem;

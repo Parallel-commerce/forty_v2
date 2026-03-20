@@ -125,6 +125,14 @@
         {%- endunless -%}
       {%- endfor -%}
     </ul>
+    {%- assign product_badges = product.metafields.custom.badge.value -%}
+    {%- if product_badges != blank -%}
+      <div class="product__custom-badges">
+        {%- for badge_text in product_badges -%}
+          <span class="badge badge--custom-label">{{ badge_text }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
     <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
       <button
         type="button"
