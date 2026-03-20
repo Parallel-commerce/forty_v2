@@ -1499,11 +1499,10 @@ a.product__text {
 
 .product__custom-badges {
   position: absolute;
-  top: 1.3rem;
-  right: 1.3rem;
+  bottom: 1.3rem;
+  left: 1.3rem;
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: flex-end;
 }

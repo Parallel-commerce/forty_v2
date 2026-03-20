@@ -2932,18 +2932,18 @@ details-disclosure > details {
 }
 
 .badge--custom-label {
-  background-color: rgb(var(--color-foreground));
-  color: rgb(var(--color-background));
-  border-color: rgb(var(--color-foreground));
+  background-color: #ece95e;
+  color: #000000;
+  border-color: #ece95e;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
 }
 
-.card__badge--custom {
+.card__badge--with-custom {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .gradient {

@@ -1,18 +1,7 @@
 {
   "article": [],
   "blog": [],
-  "collection": [
-    {
-      "key": "short_collection_description",
-      "namespace": "custom",
-      "name": "Short Collection Description",
-      "description": "A short, one sentence description of the collection.",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "collection": [],
   "company": [],
   "company_location": [],
   "location": [],
@@ -20,6 +9,106 @@
   "order": [],
   "page": [],
   "product": [
+    {
+      "key": "make",
+      "namespace": "custom",
+      "name": "Make",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "collection",
+      "namespace": "custom",
+      "name": "Collection",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size",
+      "namespace": "custom",
+      "name": "Size",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "per_box",
+      "namespace": "custom",
+      "name": "Pieces Per Box",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "product_material",
+      "namespace": "custom",
+      "name": "Material",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_finish",
+      "namespace": "custom",
+      "name": "Finish",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_rectified",
+      "namespace": "custom",
+      "name": "Rectified",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_installation",
+      "namespace": "custom",
+      "name": "Installation",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_aspect",
+      "namespace": "custom",
+      "name": "Aspect",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "dimensions",
+      "namespace": "custom",
+      "name": "Dimensions",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
     {
       "key": "queries",
       "namespace": "shopify--discovery--product_search_boost",
@@ -61,32 +150,22 @@
       }
     },
     {
-      "key": "rating",
-      "namespace": "reviews",
-      "name": "Product rating",
-      "description": "Average rating from customers",
-      "type": {
-        "name": "rating",
-        "category": "RATING"
-      }
-    },
-    {
-      "key": "product_size",
+      "key": "ean",
       "namespace": "custom",
-      "name": "Product size",
-      "description": "Size filter in collection page",
+      "name": "EAN",
+      "description": "",
       "type": {
-        "name": "list.single_line_text_field",
+        "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
     {
-      "key": "product_variant_name",
+      "key": "rooms",
       "namespace": "custom",
-      "name": "Product variant name",
-      "description": "Variant name displaying inside of variants section",
+      "name": "Rooms",
+      "description": "",
       "type": {
-        "name": "single_line_text_field",
+        "name": "list.single_line_text_field",
         "category": "TEXT"
       }
     },
@@ -99,126 +178,6 @@
         "name": "boolean",
         "category": "TRUE_FALSE"
       }
-    },
-    {
-      "key": "color-pattern",
-      "namespace": "shopify",
-      "name": "Color",
-      "description": "Defines the primary color or pattern, such as blue or striped",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "size",
-      "namespace": "shopify",
-      "name": "Size",
-      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "size_guide",
-      "namespace": "custom",
-      "name": "Size Guide",
-      "description": "Image of size guide for this product",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "collection_label",
-      "namespace": "custom",
-      "name": "Collection Label",
-      "description": "Example: DEFACE, Tech Pack",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "key_features_benefits",
-      "namespace": "custom",
-      "name": "Key Features & Benefits",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "fabric_care",
-      "namespace": "custom",
-      "name": "Fabric & Care",
-      "description": "",
-      "type": {
-        "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "fit",
-      "namespace": "custom",
-      "name": "Fit",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "model_sizing",
-      "namespace": "custom",
-      "name": "Model Sizing",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "waist-rise",
-      "namespace": "shopify",
-      "name": "Waist rise",
-      "description": "Indicates where on the waist a garment sits, like low, medium or high",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "target-gender",
-      "namespace": "shopify",
-      "name": "Target gender",
-      "description": "Identifies the intended gender for a product, such as female, male or unisex",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "accessory-size",
-      "namespace": "shopify",
-      "name": "Accessory size",
-      "description": "Defines the size of an accessory product, such as one size or compact",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "badge",
-      "namespace": "custom",
-      "name": "Badge",
-      "description": "",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
     }
   ],
   "variant": [
@@ -226,7 +185,7 @@
       "key": "custom_label_4",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 4",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -236,7 +195,7 @@
       "key": "custom_label_3",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 3",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -246,7 +205,7 @@
       "key": "custom_label_2",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 2",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -256,7 +215,7 @@
       "key": "custom_label_1",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 1",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -266,7 +225,7 @@
       "key": "custom_label_0",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 0",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -335,16 +294,6 @@
   ],
   "shop": [
     {
-      "key": "show_store_widget_app_embed_block",
-      "namespace": "mm_google_shopping_extension",
-      "name": "Google: Show Store Widget App Embed Block",
-      "description": "Indicates if the store widget app embed block should be shown.",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
       "key": "merchant_id",
       "namespace": "mm_google_shopping_extension",
       "name": "Google: Merchant ID",
@@ -352,6 +301,16 @@
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
+      }
+    },
+    {
+      "key": "show_store_widget_app_embed_block",
+      "namespace": "mm_google_shopping_extension",
+      "name": "Google: Show Store Widget App Embed Block",
+      "description": "Indicates if the store widget app embed block should be shown.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
       }
     }
   ]
