@@ -28,6 +28,16 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
+        "slide_a6UPCy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DEFACETOPO_DESKTOPBANNER.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/DEFACETOPO_MOBBANNER.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://pages/deface"
+          }
+        },
         "slide_V9mcj8": {
           "type": "slide",
           "settings": {
@@ -38,16 +48,6 @@
             "link": "shopify://pages/essentials"
           }
         },
-        "slide_a6UPCy": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/DEFACETOPO_DESKTOPBANNER.jpg",
-            "video_url": "",
-            "mobile_image": "shopify://shop_images/DEFACETOPO_MOBBANNER.jpg",
-            "mobile_video_url": "",
-            "link": "shopify://collections/topo"
-          }
-        },
         "slide_mWUeb3": {
           "type": "slide",
           "settings": {
@@ -55,13 +55,13 @@
             "video_url": "",
             "mobile_image": "shopify://shop_images/MURGA_BANNERMOBILE.jpg",
             "mobile_video_url": "",
-            "link": "shopify://collections/murgatroyd"
+            "link": "shopify://collections/lifestyle"
           }
         }
       },
       "block_order": [
-        "slide_V9mcj8",
         "slide_a6UPCy",
+        "slide_V9mcj8",
         "slide_mWUeb3"
       ],
       "name": "Image Slider",
