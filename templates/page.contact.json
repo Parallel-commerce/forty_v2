@@ -128,7 +128,7 @@
         "text_aP9XgK": {
           "type": "text",
           "settings": {
-            "text": "<p>Glasgow Fort</p><p><a href=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\" target=\"_blank\" title=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\">Unit B12<br/>295 Provan Walk<br/>Glasgow Fort<br/>Glasgow<br/>G34 9DL</a><br/><a href=\"tel:+44 141 465 0225\" title=\"tel:+44 141 465 0225\">+44 141 465 0225</a></p>",
+            "text": "<h2>Glasgow Fort</h2><p><a href=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\" target=\"_blank\" title=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\">Unit B12<br/>295 Provan Walk<br/>Glasgow Fort<br/>Glasgow<br/>G34 9DL</a><br/><a href=\"tel:+44 141 465 0225\" title=\"tel:+44 141 465 0225\">+44 141 465 0225</a></p>",
             "text_style": "body"
           }
         }
