@@ -535,6 +535,7 @@
         "column_eHQiPd",
         "column_P9JimD"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our Stores",
         "heading_size": "h1",

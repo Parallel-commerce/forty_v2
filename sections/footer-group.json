@@ -25,10 +25,10 @@
           "settings": {
             "heading_dropdown_1": "CONTACT US",
             "row_content_dropdown_1": "<p><a href=\"mailto:web@fortyclothing.com\">web[at]fortyclothing.com</a></p><p><a href=\"tel:+44 141 648 0958\" title=\"tel:+44 141 648 0958\">+44 141 648 0958</a></p>",
-            "heading_dropdown_2": "ROYAL EXCHANGE SQUARE",
-            "row_content_dropdown_2": "<p><a href=\"https://maps.app.goo.gl/UUb3G6wvpSdVSJun9\" target=\"_blank\" title=\"https://maps.app.goo.gl/UUb3G6wvpSdVSJun9\">11 Royal Exchange Square,<br/>Glasgow<br/>G1 3AJ</a><br/><a href=\"tel:+44 141 465 1371\" title=\"tel:+44 141 465 1371\">+44 141 465 1371</a></p>",
-            "heading_dropdown_3": "GLASGOW FORT",
-            "row_content_dropdown_3": "<p><a href=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\" target=\"_blank\" title=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\">Unit B12<br/>295 Provan Walk<br/>Glasgow Fort<br/>Glasgow<br/>G34 9DL</a><br/><a href=\"tel:+44 141 465 0225\" title=\"tel:+44 141 465 0225\">+44 141 465 0225</a></p>",
+            "heading_dropdown_2": "GLASGOW FORT",
+            "row_content_dropdown_2": "<p><a href=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\" target=\"_blank\" title=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\">Unit B12<br/>295 Provan Walk<br/>Glasgow Fort<br/>Glasgow<br/>G34 9DL</a><br/><a href=\"tel:+44 141 465 0225\" title=\"tel:+44 141 465 0225\">+44 141 465 0225</a></p>",
+            "heading_dropdown_3": "",
+            "row_content_dropdown_3": "",
             "heading_dropdown_4": "",
             "row_content_dropdown_4": ""
           }
