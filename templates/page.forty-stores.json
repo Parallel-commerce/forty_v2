@@ -23,7 +23,7 @@
         "heading_Vq46gX": {
           "type": "heading",
           "settings": {
-            "heading": "OUR STORES",
+            "heading": "OUR STORE",
             "heading_size": "h1"
           }
         },
@@ -75,6 +75,7 @@
         "heading_gnjkCm",
         "text_qMacdi"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/ROYAL_XCHANGE_SHOP_23.230907.17.jpg",
         "height": "adapt",
