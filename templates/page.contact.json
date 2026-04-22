@@ -97,6 +97,7 @@
         "column_TEQQrF",
         "column_jezV6c"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our Stores",
         "heading_size": "h1",
@@ -113,12 +114,52 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_YQfFLn": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hfEBGt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Visit Us In Store",
+            "heading_size": "h1"
+          }
+        },
+        "text_aP9XgK": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Glasgow Fort</h2><p><a href=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\" target=\"_blank\" title=\"https://maps.app.goo.gl/hs15TnhQfugJveRL7\">Unit B12<br/>295 Provan Walk<br/>Glasgow Fort<br/>Glasgow<br/>G34 9DL</a><br/><a href=\"tel:+44 141 465 0225\" title=\"tel:+44 141 465 0225\">+44 141 465 0225</a></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hfEBGt",
+        "text_aP9XgK"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/FORTY_FORT_SHOP_-_WEB_7_of_22.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "rich_text_z9DLPK",
     "form",
-    "multicolumn_NtV3zB"
+    "multicolumn_NtV3zB",
+    "image_with_text_YQfFLn"
   ]
 }

@@ -35,7 +35,17 @@
             "video_url": "",
             "mobile_image": "shopify://shop_images/DEFACETOPO_MOBBANNER.jpg",
             "mobile_video_url": "",
-            "link": "shopify://collections/topo"
+            "link": "shopify://collections/deface"
+          }
+        },
+        "slide_V9mcj8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BENJAMINSS26_BANNERDESKTOP.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/BENJAMINSS26_BANNERMOB.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://pages/essentials"
           }
         },
         "slide_mWUeb3": {
@@ -45,43 +55,14 @@
             "video_url": "",
             "mobile_image": "shopify://shop_images/MURGA_BANNERMOBILE.jpg",
             "mobile_video_url": "",
-            "link": "shopify://collections/murgatroyd"
-          }
-        },
-        "slide_9DiFxQ": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/YONJUU_BANNERDESKTOP.jpg",
-            "video_url": "",
-            "mobile_image": "shopify://shop_images/YONJUU_BANNER_MOB.jpg",
-            "mobile_video_url": "",
-            "link": "shopify://collections/yonjuu"
-          }
-        },
-        "slide_7QTqrB": {
-          "type": "slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/c7d2b64dcc8c4913a32fdcb292785062.mp4",
-            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/4ef359cb486c49c6b50910ee3ee4e8e8.mp4",
-            "link": "shopify://collections/deface"
-          }
-        },
-        "slide_3eRt8P": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
-            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/fb6d80c8b79c48dd954883d3446ac249.mov",
-            "link": "shopify://collections/planet-forty"
+            "link": "shopify://collections/lifestyle"
           }
         }
       },
       "block_order": [
         "slide_a6UPCy",
-        "slide_mWUeb3",
-        "slide_9DiFxQ",
-        "slide_7QTqrB",
-        "slide_3eRt8P"
+        "slide_V9mcj8",
+        "slide_mWUeb3"
       ],
       "name": "Image Slider",
       "settings": {
@@ -554,6 +535,7 @@
         "column_eHQiPd",
         "column_P9JimD"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our Stores",
         "heading_size": "h1",
