@@ -6,6 +6,7 @@ if (!customElements.get('product-info')) {
       quantityForm = undefined;
       onVariantChangeUnsubscriber = undefined;
       cartUpdateUnsubscriber = undefined;
+      countdownInterval = undefined;
       abortController = undefined;
       pendingRequestUrl = null;
       preProcessHtmlCallbacks = [];
@@ -26,6 +27,7 @@ if (!customElements.get('product-info')) {
         );
 
         this.initQuantityHandlers();
+        this.initCountdownTimers();
         this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
       }
 
@@ -45,9 +47,101 @@ if (!customElements.get('product-info')) {
         }
       }
 
+      initCountdownTimers() {
+        this.clearCountdownTimers();
+
+        const updateCountdowns = () => {
+          const countdowns = this.querySelectorAll('[data-countdown-timer]');
+          if (!countdowns.length) {
+            this.clearCountdownTimers();
+            return;
+          }
+
+          let hasActiveCountdown = false;
+          countdowns.forEach((countdown) => {
+            if (this.updateCountdown(countdown)) hasActiveCountdown = true;
+          });
+
+          if (!hasActiveCountdown) this.clearCountdownTimers();
+        };
+
+        updateCountdowns();
+
+        if (this.querySelector('[data-countdown-timer]')) {
+          this.countdownInterval = window.setInterval(updateCountdowns, 1000);
+        }
+      }
+
+      clearCountdownTimers() {
+        if (this.countdownInterval) {
+          window.clearInterval(this.countdownInterval);
+          this.countdownInterval = undefined;
+        }
+      }
+
+      updateCountdown(countdown) {
+        const target = countdown.dataset.target;
+        const timer = countdown.querySelector('.product__countdown-timer');
+        const expiredMessage = countdown.querySelector('[data-countdown-expired-message]');
+        const targetDate = target ? new Date(target) : null;
+
+        if (!targetDate || Number.isNaN(targetDate.getTime())) {
+          countdown.hidden = true;
+          return false;
+        }
+
+        const remainingTime = targetDate.getTime() - Date.now();
+
+        if (remainingTime <= 0) {
+          return this.handleExpiredCountdown(countdown, timer, expiredMessage);
+        }
+
+        const totalSeconds = Math.floor(remainingTime / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        countdown.hidden = false;
+        timer?.classList.remove('hidden');
+        expiredMessage?.classList.add('hidden');
+
+        this.updateCountdownValue(countdown, 'days', days);
+        this.updateCountdownValue(countdown, 'hours', hours);
+        this.updateCountdownValue(countdown, 'minutes', minutes);
+        this.updateCountdownValue(countdown, 'seconds', seconds);
+
+        return true;
+      }
+
+      handleExpiredCountdown(countdown, timer, expiredMessage) {
+        if (countdown.dataset.expiryBehavior === 'hide') {
+          countdown.hidden = true;
+          return false;
+        }
+
+        timer?.classList.add('hidden');
+
+        if (expiredMessage) {
+          countdown.hidden = false;
+          expiredMessage.classList.remove('hidden');
+          return false;
+        }
+
+        countdown.hidden = true;
+        return false;
+      }
+
+      updateCountdownValue(countdown, unit, value) {
+        countdown.querySelector(`[data-countdown-${unit}]`)?.replaceChildren(
+          document.createTextNode(String(value).padStart(2, '0'))
+        );
+      }
+
       disconnectedCallback() {
         this.onVariantChangeUnsubscriber();
         this.cartUpdateUnsubscriber?.();
+        this.clearCountdownTimers();
       }
 
       initializeProductSwapUtility() {
@@ -57,6 +151,8 @@ if (!customElements.get('product-info')) {
         this.postProcessHtmlCallbacks.push((newNode) => {
           window?.Shopify?.PaymentButton?.init();
           window?.ProductModel?.loadShopifyXR();
+          const productInfo = newNode.matches?.('product-info') ? newNode : newNode.querySelector?.('product-info');
+          productInfo?.initCountdownTimers?.();
         });
       }
 

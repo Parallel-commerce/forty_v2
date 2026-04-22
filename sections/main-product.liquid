@@ -116,6 +116,62 @@
                     <span class="product_tags_forty">Last few remaining</span>
                   {% endif %}
                 {% endif %}
+              {%- when 'countdown_timer' -%}
+                {% assign countdown_tag = block.settings.sale_tag | strip %}
+                {% assign countdown_date = block.settings.end_date | strip %}
+                {% assign countdown_time = block.settings.end_time | strip %}
+                {% assign countdown_target = countdown_date | append: 'T' | append: countdown_time %}
+
+                {% if countdown_tag != blank and countdown_date != blank and countdown_time != blank and product.tags contains countdown_tag %}
+                  <div
+                    class="product__countdown"
+                    data-countdown-timer
+                    data-target="{{ countdown_target }}"
+                    data-expiry-behavior="{{ block.settings.expiry_behavior }}"
+                    style="
+                      --countdown-background: {{ block.settings.background_color }};
+                      --countdown-text: {{ block.settings.text_color }};
+                      --countdown-border: {{ block.settings.border_color }};
+                      --countdown-item-background: {{ block.settings.item_background_color }};
+                      --countdown-item-text: {{ block.settings.item_text_color }};
+                    "
+                    {{ block.shopify_attributes }}
+                  >
+                    {% if block.settings.heading != blank %}
+                      <p class="product__countdown-heading">{{ block.settings.heading }}</p>
+                    {% endif %}
+                    {% if block.settings.subtext != blank %}
+                      <div class="product__countdown-subtext rte">
+                        {{ block.settings.subtext }}
+                      </div>
+                    {% endif %}
+
+                    <div class="product__countdown-timer" aria-live="polite" aria-atomic="true">
+                      <div class="product__countdown-item">
+                        <span class="product__countdown-value" data-countdown-days>00</span>
+                        <span class="product__countdown-label">Days</span>
+                      </div>
+                      <div class="product__countdown-item">
+                        <span class="product__countdown-value" data-countdown-hours>00</span>
+                        <span class="product__countdown-label">Hours</span>
+                      </div>
+                      <div class="product__countdown-item">
+                        <span class="product__countdown-value" data-countdown-minutes>00</span>
+                        <span class="product__countdown-label">Minutes</span>
+                      </div>
+                      <div class="product__countdown-item">
+                        <span class="product__countdown-value" data-countdown-seconds>00</span>
+                        <span class="product__countdown-label">Seconds</span>
+                      </div>
+                    </div>
+
+                    {% if block.settings.expiry_message != blank %}
+                      <p class="product__countdown-expired hidden" data-countdown-expired-message>
+                        {{ block.settings.expiry_message }}
+                      </p>
+                    {% endif %}
+                  </div>
+                {% endif %}
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -933,6 +989,101 @@
           "type": "number",
           "id": "stock_threshold",
           "label": "What is the stock threshold for 'Low Stock' tag?"
+        }
+      ]
+    },
+    {
+      "type": "countdown_timer",
+      "name": "Countdown timer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Flash sale ends in"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Subtext"
+        },
+        {
+          "type": "text",
+          "id": "sale_tag",
+          "label": "Product tag to match",
+          "info": "Only products with this exact tag will show the timer.",
+          "default": "flash-sale"
+        },
+        {
+          "type": "text",
+          "id": "end_date",
+          "label": "End date",
+          "info": "Use the format YYYY-MM-DD.",
+          "default": "2026-12-31"
+        },
+        {
+          "type": "text",
+          "id": "end_time",
+          "label": "End time",
+          "info": "Use the 24-hour format HH:MM.",
+          "default": "23:59"
+        },
+        {
+          "type": "select",
+          "id": "expiry_behavior",
+          "label": "When the countdown ends",
+          "default": "message",
+          "options": [
+            {
+              "value": "message",
+              "label": "Show expiry message"
+            },
+            {
+              "value": "hide",
+              "label": "Hide the timer"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "expiry_message",
+          "label": "Expiry message",
+          "default": "This flash sale has ended."
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background",
+          "default": "#f7f7f7"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text",
+          "default": "#1f1f1f"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border",
+          "default": "#d9d9d9"
+        },
+        {
+          "type": "color",
+          "id": "item_background_color",
+          "label": "Timer box background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "item_text_color",
+          "label": "Timer box text",
+          "default": "#1f1f1f"
         }
       ]
     },
