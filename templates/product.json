@@ -57,10 +57,10 @@
             "expiry_behavior": "hide",
             "expiry_message": "This flash sale has ended.",
             "background_color": "#e2e624",
-            "text_color": "#ffffff",
+            "text_color": "#121212",
             "border_color": "#e2e624",
             "item_background_color": "#121212",
-            "item_text_color": "#1f1f1f"
+            "item_text_color": "#ffffff"
           }
         },
         "loyalty_points_simple_3XmmHD": {
