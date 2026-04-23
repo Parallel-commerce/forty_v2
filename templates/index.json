@@ -31,6 +31,16 @@
         "slide_a6UPCy": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/FORTY_WAREHOUSESALE_BANNERDESKTOP_1.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/FORTY_WAREHOUSESALE_BANNERMOBILE_1.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://collections/deface"
+          }
+        },
+        "slide_kdQfyM": {
+          "type": "slide",
+          "settings": {
             "image": "shopify://shop_images/DEFACETOPO_DESKTOPBANNER.jpg",
             "video_url": "",
             "mobile_image": "shopify://shop_images/DEFACETOPO_MOBBANNER.jpg",
@@ -61,6 +71,7 @@
       },
       "block_order": [
         "slide_a6UPCy",
+        "slide_kdQfyM",
         "slide_V9mcj8",
         "slide_mWUeb3"
       ],
