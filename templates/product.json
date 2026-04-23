@@ -46,8 +46,26 @@
           "type": "price",
           "settings": {}
         },
+        "countdown_timer_gJVWmi": {
+          "type": "countdown_timer",
+          "settings": {
+            "heading": "Warehouse sale ends in",
+            "subtext": "",
+            "sale_tag": "warehouse-sale",
+            "end_date": "2026-04-27",
+            "end_time": "23:59",
+            "expiry_behavior": "hide",
+            "expiry_message": "This flash sale has ended.",
+            "background_color": "#f7f7f7",
+            "text_color": "#1f1f1f",
+            "border_color": "#d9d9d9",
+            "item_background_color": "#ffffff",
+            "item_text_color": "#1f1f1f"
+          }
+        },
         "loyalty_points_simple_3XmmHD": {
           "type": "loyalty_points_simple",
+          "disabled": true,
           "settings": {
             "show_loyalty_points": true,
             "points_per_pound": 10,
@@ -126,6 +144,7 @@
         "text_YKDePX",
         "title",
         "price",
+        "countdown_timer_gJVWmi",
         "loyalty_points_simple_3XmmHD",
         "variant_picker",
         "quantity_selector",
