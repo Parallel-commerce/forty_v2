@@ -750,10 +750,8 @@
         if (achievedNames) {
           unlockedStagesSpan.textContent = achievedNames;
           congratulationsContainer.style.display = 'block';
-          console.log('Showing congratulations for:', achievedNames);
         } else {
           congratulationsContainer.style.display = 'none';
-          console.log('Hiding congratulations - no achieved stages');
         }
       }
       
@@ -764,7 +762,6 @@
     function setupCartListeners() {
       // Listen for Shopify's standard cart events
       document.addEventListener('cart:updated', function(event) {
-        console.log('Cart updated event received:', event);
         if (event.detail && event.detail.cart) {
           updateCompactText(event.detail.cart.total_price);
         } else {
@@ -775,7 +772,6 @@
       
       // Listen for cart item updates
       document.addEventListener('cart:item-updated', function(event) {
-        console.log('Cart item updated event received:', event);
         if (event.detail && event.detail.cart) {
           updateCompactText(event.detail.cart.total_price);
         } else {
@@ -785,7 +781,6 @@
       
       // Listen for cart item additions
       document.addEventListener('cart:item-added', function(event) {
-        console.log('Cart item added event received:', event);
         if (event.detail && event.detail.cart) {
           updateCompactText(event.detail.cart.total_price);
         } else {
@@ -795,7 +790,6 @@
       
       // Listen for cart item removals
       document.addEventListener('cart:item-removed', function(event) {
-        console.log('Cart item removed event received:', event);
         if (event.detail && event.detail.cart) {
           updateCompactText(event.detail.cart.total_price);
         } else {
@@ -805,7 +799,6 @@
       
       // Listen for custom cart events that might be used by the theme
       document.addEventListener('cart:refresh', function(event) {
-        console.log('Cart refresh event received:', event);
         fetchCartData();
       });
       
@@ -813,7 +806,6 @@
       document.addEventListener('submit', function(event) {
         const form = event.target;
         if (form && form.action && form.action.includes('/cart/add')) {
-          console.log('Add to cart form submitted');
           // Wait a moment for the cart to update, then fetch data
           setTimeout(fetchCartData, 500);
         }
@@ -823,7 +815,6 @@
       document.addEventListener('click', function(event) {
         const button = event.target.closest('[data-add-to-cart], .btn-cart, .add-to-cart, [name="add"]');
         if (button) {
-          console.log('Add to cart button clicked');
           setTimeout(fetchCartData, 1000);
         }
       });
@@ -834,12 +825,9 @@
       fetch('/cart.js')
         .then(response => response.json())
         .then(cart => {
-          console.log('Fetched cart data:', cart);
           updateCompactText(cart.total_price);
         })
-        .catch(error => {
-          console.error('Error fetching cart data:', error);
-        });
+        .catch(() => {});
     }
     
     // Initialize with current cart total
@@ -874,7 +862,6 @@
       });
       
       if (shouldCheckCart) {
-        console.log('Cart-related DOM mutation detected, fetching cart data');
         fetchCartData();
       }
     });
