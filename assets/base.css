@@ -3654,19 +3654,33 @@ div[os-name="Color"] {
 }
 
 /* Menu Customisations */
-#HeaderMenu-sale {
+#HeaderMenu-sale,
+#HeaderMenu-warehouse-sale {
   color: #d6101c;
 }
 
-#HeaderDrawer-sale{
+#HeaderDrawer-sale,
+#HeaderDrawer-warehouse-sale {
   color: #d6101c;
 }
 
-#HeaderMenu-junior-sale{
+#HeaderMenu-junior-sale,
+#HeaderMenu-junior-warehouse-sale {
   color: #d6101c;
 }
 
-#HeaderMenu-clothing-sale{
+#HeaderDrawer-junior-sale,
+#HeaderDrawer-junior-warehouse-sale {
+  color: #d6101c;
+}
+
+#HeaderMenu-clothing-sale,
+#HeaderMenu-clothing-warehouse-sale {
+  color: #d6101c;
+}
+
+#HeaderDrawer-clothing-sale,
+#HeaderDrawer-clothing-warehouse-sale {
   color: #d6101c;
 }
 
