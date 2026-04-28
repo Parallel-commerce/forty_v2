@@ -30,6 +30,7 @@
       "blocks": {
         "slide_a6UPCy": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/FORTY_WAREHOUSESALE_BANNERDESKTOP_1.jpg",
             "video_url": "",
