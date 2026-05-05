@@ -30,13 +30,12 @@
       "blocks": {
         "slide_a6UPCy": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/FORTY_WAREHOUSESALE_BANNERDESKTOP_1.jpg",
-            "video_url": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/7d48afbb21384b48840ffeada5af3a76.mov",
             "mobile_image": "shopify://shop_images/FORTY_WAREHOUSESALE_BANNERMOBILE_1.jpg",
-            "mobile_video_url": "",
-            "link": "shopify://collections/all-sale"
+            "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/7d48afbb21384b48840ffeada5af3a76.mov",
+            "link": "shopify://products/deface-midland-92-tee-black"
           }
         },
         "slide_kdQfyM": {
