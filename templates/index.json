@@ -210,6 +210,49 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_DPwzww": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_m8maHH": {
+          "type": "heading",
+          "settings": {
+            "heading": "DEFACE of Spades",
+            "heading_size": "h1"
+          }
+        },
+        "text_R4qzpp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Launching soon. <br/>Available in Black and White. <br/>Sign up to be the first to know when it launches.</p>"
+          }
+        },
+        "button_FimaN4": {
+          "type": "button",
+          "settings": {
+            "button_label": "FIND OUT MORE",
+            "button_link": "shopify://pages/deface-of-spades",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_m8maHH",
+        "text_R4qzpp",
+        "button_FimaN4"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "featured_collection_37qppx": {
       "type": "featured-collection",
       "settings": {
@@ -605,6 +648,7 @@
     "parallel_slider_banner_UTGPAH",
     "parallel_trust_builder_MPctNB",
     "featured_collection_L6Y9r7",
+    "rich_text_DPwzww",
     "featured_collection_37qppx",
     "parallel_shop_the_look_9cG8nx",
     "parallel_shop_the_look_QVzTdD",
