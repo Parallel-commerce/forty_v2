@@ -205,12 +205,6 @@
     "collection_list_mMCr4E": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_xnmGfi": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tech-pack"
-          }
-        },
         "featured_collection_QmxYJb": {
           "type": "featured_collection",
           "settings": {
@@ -231,7 +225,6 @@
         }
       },
       "block_order": [
-        "featured_collection_xnmGfi",
         "featured_collection_QmxYJb",
         "featured_collection_8FCADT",
         "featured_collection_AVGchL"
@@ -240,7 +233,7 @@
         "title": "OTHER FORTY RANGES",
         "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "1",
