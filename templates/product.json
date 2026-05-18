@@ -302,12 +302,6 @@
             "collection": "essentials"
           }
         },
-        "featured_collection_cWjbnp": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tech-pack"
-          }
-        },
         "featured_collection_3G4EJX": {
           "type": "featured_collection",
           "settings": {
@@ -319,13 +313,19 @@
           "settings": {
             "collection": "lifestyle"
           }
+        },
+        "featured_collection_3nWbXF": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "all-junior"
+          }
         }
       },
       "block_order": [
         "featured_collection_ijhgPw",
-        "featured_collection_cWjbnp",
         "featured_collection_3G4EJX",
-        "featured_collection_tKjXLp"
+        "featured_collection_tKjXLp",
+        "featured_collection_3nWbXF"
       ],
       "settings": {
         "title": "",
@@ -339,6 +339,26 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1779111666edafb3fb": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_8khgti": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_8khgti"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -347,6 +367,7 @@
     "parallel_trust_builder_Ex4ene",
     "collapsible_content_kkhXWm",
     "related-products",
-    "collection_list_mUYTPW"
+    "collection_list_mUYTPW",
+    "1779111666edafb3fb"
   ]
 }
