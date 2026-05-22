@@ -28,6 +28,16 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
+        "slide_XWhkzk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/JNRDROP_DESKTOPBANNER.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/JNRDROP_MOBBANNER.jpg",
+            "mobile_video_url": "",
+            "link": ""
+          }
+        },
         "slide_a6UPCy": {
           "type": "slide",
           "settings": {
@@ -70,6 +80,7 @@
         }
       },
       "block_order": [
+        "slide_XWhkzk",
         "slide_a6UPCy",
         "slide_kdQfyM",
         "slide_V9mcj8",
