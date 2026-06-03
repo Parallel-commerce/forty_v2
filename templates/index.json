@@ -28,6 +28,16 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
+        "slide_8YXdtg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/TARMY_DESKTOPBANNER.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/TARMY_MOBBANNER.jpg",
+            "mobile_video_url": "",
+            "link": "shopify://products/essential-tarmy-tee-white"
+          }
+        },
         "slide_XWhkzk": {
           "type": "slide",
           "settings": {
@@ -67,24 +77,14 @@
             "mobile_video_url": "",
             "link": "shopify://pages/essentials"
           }
-        },
-        "slide_mWUeb3": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/MURGA_BANNERDESKTOP.jpg",
-            "video_url": "",
-            "mobile_image": "shopify://shop_images/MURGA_BANNERMOBILE.jpg",
-            "mobile_video_url": "",
-            "link": "shopify://collections/lifestyle"
-          }
         }
       },
       "block_order": [
+        "slide_8YXdtg",
         "slide_XWhkzk",
         "slide_a6UPCy",
         "slide_kdQfyM",
-        "slide_V9mcj8",
-        "slide_mWUeb3"
+        "slide_V9mcj8"
       ],
       "name": "Image Slider",
       "settings": {
