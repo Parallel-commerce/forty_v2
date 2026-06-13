@@ -71,20 +71,20 @@
         "slide_V9mcj8": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BENJAMINSS26_BANNERDESKTOP.jpg",
+            "image": "shopify://shop_images/BRYCE10_BANNERDESKTOP.jpg",
             "video_url": "",
-            "mobile_image": "shopify://shop_images/BENJAMINSS26_BANNERMOB.jpg",
+            "mobile_image": "shopify://shop_images/BRYCE10_BANNERMOBILE.jpg",
             "mobile_video_url": "",
-            "link": "shopify://pages/essentials"
+            "link": "https://fortyclothing.com/products/essential-bryce-tee-black"
           }
         }
       },
       "block_order": [
+        "slide_V9mcj8",
         "slide_8YXdtg",
         "slide_XWhkzk",
         "slide_a6UPCy",
-        "slide_kdQfyM",
-        "slide_V9mcj8"
+        "slide_kdQfyM"
       ],
       "name": "Image Slider",
       "settings": {
