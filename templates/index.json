@@ -28,8 +28,19 @@
     "slider_banner_eREQW4": {
       "type": "parallel-slider-banner",
       "blocks": {
+        "slide_V9mcj8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BRYCE10_BANNERDESKTOP.jpg",
+            "video_url": "",
+            "mobile_image": "shopify://shop_images/BRYCE10_BANNERMOBILE.jpg",
+            "mobile_video_url": "",
+            "link": "https://fortyclothing.com/products/essential-bryce-tee-black"
+          }
+        },
         "slide_8YXdtg": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/TARMY_DESKTOPBANNER.jpg",
             "video_url": "",
@@ -66,16 +77,6 @@
             "mobile_image": "shopify://shop_images/DEFACETOPO_MOBBANNER.jpg",
             "mobile_video_url": "",
             "link": "shopify://collections/deface"
-          }
-        },
-        "slide_V9mcj8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BRYCE10_BANNERDESKTOP.jpg",
-            "video_url": "",
-            "mobile_image": "shopify://shop_images/BRYCE10_BANNERMOBILE.jpg",
-            "mobile_video_url": "",
-            "link": "https://fortyclothing.com/products/essential-bryce-tee-black"
           }
         }
       },
