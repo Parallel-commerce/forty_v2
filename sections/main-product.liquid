@@ -312,9 +312,39 @@
                     </div>
                   </details>
                 </div>
+              {%- when 'size_guide' -%}
+                {%- assign product_size_guide = product.metafields.custom.size_guide -%}
+                {%- if product_size_guide != blank -%}
+                  <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                    <details id="Details-{{ block.id }}-{{ section.id }}">
+                      <summary>
+                        <div class="summary__title">
+                          {% render 'icon-accordion', icon: block.settings.icon %}
+                          <h2 class="h4 accordion__title inline-richtext">
+                            {{ block.settings.heading | escape }}
+                          </h2>
+                        </div>
+                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                      </summary>
+                      <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                        {{
+                          product_size_guide
+                          | image_url: width: 3200
+                          | image_tag:
+                            widths: '375, 550, 750, 1100, 1500, 2200, 3000, 3200',
+                            alt: product_size_guide.alt
+                        }}
+                      </div>
+                    </details>
+                  </div>
+                {%- endif -%}
               {%- when 'product_details_accordion' -%}
+                {%- assign product_size_guide = product.metafields.custom.size_guide -%}
+                {%- assign fit_content = product.metafields.custom.fit -%}
+                {%- assign model_sizing_content = product.metafields.custom.model_sizing -%}
+                {%- assign delivery_returns_page = block.settings.delivery_returns_page -%}
                 {%- assign has_content = false -%}
-                {%- if block.settings.description != blank or block.settings.features != blank or block.settings.fabric_care != blank or block.settings.fit_sizing != blank -%}
+                {%- if block.settings.description != blank or block.settings.features != blank or block.settings.fabric_care != blank or fit_content != blank or model_sizing_content != blank or block.settings.show_size_guide and product_size_guide != blank or delivery_returns_page != blank -%}
                   {%- assign has_content = true -%}
                 {%- endif -%}
                 
@@ -364,8 +394,6 @@
                       </details>
                     {%- endif -%}
                     
-                    {%- assign fit_content = product.metafields.custom.fit -%}
-                    {%- assign model_sizing_content = product.metafields.custom.model_sizing -%}
                     {%- if fit_content != blank or model_sizing_content != blank -%}
                       <details class="product__detail-item"{% if block.settings.open_first_accordion and first_accordion_opened == false %} open{% assign first_accordion_opened = true %}{% endif %}>
                         <summary class="product__detail-summary">
@@ -385,6 +413,42 @@
                               {{ model_sizing_content }}
                             </div>
                           {%- endif -%}
+                        </div>
+                      </details>
+                    {%- endif -%}
+
+                    {%- if block.settings.show_size_guide and product_size_guide != blank -%}
+                      <details class="product__detail-item"{% if block.settings.open_first_accordion and first_accordion_opened == false %} open{% assign first_accordion_opened = true %}{% endif %}>
+                        <summary class="product__detail-summary">
+                          <h3 class="product__detail-title">{{ block.settings.size_guide_heading | escape }}</h3>
+                          <svg class="product__detail-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </summary>
+                        <div class="product__detail-content rte">
+                          {{
+                            product_size_guide
+                            | image_url: width: 3200
+                            | image_tag:
+                              widths: '375, 550, 750, 1100, 1500, 2200, 3000, 3200',
+                              alt: product_size_guide.alt
+                          }}
+                        </div>
+                      </details>
+                    {%- endif -%}
+
+                    {%- if delivery_returns_page != blank -%}
+                      <details class="product__detail-item"{% if block.settings.open_first_accordion and first_accordion_opened == false %} open{% assign first_accordion_opened = true %}{% endif %}>
+                        <summary class="product__detail-summary">
+                          <h3 class="product__detail-title">
+                            {{ block.settings.delivery_returns_heading | default: delivery_returns_page.title | escape }}
+                          </h3>
+                          <svg class="product__detail-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </summary>
+                        <div class="product__detail-content rte">
+                          {{ delivery_returns_page.content }}
                         </div>
                       </details>
                     {%- endif -%}
@@ -1483,6 +1547,203 @@
       ]
     },
     {
+      "type": "size_guide",
+      "name": "Size guide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Size Guide",
+          "label": "Heading",
+          "info": "Displays the product size guide image from the custom.size_guide metafield when available"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
+            },
+            {
+              "value": "apple",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__2.label"
+            },
+            {
+              "value": "banana",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__3.label"
+            },
+            {
+              "value": "bottle",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__4.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__5.label"
+            },
+            {
+              "value": "carrot",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__6.label"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__7.label"
+            },
+            {
+              "value": "check_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__8.label"
+            },
+            {
+              "value": "clipboard",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__9.label"
+            },
+            {
+              "value": "dairy",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__10.label"
+            },
+            {
+              "value": "dairy_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__11.label"
+            },
+            {
+              "value": "dryer",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__12.label"
+            },
+            {
+              "value": "eye",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__13.label"
+            },
+            {
+              "value": "fire",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__14.label"
+            },
+            {
+              "value": "gluten_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__15.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__16.label"
+            },
+            {
+              "value": "iron",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__17.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__18.label"
+            },
+            {
+              "value": "leather",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__19.label"
+            },
+            {
+              "value": "lightning_bolt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__20.label"
+            },
+            {
+              "value": "lipstick",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__21.label"
+            },
+            {
+              "value": "lock",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__22.label"
+            },
+            {
+              "value": "map_pin",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__23.label"
+            },
+            {
+              "value": "nut_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__24.label"
+            },
+            {
+              "value": "pants",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__25.label"
+            },
+            {
+              "value": "paw_print",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__26.label"
+            },
+            {
+              "value": "pepper",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__27.label"
+            },
+            {
+              "value": "perfume",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__28.label"
+            },
+            {
+              "value": "plane",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__29.label"
+            },
+            {
+              "value": "plant",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__30.label"
+            },
+            {
+              "value": "price_tag",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__31.label"
+            },
+            {
+              "value": "question_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__32.label"
+            },
+            {
+              "value": "recycle",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__33.label"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__34.label"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__35.label"
+            },
+            {
+              "value": "serving_dish",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__36.label"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__37.label"
+            },
+            {
+              "value": "shoe",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__38.label"
+            },
+            {
+              "value": "silhouette",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__39.label"
+            },
+            {
+              "value": "snowflake",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__40.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__41.label"
+            },
+            {
+              "value": "stopwatch",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__42.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__43.label"
+            },
+            {
+              "value": "washing",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__44.label"
+            }
+          ],
+          "default": "ruler",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
+        }
+      ]
+    },
+    {
       "type": "product_details_accordion",
       "name": "Product Details Accordion",
       "limit": 1,
@@ -1511,6 +1772,32 @@
           "id": "fabric_care",
           "label": "Fabric and Care",
           "info": "Fabric composition and care instructions"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_size_guide",
+          "label": "Show size guide",
+          "default": false,
+          "info": "Displays the product size guide image from the custom.size_guide metafield when available"
+        },
+        {
+          "type": "text",
+          "id": "size_guide_heading",
+          "label": "Size guide heading",
+          "default": "Size Guide"
+        },
+        {
+          "type": "page",
+          "id": "delivery_returns_page",
+          "label": "Delivery & returns page",
+          "info": "Select a page to display delivery and returns information"
+        },
+        {
+          "type": "text",
+          "id": "delivery_returns_heading",
+          "label": "Delivery & returns heading",
+          "default": "Delivery & Returns",
+          "info": "Leave blank to use the selected page title"
         }
       ]
     },
