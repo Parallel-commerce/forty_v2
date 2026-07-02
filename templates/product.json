@@ -111,7 +111,11 @@
             "open_first_accordion": false,
             "description": "{{ product.description }}",
             "features": "{{ product.metafields.custom.key_features_benefits | metafield_tag }}",
-            "fabric_care": "{{ product.metafields.custom.fabric_care | metafield_tag }}"
+            "fabric_care": "{{ product.metafields.custom.fabric_care | metafield_tag }}",
+            "show_size_guide": true,
+            "size_guide_heading": "Size Guide",
+            "delivery_returns_page": "delivery-information",
+            "delivery_returns_heading": "Delivery & Returns"
           }
         },
         "loyalty_points_QEL9J7": {
@@ -163,13 +167,13 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
-        "media_size": "medium",
+        "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "cover",
-        "gallery_layout": "thumbnail_slider",
+        "media_fit": "contain",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "hover",
-        "mobile_thumbnails": "show",
+        "mobile_thumbnails": "columns",
         "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 8,
