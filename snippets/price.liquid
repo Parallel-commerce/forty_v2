@@ -139,11 +139,19 @@
         <span class="badge coming-soon-badge">
           Coming Soon
         </span>
-      {%- elsif product.available == false -%}
-        <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-          {{ 'products.product.sold_out' | t }}
+      {%- endif -%}
+      {%- if product.tags contains 'new' -%}
+        <span class="badge new-arrival-badge">
+          New Arrival
         </span>
       {%- endif -%}
+      {%- unless product.tags contains 'coming-soon' -%}
+        {%- if product.available == false -%}
+          <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
+            {{ 'products.product.sold_out' | t }}
+          </span>
+        {%- endif -%}
+      {%- endunless -%}
     {%- endif -%}
   </div>
 {% endunless %}

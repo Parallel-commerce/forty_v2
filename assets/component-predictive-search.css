@@ -52,7 +52,8 @@
     width: calc(100% + 0.2rem);
   }
 
-  .header predictive-search {
+  .header predictive-search,
+  .header__search-bar predictive-search {
     position: relative;
   }
 }

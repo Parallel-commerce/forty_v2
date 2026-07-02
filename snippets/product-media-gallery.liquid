@@ -126,8 +126,11 @@
       {%- endfor -%}
     </ul>
     {%- assign product_badges = product.metafields.custom.badge.value -%}
-    {%- if product_badges != blank -%}
+    {%- if product_badges != blank or product.tags contains 'new' -%}
       <div class="product__custom-badges">
+        {%- if product.tags contains 'new' -%}
+          <span class="badge new-arrival-badge">New Arrival</span>
+        {%- endif -%}
         {%- for badge_text in product_badges -%}
           <span class="badge badge--custom-label">{{ badge_text }}</span>
         {%- endfor -%}

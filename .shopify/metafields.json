@@ -219,6 +219,16 @@
         "name": "list.single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
     }
   ],
   "variant": [
@@ -349,6 +359,16 @@
       "namespace": "mm_google_shopping_extension",
       "name": "Google: Merchant ID",
       "description": "Currently Linked Merchant Center ID",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "channel_key",
+      "namespace": "smile",
+      "name": "Channel key",
+      "description": "The Smile sales channel key, read by storefront and customer account extensions.",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"

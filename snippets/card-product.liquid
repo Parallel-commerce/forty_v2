@@ -125,7 +125,7 @@
             </h3>
           </div>
           {%- assign custom_badges = card_product.metafields.custom.badge.value -%}
-          <div class="card__badge {{ settings.badge_position }}{% if custom_badges != blank %} card__badge--with-custom{% endif %}">
+          <div class="card__badge {{ settings.badge_position }}{% if custom_badges != blank or card_product.tags contains 'new' %} card__badge--with-custom{% endif %}">
             {%- if card_product.tags contains 'coming-soon' -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
@@ -151,6 +151,9 @@
                   {{- 'products.product.on_sale' | t -}}
                 {%- endif -%}
               </span>
+            {%- endif -%}
+            {%- if card_product.tags contains 'new' -%}
+              <span class="badge new-arrival-badge">New Arrival</span>
             {%- endif -%}
             {%- for badge_text in custom_badges -%}
               <span class="badge badge--custom-label">{{ badge_text }}</span>

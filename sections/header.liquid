@@ -124,10 +124,6 @@
       if section.settings.menu != blank
         render 'header-drawer'
       endif
-
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
     -%}
 
     {%- if section.settings.logo_position != 'middle-center' -%}
@@ -224,8 +220,6 @@
           </localization-form>
         {%- endif -%}
       </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
-
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
@@ -280,6 +274,11 @@
       </a>
     </div>
   </header>
+  <div class="header__search-bar color-{{ section.settings.search_color_scheme }} gradient">
+    <div class="header__search-bar-inner page-width">
+      {% render 'header-search', input_id: 'Search-In-Header', placeholder: section.settings.search_placeholder %}
+    </div>
+  </div>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
 {%- if settings.cart_type == "notification" -%}
@@ -370,7 +369,7 @@
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
       this.closeMenuDisclosure();
-      this.closeSearchModal();
+      this.closePredictiveSearch();
     }
 
     reveal() {
@@ -389,9 +388,9 @@
       this.disclosures.forEach(disclosure => disclosure.close());
     }
 
-    closeSearchModal() {
-      this.searchModal = this.searchModal || this.header.querySelector('details-modal');
-      this.searchModal.close(false);
+    closePredictiveSearch() {
+      this.predictiveSearch = this.predictiveSearch || this.querySelector('predictive-search');
+      this.predictiveSearch?.close();
     }
   }
 
@@ -540,6 +539,22 @@
       "type": "color_scheme",
       "id": "menu_color_scheme",
       "label": "t:sections.header.settings.menu_color_scheme.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.search_header.content"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "t:sections.header.settings.search_placeholder.label",
+      "default": "Search"
+    },
+    {
+      "type": "color_scheme",
+      "id": "search_color_scheme",
+      "label": "t:sections.header.settings.search_color_scheme.label",
       "default": "scheme-1"
     },
     {
