@@ -101,7 +101,8 @@ if (!customElements.get('quick-add-modal')) {
       updateImageSizes(productElement) {
         const product = productElement.querySelector('.product');
         const desktopColumns = product?.classList.contains('product--columns');
-        if (!desktopColumns) return;
+        const columnsFirstFull = product?.classList.contains('product--columns_first_full');
+        if (!desktopColumns && !columnsFirstFull) return;
 
         const mediaImages = product.querySelectorAll('.product__media img');
         if (!mediaImages.length) return;
@@ -109,13 +110,24 @@ if (!customElements.get('quick-add-modal')) {
         let mediaImageSizes =
           '(min-width: 1000px) 715px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)';
 
+        let firstImageSizes =
+          '(min-width: 1000px) 1430px, (min-width: 750px) calc(100vw - 11.5rem), calc(100vw - 4rem)';
+
         if (product.classList.contains('product--medium')) {
           mediaImageSizes = mediaImageSizes.replace('715px', '605px');
+          firstImageSizes = firstImageSizes.replace('1430px', '1210px');
         } else if (product.classList.contains('product--small')) {
           mediaImageSizes = mediaImageSizes.replace('715px', '495px');
+          firstImageSizes = firstImageSizes.replace('1430px', '990px');
         }
 
-        mediaImages.forEach((img) => img.setAttribute('sizes', mediaImageSizes));
+        mediaImages.forEach((img, index) => {
+          if (columnsFirstFull && index === 0) {
+            img.setAttribute('sizes', firstImageSizes);
+          } else {
+            img.setAttribute('sizes', mediaImageSizes);
+          }
+        });
       }
     }
   );

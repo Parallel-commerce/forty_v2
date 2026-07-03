@@ -320,9 +320,24 @@ quick-add-modal .product__column-sticky {
     width: calc(54% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
-  quick-add-modal .product--columns .product__media-item:not(.product__media-item--single):not(:only-child) {
+  quick-add-modal .product--columns .product__media-item:not(.product__media-item--single):not(:only-child),
+  quick-add-modal .product--columns_first_full .product__media-item:not(.product__media-item--single):not(:only-child):not(:first-child) {
     max-width: 100%;
     width: 100%;
+  }
+
+  quick-add-modal .product--columns_first_full .product-media-container--square {
+    --aspect-ratio: 1;
+    --ratio-percent: 100%;
+  }
+
+  quick-add-modal .product--columns_first_full .product-media-container--square .media {
+    aspect-ratio: 1 / 1;
+    padding-top: 0 !important;
+  }
+
+  quick-add-modal .product--columns_first_full .product-media-container--square .media > img {
+    object-fit: contain;
   }
 
   quick-add-modal .thumbnail-slider .thumbnail-list.slider--tablet-up {

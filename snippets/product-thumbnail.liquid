@@ -33,6 +33,15 @@
   assign desktop_columns = 1
   if desktop_layout == 'columns' and media_count > 1
     assign desktop_columns = 2
+  elsif desktop_layout == 'columns_first_full' and media_count > 1 and position > 1
+    assign desktop_columns = 2
+  endif
+
+  assign container_ratio = media.preview_image.aspect_ratio | default: 1.0
+  assign media_ratio = media.aspect_ratio | default: 1.0
+  if desktop_layout == 'columns_first_full' and media.media_type == 'image'
+    assign container_ratio = 1.0
+    assign media_ratio = 1.0
   endif
 
   assign mobile_columns = 1
@@ -50,8 +59,8 @@
 {%- endcapture -%}
 
 <div
-  class="product-media-container media-type-{{ media.media_type }} media-fit-{{ media_fit }} global-media-settings gradient{% if constrain_to_viewport %} constrain-height{% endif %}"
-  style="--ratio: {{ media.aspect_ratio | default: 1.0 }}; --preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};"
+  class="product-media-container media-type-{{ media.media_type }} media-fit-{{ media_fit }} global-media-settings gradient{% if constrain_to_viewport %} constrain-height{% endif %}{% if desktop_layout == 'columns_first_full' and media.media_type == 'image' %} product-media-container--square{% endif %}"
+  style="--ratio: {{ media_ratio }}; --preview-ratio: {{ container_ratio }};"
 >
   <modal-opener
     class="product__modal-opener product__modal-opener--{{ media.media_type }}"
