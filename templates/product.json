@@ -86,22 +86,21 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "klarna_on_site_messaging_app_block_YkBVtG": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "top-strip-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
-          }
-        },
-        "klarna_on_site_messaging_app_block_a4HPbb": {
-          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
-          "disabled": true,
-          "settings": {
-            "data_key": "credit-promotion-badge",
-            "theme": "default",
-            "topPadding": "0",
-            "bottomPadding": "0",
-            "messagePrefix": ""
           }
         },
         "product_details_accordion_AGkxfF": {
@@ -155,8 +154,8 @@
         "loyalty_points_simple_3XmmHD",
         "variant_picker",
         "quantity_selector",
+        "klarna_on_site_messaging_app_block_YkBVtG",
         "buy_buttons",
-        "klarna_on_site_messaging_app_block_a4HPbb",
         "product_details_accordion_AGkxfF",
         "loyalty_points_QEL9J7",
         "f7a58491-1754-42d3-96c2-6cdd772a2fc9",
